@@ -231,32 +231,59 @@ src/Models/TexturedModel.cpp.s:
 	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Models/TexturedModel.cpp.s
 .PHONY : src/Models/TexturedModel.cpp.s
 
-src/Particles/Particles.o: src/Particles/Particles.cpp.o
+src/Particles/Particle.o: src/Particles/Particle.cpp.o
 
-.PHONY : src/Particles/Particles.o
+.PHONY : src/Particles/Particle.o
 
 # target to build an object file
-src/Particles/Particles.cpp.o:
-	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Particles/Particles.cpp.o
-.PHONY : src/Particles/Particles.cpp.o
+src/Particles/Particle.cpp.o:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Particles/Particle.cpp.o
+.PHONY : src/Particles/Particle.cpp.o
 
-src/Particles/Particles.i: src/Particles/Particles.cpp.i
+src/Particles/Particle.i: src/Particles/Particle.cpp.i
 
-.PHONY : src/Particles/Particles.i
+.PHONY : src/Particles/Particle.i
 
 # target to preprocess a source file
-src/Particles/Particles.cpp.i:
-	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Particles/Particles.cpp.i
-.PHONY : src/Particles/Particles.cpp.i
+src/Particles/Particle.cpp.i:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Particles/Particle.cpp.i
+.PHONY : src/Particles/Particle.cpp.i
 
-src/Particles/Particles.s: src/Particles/Particles.cpp.s
+src/Particles/Particle.s: src/Particles/Particle.cpp.s
 
-.PHONY : src/Particles/Particles.s
+.PHONY : src/Particles/Particle.s
 
 # target to generate assembly for a file
-src/Particles/Particles.cpp.s:
-	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Particles/Particles.cpp.s
-.PHONY : src/Particles/Particles.cpp.s
+src/Particles/Particle.cpp.s:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Particles/Particle.cpp.s
+.PHONY : src/Particles/Particle.cpp.s
+
+src/Particles/ParticleSystem.o: src/Particles/ParticleSystem.cpp.o
+
+.PHONY : src/Particles/ParticleSystem.o
+
+# target to build an object file
+src/Particles/ParticleSystem.cpp.o:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o
+.PHONY : src/Particles/ParticleSystem.cpp.o
+
+src/Particles/ParticleSystem.i: src/Particles/ParticleSystem.cpp.i
+
+.PHONY : src/Particles/ParticleSystem.i
+
+# target to preprocess a source file
+src/Particles/ParticleSystem.cpp.i:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.i
+.PHONY : src/Particles/ParticleSystem.cpp.i
+
+src/Particles/ParticleSystem.s: src/Particles/ParticleSystem.cpp.s
+
+.PHONY : src/Particles/ParticleSystem.s
+
+# target to generate assembly for a file
+src/Particles/ParticleSystem.cpp.s:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.s
+.PHONY : src/Particles/ParticleSystem.cpp.s
 
 src/RenderEngine/DisplayManager.o: src/RenderEngine/DisplayManager.cpp.o
 
@@ -420,6 +447,33 @@ src/Shaders/LightShader.cpp.s:
 	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.s
 .PHONY : src/Shaders/LightShader.cpp.s
 
+src/Shaders/ParticlesShader.o: src/Shaders/ParticlesShader.cpp.o
+
+.PHONY : src/Shaders/ParticlesShader.o
+
+# target to build an object file
+src/Shaders/ParticlesShader.cpp.o:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.o
+.PHONY : src/Shaders/ParticlesShader.cpp.o
+
+src/Shaders/ParticlesShader.i: src/Shaders/ParticlesShader.cpp.i
+
+.PHONY : src/Shaders/ParticlesShader.i
+
+# target to preprocess a source file
+src/Shaders/ParticlesShader.cpp.i:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.i
+.PHONY : src/Shaders/ParticlesShader.cpp.i
+
+src/Shaders/ParticlesShader.s: src/Shaders/ParticlesShader.cpp.s
+
+.PHONY : src/Shaders/ParticlesShader.s
+
+# target to generate assembly for a file
+src/Shaders/ParticlesShader.cpp.s:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.s
+.PHONY : src/Shaders/ParticlesShader.cpp.s
+
 src/Tools/Clock.o: src/Tools/Clock.cpp.o
 
 .PHONY : src/Tools/Clock.o
@@ -522,9 +576,12 @@ help:
 	@echo "... src/Models/TexturedModel.o"
 	@echo "... src/Models/TexturedModel.i"
 	@echo "... src/Models/TexturedModel.s"
-	@echo "... src/Particles/Particles.o"
-	@echo "... src/Particles/Particles.i"
-	@echo "... src/Particles/Particles.s"
+	@echo "... src/Particles/Particle.o"
+	@echo "... src/Particles/Particle.i"
+	@echo "... src/Particles/Particle.s"
+	@echo "... src/Particles/ParticleSystem.o"
+	@echo "... src/Particles/ParticleSystem.i"
+	@echo "... src/Particles/ParticleSystem.s"
 	@echo "... src/RenderEngine/DisplayManager.o"
 	@echo "... src/RenderEngine/DisplayManager.i"
 	@echo "... src/RenderEngine/DisplayManager.s"
@@ -543,6 +600,9 @@ help:
 	@echo "... src/Shaders/LightShader.o"
 	@echo "... src/Shaders/LightShader.i"
 	@echo "... src/Shaders/LightShader.s"
+	@echo "... src/Shaders/ParticlesShader.o"
+	@echo "... src/Shaders/ParticlesShader.i"
+	@echo "... src/Shaders/ParticlesShader.s"
 	@echo "... src/Tools/Clock.o"
 	@echo "... src/Tools/Clock.i"
 	@echo "... src/Tools/Clock.s"
