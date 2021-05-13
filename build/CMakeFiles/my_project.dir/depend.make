@@ -26,6 +26,7 @@ CMakeFiles/my_project.dir/src/Models/TexturedModel.cpp.o: ../src/Tools/Clock.hpp
 CMakeFiles/my_project.dir/src/Models/TexturedModel.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/Models/TexturedModel.cpp.o: ../src/include.hpp
 
+CMakeFiles/my_project.dir/src/Particles/Particle.cpp.o: ../src/Models/TexturedModel.hpp
 CMakeFiles/my_project.dir/src/Particles/Particle.cpp.o: ../src/Particles/Particle.cpp
 CMakeFiles/my_project.dir/src/Particles/Particle.cpp.o: ../src/Particles/Particle.hpp
 CMakeFiles/my_project.dir/src/Particles/Particle.cpp.o: ../src/Tools/Clock.hpp
@@ -44,6 +45,7 @@ CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/RenderEngin
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/RenderEngine/ParticlesRenderer.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/RenderEngine/rlights.h
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Shaders/LightShader.hpp
+CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Shaders/ParticlesShader.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Tools/Clock.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/include.hpp
@@ -61,6 +63,7 @@ CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/RenderEn
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/RenderEngine/ParticlesRenderer.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/RenderEngine/rlights.h
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Shaders/LightShader.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Shaders/ParticlesShader.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Tools/Clock.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/include.hpp
@@ -94,14 +97,17 @@ CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/RenderEn
 CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/RenderEngine/ParticlesRenderer.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/RenderEngine/rlights.h
 CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Shaders/LightShader.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Shaders/ParticlesShader.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Tools/Clock.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/include.hpp
 
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/Entities/Camera.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/Models/TexturedModel.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/Particles/Particle.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/RenderEngine/ParticlesRenderer.cpp
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/RenderEngine/ParticlesRenderer.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/Shaders/ParticlesShader.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/Tools/Clock.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/include.hpp
@@ -138,6 +144,7 @@ CMakeFiles/my_project.dir/src/main.cpp.o: ../src/RenderEngine/MasterRenderer.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/RenderEngine/ParticlesRenderer.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/RenderEngine/rlights.h
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Shaders/LightShader.hpp
+CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Shaders/ParticlesShader.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Tools/Clock.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/include.hpp
