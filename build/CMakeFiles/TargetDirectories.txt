@@ -1,0 +1,3 @@
+/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles/rebuild_cache.dir
+/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles/my_project.dir
+/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles/edit_cache.dir
