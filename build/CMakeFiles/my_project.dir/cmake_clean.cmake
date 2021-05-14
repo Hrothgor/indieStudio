@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/my_project.dir/src/Entities/Camera.cpp.o"
   "CMakeFiles/my_project.dir/src/Entities/Entity.cpp.o"
   "CMakeFiles/my_project.dir/src/Entities/Light.cpp.o"
+  "CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.o"
   "CMakeFiles/my_project.dir/src/Models/TexturedModel.cpp.o"
   "CMakeFiles/my_project.dir/src/Particles/Particle.cpp.o"
   "CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o"

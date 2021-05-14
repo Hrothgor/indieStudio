@@ -20,12 +20,20 @@ CMakeFiles/my_project.dir/src/Entities/Light.cpp.o: ../src/Tools/Clock.hpp
 CMakeFiles/my_project.dir/src/Entities/Light.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/Entities/Light.cpp.o: ../src/include.hpp
 
+CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.o: ../src/Models/ParticleTexturedModel.cpp
+CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.o: ../src/Models/ParticleTexturedModel.hpp
+CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.o: ../src/Models/TexturedModel.hpp
+CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.o: ../src/Tools/Maths.hpp
+CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.o: ../src/include.hpp
+
 CMakeFiles/my_project.dir/src/Models/TexturedModel.cpp.o: ../src/Models/TexturedModel.cpp
 CMakeFiles/my_project.dir/src/Models/TexturedModel.cpp.o: ../src/Models/TexturedModel.hpp
 CMakeFiles/my_project.dir/src/Models/TexturedModel.cpp.o: ../src/Tools/Clock.hpp
 CMakeFiles/my_project.dir/src/Models/TexturedModel.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/Models/TexturedModel.cpp.o: ../src/include.hpp
 
+CMakeFiles/my_project.dir/src/Particles/Particle.cpp.o: ../src/Models/ParticleTexturedModel.hpp
 CMakeFiles/my_project.dir/src/Particles/Particle.cpp.o: ../src/Models/TexturedModel.hpp
 CMakeFiles/my_project.dir/src/Particles/Particle.cpp.o: ../src/Particles/Particle.cpp
 CMakeFiles/my_project.dir/src/Particles/Particle.cpp.o: ../src/Particles/Particle.hpp
@@ -36,6 +44,7 @@ CMakeFiles/my_project.dir/src/Particles/Particle.cpp.o: ../src/include.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Entities/Camera.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Entities/Entity.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Entities/Light.hpp
+CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Models/ParticleTexturedModel.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Models/TexturedModel.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Particles/Particle.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Particles/ParticleSystem.cpp
@@ -53,6 +62,7 @@ CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/include.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Entities/Camera.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Entities/Entity.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Entities/Light.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Models/ParticleTexturedModel.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Models/TexturedModel.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Particles/Particle.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Particles/ParticleSystem.hpp
@@ -89,6 +99,7 @@ CMakeFiles/my_project.dir/src/RenderEngine/FrameRate.cpp.o: ../src/include.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Entities/Camera.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Entities/Entity.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Entities/Light.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Models/ParticleTexturedModel.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Models/TexturedModel.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Particles/Particle.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/RenderEngine/EntityRenderer.hpp
@@ -103,6 +114,7 @@ CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Tools/Ma
 CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/include.hpp
 
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/Entities/Camera.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/Models/ParticleTexturedModel.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/Models/TexturedModel.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/Particles/Particle.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/RenderEngine/ParticlesRenderer.cpp
@@ -135,6 +147,7 @@ CMakeFiles/my_project.dir/src/Tools/Maths.cpp.o: ../src/include.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Entities/Camera.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Entities/Entity.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Entities/Light.hpp
+CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Models/ParticleTexturedModel.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Models/TexturedModel.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Particles/Particle.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Particles/ParticleSystem.hpp

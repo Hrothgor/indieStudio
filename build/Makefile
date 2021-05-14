@@ -204,6 +204,33 @@ src/Entities/Light.cpp.s:
 	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Entities/Light.cpp.s
 .PHONY : src/Entities/Light.cpp.s
 
+src/Models/ParticleTexturedModel.o: src/Models/ParticleTexturedModel.cpp.o
+
+.PHONY : src/Models/ParticleTexturedModel.o
+
+# target to build an object file
+src/Models/ParticleTexturedModel.cpp.o:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.o
+.PHONY : src/Models/ParticleTexturedModel.cpp.o
+
+src/Models/ParticleTexturedModel.i: src/Models/ParticleTexturedModel.cpp.i
+
+.PHONY : src/Models/ParticleTexturedModel.i
+
+# target to preprocess a source file
+src/Models/ParticleTexturedModel.cpp.i:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.i
+.PHONY : src/Models/ParticleTexturedModel.cpp.i
+
+src/Models/ParticleTexturedModel.s: src/Models/ParticleTexturedModel.cpp.s
+
+.PHONY : src/Models/ParticleTexturedModel.s
+
+# target to generate assembly for a file
+src/Models/ParticleTexturedModel.cpp.s:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.s
+.PHONY : src/Models/ParticleTexturedModel.cpp.s
+
 src/Models/TexturedModel.o: src/Models/TexturedModel.cpp.o
 
 .PHONY : src/Models/TexturedModel.o
@@ -573,6 +600,9 @@ help:
 	@echo "... src/Entities/Light.o"
 	@echo "... src/Entities/Light.i"
 	@echo "... src/Entities/Light.s"
+	@echo "... src/Models/ParticleTexturedModel.o"
+	@echo "... src/Models/ParticleTexturedModel.i"
+	@echo "... src/Models/ParticleTexturedModel.s"
 	@echo "... src/Models/TexturedModel.o"
 	@echo "... src/Models/TexturedModel.i"
 	@echo "... src/Models/TexturedModel.s"

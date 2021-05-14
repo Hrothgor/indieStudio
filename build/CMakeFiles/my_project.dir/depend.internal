@@ -20,6 +20,13 @@ CMakeFiles/my_project.dir/src/Entities/Light.cpp.o
  /home/julesminguet/EPI_2020/indieStudio/src/Tools/Clock.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Tools/Maths.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
+CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.o
+ /home/julesminguet/EPI_2020/indieStudio/src/Models/ParticleTexturedModel.cpp
+ /home/julesminguet/EPI_2020/indieStudio/src/Models/ParticleTexturedModel.hpp
+ /home/julesminguet/EPI_2020/indieStudio/src/Models/TexturedModel.hpp
+ /home/julesminguet/EPI_2020/indieStudio/src/Tools/Clock.hpp
+ /home/julesminguet/EPI_2020/indieStudio/src/Tools/Maths.hpp
+ /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
 CMakeFiles/my_project.dir/src/Models/TexturedModel.cpp.o
  /home/julesminguet/EPI_2020/indieStudio/src/Models/TexturedModel.cpp
  /home/julesminguet/EPI_2020/indieStudio/src/Models/TexturedModel.hpp
@@ -27,6 +34,7 @@ CMakeFiles/my_project.dir/src/Models/TexturedModel.cpp.o
  /home/julesminguet/EPI_2020/indieStudio/src/Tools/Maths.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
 CMakeFiles/my_project.dir/src/Particles/Particle.cpp.o
+ /home/julesminguet/EPI_2020/indieStudio/src/Models/ParticleTexturedModel.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Models/TexturedModel.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Particles/Particle.cpp
  /home/julesminguet/EPI_2020/indieStudio/src/Particles/Particle.hpp
@@ -37,6 +45,7 @@ CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o
  /home/julesminguet/EPI_2020/indieStudio/src/Entities/Camera.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Entities/Entity.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Entities/Light.hpp
+ /home/julesminguet/EPI_2020/indieStudio/src/Models/ParticleTexturedModel.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Models/TexturedModel.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Particles/Particle.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Particles/ParticleSystem.cpp
@@ -54,6 +63,7 @@ CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o
  /home/julesminguet/EPI_2020/indieStudio/src/Entities/Camera.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Entities/Entity.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Entities/Light.hpp
+ /home/julesminguet/EPI_2020/indieStudio/src/Models/ParticleTexturedModel.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Models/TexturedModel.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Particles/Particle.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Particles/ParticleSystem.hpp
@@ -90,6 +100,7 @@ CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o
  /home/julesminguet/EPI_2020/indieStudio/src/Entities/Camera.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Entities/Entity.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Entities/Light.hpp
+ /home/julesminguet/EPI_2020/indieStudio/src/Models/ParticleTexturedModel.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Models/TexturedModel.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Particles/Particle.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/EntityRenderer.hpp
@@ -104,6 +115,7 @@ CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o
  /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o
  /home/julesminguet/EPI_2020/indieStudio/src/Entities/Camera.hpp
+ /home/julesminguet/EPI_2020/indieStudio/src/Models/ParticleTexturedModel.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Models/TexturedModel.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Particles/Particle.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/ParticlesRenderer.cpp
@@ -136,6 +148,7 @@ CMakeFiles/my_project.dir/src/main.cpp.o
  /home/julesminguet/EPI_2020/indieStudio/src/Entities/Camera.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Entities/Entity.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Entities/Light.hpp
+ /home/julesminguet/EPI_2020/indieStudio/src/Models/ParticleTexturedModel.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Models/TexturedModel.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Particles/Particle.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Particles/ParticleSystem.hpp

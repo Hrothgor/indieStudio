@@ -7,6 +7,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/julesminguet/EPI_2020/indieStudio/src/Entities/Camera.cpp" "/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles/my_project.dir/src/Entities/Camera.cpp.o"
   "/home/julesminguet/EPI_2020/indieStudio/src/Entities/Entity.cpp" "/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles/my_project.dir/src/Entities/Entity.cpp.o"
   "/home/julesminguet/EPI_2020/indieStudio/src/Entities/Light.cpp" "/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles/my_project.dir/src/Entities/Light.cpp.o"
+  "/home/julesminguet/EPI_2020/indieStudio/src/Models/ParticleTexturedModel.cpp" "/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.o"
   "/home/julesminguet/EPI_2020/indieStudio/src/Models/TexturedModel.cpp" "/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles/my_project.dir/src/Models/TexturedModel.cpp.o"
   "/home/julesminguet/EPI_2020/indieStudio/src/Particles/Particle.cpp" "/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles/my_project.dir/src/Particles/Particle.cpp.o"
   "/home/julesminguet/EPI_2020/indieStudio/src/Particles/ParticleSystem.cpp" "/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o"
