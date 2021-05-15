@@ -14,7 +14,9 @@ namespace IS {
     class TexturedModel {
         public:
             TexturedModel() {};
+            TexturedModel(const std::string &modelPath);
             TexturedModel(const std::string &modelPath, const std::string &texturePath);
+            TexturedModel(Mesh mesh, const std::string &texturePath);
             ~TexturedModel();
 
             void setShader(Shader shader);
@@ -26,7 +28,7 @@ namespace IS {
         protected:
         private:
             Model _model;
-            Texture2D _texture;
+            Texture2D _texture = {0};
     };
 }
 

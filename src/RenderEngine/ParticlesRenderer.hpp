@@ -10,7 +10,8 @@
 
 #include "../include.hpp"
 #include "../Entities/Camera.hpp"
-#include "../Particles/Particles.hpp"
+#include "../Particles/Particle.hpp"
+#include "../Shaders/ParticlesShader.hpp"
 
 namespace IS {
     class ParticlesRenderer {
@@ -18,13 +19,17 @@ namespace IS {
             ParticlesRenderer();
             ~ParticlesRenderer();
 
+            void update(int scene, Camera3D camera);
             void render(int scene, IS::Camera camera);
-            void prepareParticles(Particles &particles);
-            void addParticles(int scene, const Particles &entity);
+            void updateModelViewMatrix(Particle &particle, Matrix viewMatrix);
+
+            void addParticles(const Particle &particle);
 
         protected:
         private:
-            std::map<int, std::vector<Particles>> _particles;
+            ParticlesShader _particlesShader;
+
+            std::multimap<int, Particle> _particles;
     };
 }
 

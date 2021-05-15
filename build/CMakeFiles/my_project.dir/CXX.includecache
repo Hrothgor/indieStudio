@@ -36,6 +36,34 @@
 ../Models/ParticleTexturedModel.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/Models/ParticleTexturedModel.hpp
 
+/home/julesminguet/EPI_2020/indieStudio/src/Particles/ParticleSystem.hpp
+../include.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/include.hpp
+Particle.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Particles/Particle.hpp
+../RenderEngine/MasterRenderer.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/MasterRenderer.hpp
+
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/DisplayManager.cpp
+DisplayManager.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/DisplayManager.hpp
+
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/DisplayManager.hpp
+../include.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/include.hpp
+../Entities/Camera.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Entities/Camera.hpp
+../Entities/Light.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Entities/Light.hpp
+../Entities/Entity.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Entities/Entity.hpp
+../Models/TexturedModel.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Models/TexturedModel.hpp
+../Particles/ParticleSystem.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Particles/ParticleSystem.hpp
+MasterRenderer.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/MasterRenderer.hpp
+
 /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/EntityRenderer.hpp
 ../include.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
@@ -47,12 +75,10 @@
 /home/julesminguet/EPI_2020/indieStudio/src/Entities/Light.hpp
 ../Shaders/LightShader.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShader.hpp
+../Shaders/LightShaderColor.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShaderColor.hpp
 rlights.h
 /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/rlights.h
-
-/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/MasterRenderer.cpp
-MasterRenderer.hpp
-/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/MasterRenderer.hpp
 
 /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/MasterRenderer.hpp
 ../include.hpp
@@ -79,6 +105,10 @@ raylib.h
 /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/raylib.h
 
 /home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShader.hpp
+../include.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/include.hpp
+
+/home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShaderColor.hpp
 ../include.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
 

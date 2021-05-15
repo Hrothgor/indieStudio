@@ -13,6 +13,7 @@
 #include "../Entities/Light.hpp"
 #include "../Entities/Entity.hpp"
 #include "../Models/TexturedModel.hpp"
+#include "../Particles/ParticleSystem.hpp"
 #include "MasterRenderer.hpp"
 
 namespace IS {

@@ -25,7 +25,7 @@ namespace IS {
 
             void addLight(const LightValue &light);
             void addEntity(int scene, const Entity &entity);
-            void addParticles(int scene, const Particles &particles);
+            void addParticles(const Particle &particles);
 
         protected:
         private:

@@ -10,7 +10,7 @@
 IS::Camera::Camera()
 {
     _camera = { 0 };
-    _camera.position = { 0, 30.0, -70.0 }; // _camera position
+    _camera.position = { -20, 10.0, -20.0 }; // _camera position
     _camera.target = { 0.0, 0.0, 0.0 };     // _camera looking at point
     _camera.up = { 0.0, 1.0, 0.0 };          // _camera up vector (rotation towards target)
     _camera.fovy = 70;

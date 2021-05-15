@@ -12,6 +12,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o"
   "CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o"
   "CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.o"
+  "CMakeFiles/my_project.dir/src/Shaders/LightShaderColor.cpp.o"
   "CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.o"
   "CMakeFiles/my_project.dir/src/Tools/Clock.cpp.o"
   "CMakeFiles/my_project.dir/src/Tools/Maths.cpp.o"

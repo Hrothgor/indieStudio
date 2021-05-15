@@ -17,6 +17,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/MasterRenderer.cpp" "/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o"
   "/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/ParticlesRenderer.cpp" "/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o"
   "/home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShader.cpp" "/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.o"
+  "/home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShaderColor.cpp" "/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles/my_project.dir/src/Shaders/LightShaderColor.cpp.o"
   "/home/julesminguet/EPI_2020/indieStudio/src/Shaders/ParticlesShader.cpp" "/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.o"
   "/home/julesminguet/EPI_2020/indieStudio/src/Tools/Clock.cpp" "/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles/my_project.dir/src/Tools/Clock.cpp.o"
   "/home/julesminguet/EPI_2020/indieStudio/src/Tools/Maths.cpp" "/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles/my_project.dir/src/Tools/Maths.cpp.o"
