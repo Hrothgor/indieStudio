@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/my_project.dir/src/Entities/Bomb.cpp.o"
+  "CMakeFiles/my_project.dir/src/Entities/Bomberman.cpp.o"
   "CMakeFiles/my_project.dir/src/Entities/Camera.cpp.o"
   "CMakeFiles/my_project.dir/src/Entities/Entity.cpp.o"
   "CMakeFiles/my_project.dir/src/Entities/Light.cpp.o"

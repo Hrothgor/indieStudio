@@ -123,6 +123,60 @@ my_project/fast:
 	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/build
 .PHONY : my_project/fast
 
+src/Entities/Bomb.o: src/Entities/Bomb.cpp.o
+
+.PHONY : src/Entities/Bomb.o
+
+# target to build an object file
+src/Entities/Bomb.cpp.o:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Entities/Bomb.cpp.o
+.PHONY : src/Entities/Bomb.cpp.o
+
+src/Entities/Bomb.i: src/Entities/Bomb.cpp.i
+
+.PHONY : src/Entities/Bomb.i
+
+# target to preprocess a source file
+src/Entities/Bomb.cpp.i:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Entities/Bomb.cpp.i
+.PHONY : src/Entities/Bomb.cpp.i
+
+src/Entities/Bomb.s: src/Entities/Bomb.cpp.s
+
+.PHONY : src/Entities/Bomb.s
+
+# target to generate assembly for a file
+src/Entities/Bomb.cpp.s:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Entities/Bomb.cpp.s
+.PHONY : src/Entities/Bomb.cpp.s
+
+src/Entities/Bomberman.o: src/Entities/Bomberman.cpp.o
+
+.PHONY : src/Entities/Bomberman.o
+
+# target to build an object file
+src/Entities/Bomberman.cpp.o:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Entities/Bomberman.cpp.o
+.PHONY : src/Entities/Bomberman.cpp.o
+
+src/Entities/Bomberman.i: src/Entities/Bomberman.cpp.i
+
+.PHONY : src/Entities/Bomberman.i
+
+# target to preprocess a source file
+src/Entities/Bomberman.cpp.i:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Entities/Bomberman.cpp.i
+.PHONY : src/Entities/Bomberman.cpp.i
+
+src/Entities/Bomberman.s: src/Entities/Bomberman.cpp.s
+
+.PHONY : src/Entities/Bomberman.s
+
+# target to generate assembly for a file
+src/Entities/Bomberman.cpp.s:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Entities/Bomberman.cpp.s
+.PHONY : src/Entities/Bomberman.cpp.s
+
 src/Entities/Camera.o: src/Entities/Camera.cpp.o
 
 .PHONY : src/Entities/Camera.o
@@ -591,6 +645,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... my_project"
 	@echo "... edit_cache"
+	@echo "... src/Entities/Bomb.o"
+	@echo "... src/Entities/Bomb.i"
+	@echo "... src/Entities/Bomb.s"
+	@echo "... src/Entities/Bomberman.o"
+	@echo "... src/Entities/Bomberman.i"
+	@echo "... src/Entities/Bomberman.s"
 	@echo "... src/Entities/Camera.o"
 	@echo "... src/Entities/Camera.i"
 	@echo "... src/Entities/Camera.s"
