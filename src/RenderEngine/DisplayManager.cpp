@@ -72,24 +72,24 @@ void IS::DisplayManager::run()
 {
     ///// 3D INIT /////
     TexturedModel texturedModelDragon("ressources/dragon.obj", "ressources/dragon.png");
-    TexturedModel texturedModelBomberMan("ressources/bomberman.obj");
+    TexturedModel texturedModelBomberMan("ressources/test.gltf");
 
-    Entity bombermanTest(texturedModelBomberMan, { -50, 0, -50 }, { 0, 0, 0 }, 2);
+    Entity bombermanTest(texturedModelBomberMan, { -50, 0, -50 }, { 0, 0, 0 }, 0.2);
     _renderer.addEntity(0, Entity(texturedModelDragon, { 0, 0, 0 }, { 0, 0, 0 }, 2));
     _renderer.addEntity(0, bombermanTest);
-    _renderer.addEntity(0, Entity(texturedModelBomberMan, { -40, 0, -50 }, { 0, 0, 0 }, 2));
-    _renderer.addEntity(0, Entity(texturedModelBomberMan, { -30, 0, -50 }, { 0, 0, 0 }, 2));
-    _renderer.addEntity(0, Entity(texturedModelBomberMan, { -20, 0, -50 }, { 0, 0, 0 }, 2));
-    _renderer.addEntity(0, Entity(texturedModelBomberMan, { -10, 0, -50 }, { 0, 0, 0 }, 2));
-    _renderer.addEntity(0, Entity(texturedModelBomberMan, { 0, 0, -50 }, { 0, 0, 0 }, 2));
-    _renderer.addEntity(0, Entity(texturedModelBomberMan, { 10, 0, -50 }, { 0, 0, 0 }, 2));
-    _renderer.addEntity(0, Entity(texturedModelBomberMan, { 20, 0, -50 }, { 0, 0, 0 }, 2));
-    _renderer.addEntity(0, Entity(texturedModelBomberMan, { 30, 0, -50 }, { 0, 0, 0 }, 2));
-    _renderer.addEntity(0, Entity(texturedModelBomberMan, { 40, 0, -50 }, { 0, 0, 0 }, 2));
-    _renderer.addEntity(0, Entity(texturedModelBomberMan, { 50, 0, -50 }, { 0, 0, 0 }, 2));
+    _renderer.addEntity(0, Entity(texturedModelBomberMan, { -40, 0, -50 }, { 0, 0, 0 }, 0.2));
+    _renderer.addEntity(0, Entity(texturedModelBomberMan, { -30, 0, -50 }, { 0, 0, 0 }, 0.2));
+    _renderer.addEntity(0, Entity(texturedModelBomberMan, { -20, 0, -50 }, { 0, 0, 0 }, 0.2));
+    _renderer.addEntity(0, Entity(texturedModelBomberMan, { -10, 0, -50 }, { 0, 0, 0 }, 0.2));
+    _renderer.addEntity(0, Entity(texturedModelBomberMan, { 0, 0, -50 }, { 0, 0, 0 }, 0.2));
+    _renderer.addEntity(0, Entity(texturedModelBomberMan, { 10, 0, -50 }, { 0, 0, 0 }, 0.2));
+    _renderer.addEntity(0, Entity(texturedModelBomberMan, { 20, 0, -50 }, { 0, 0, 0 }, 0.2));
+    _renderer.addEntity(0, Entity(texturedModelBomberMan, { 30, 0, -50 }, { 0, 0, 0 }, 0.2));
+    _renderer.addEntity(0, Entity(texturedModelBomberMan, { 40, 0, -50 }, { 0, 0, 0 }, 0.2));
+    _renderer.addEntity(0, Entity(texturedModelBomberMan, { 50, 0, -50 }, { 0, 0, 0 }, 0.2));
 
     int animsCount = 0;
-    ModelAnimation *anims = LoadModelAnimations("ressources/bomberman.obj", &animsCount);
+    ModelAnimation *anims = LoadModelAnimations("ressources/test.gltf", &animsCount);
     int animFrameCounter = 0;
 
     LightValue light({ 0, 75, 0 }, WHITE);
@@ -123,9 +123,9 @@ void IS::DisplayManager::run()
 
         if (IsKeyDown(KEY_SPACE))
         {
-            // animFrameCounter++;
-            // UpdateModelAnimation(bombermanTest.getTexturedModel().getModel(), anims[4], animFrameCounter);
-            // if (animFrameCounter >= anims[0].frameCount) animFrameCounter = 0;
+            animFrameCounter++;
+            UpdateModelAnimation(bombermanTest.getTexturedModel().getModel(), anims[0], animFrameCounter);
+            if (animFrameCounter >= anims[0].frameCount) animFrameCounter = 0;
         }
         ////////////
         BeginDrawing();
