@@ -18,12 +18,16 @@ IS::EntityRenderer::~EntityRenderer()
 {
 }
 
+float angle = 0;
+
 void IS::EntityRenderer::prepare(Camera camera)
 {
-    for (auto &light : _lights) {
+    for (Light &light : _lights) {
+        light.position.z = std::cos(angle) * 75;
+        light.position.y = std::sin(angle) * 75;
+        angle += 0.01;
         UpdateLightValues(_lightShader.getShader(), light);
-        UpdateLightValues(_lightShaderColor.getShader(), light);
-        DrawSphere(light.position, 2, light.color);
+        DrawSphere(light.position, 4, YELLOW);
     }
 }
 
@@ -42,21 +46,14 @@ void IS::EntityRenderer::render(int scene, IS::Camera camera)
 
 void IS::EntityRenderer::prepareEntity(Entity &entity)
 {
-    if (!entity.getTexturedModel().hasShader()) {
-        if (entity.getTexturedModel().getTexture().id == 0) {
-            entity.getTexturedModel().getModel().materials[0].shader = _lightShaderColor.getShader();
-            entity.getTexturedModel().getModel().materials[1].shader = _lightShaderColor.getShader();
-        }
-        else {
-            entity.getTexturedModel().setShader(_lightShader.getShader());
-        }
-    }
+    if (!entity.getTexturedModel().hasShader())
+        entity.getTexturedModel().setShader(_lightShader.getShader());
+    entity.update();
 }
 
 void IS::EntityRenderer::addLight(int scene, const LightValue &light)
 {
     _lights.push_back(CreateLight(LIGHT_POINT, light.getPosition(), Vector3Zero(), light.getColor(), _lightShader.getShader()));
-    CreateLight(LIGHT_POINT, light.getPosition(), Vector3Zero(), light.getColor(), _lightShaderColor.getShader());
 }
 
 void IS::EntityRenderer::addEntity(int scene, const Entity &entity)

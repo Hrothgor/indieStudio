@@ -23,10 +23,19 @@ namespace IS {
             ~DisplayManager();
 
             void run();
+            void LoadData();
 
         protected:
         private:
             MasterRenderer _renderer;
+            std::thread _thread;
+            int _progress = -1;
+
+            std::vector<TexturedModel> _texturedModels;
+            std::vector<ParticleTexturedModel> _particleTexturedModels;
+            std::vector<ParticleSystem> _particleSystem;
+            std::vector<Entity> _entities;
+            std::vector<LightValue> _lights;
     };
 }
 

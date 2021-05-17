@@ -54,7 +54,6 @@ CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/RenderEngin
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/RenderEngine/ParticlesRenderer.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/RenderEngine/rlights.h
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Shaders/LightShader.hpp
-CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Shaders/LightShaderColor.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Shaders/ParticlesShader.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Tools/Clock.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Tools/Maths.hpp
@@ -74,7 +73,6 @@ CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/RenderEn
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/RenderEngine/ParticlesRenderer.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/RenderEngine/rlights.h
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Shaders/LightShader.hpp
-CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Shaders/LightShaderColor.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Shaders/ParticlesShader.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Tools/Clock.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Tools/Maths.hpp
@@ -88,7 +86,6 @@ CMakeFiles/my_project.dir/src/RenderEngine/EntityRenderer.cpp.o: ../src/RenderEn
 CMakeFiles/my_project.dir/src/RenderEngine/EntityRenderer.cpp.o: ../src/RenderEngine/EntityRenderer.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/EntityRenderer.cpp.o: ../src/RenderEngine/rlights.h
 CMakeFiles/my_project.dir/src/RenderEngine/EntityRenderer.cpp.o: ../src/Shaders/LightShader.hpp
-CMakeFiles/my_project.dir/src/RenderEngine/EntityRenderer.cpp.o: ../src/Shaders/LightShaderColor.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/EntityRenderer.cpp.o: ../src/Tools/Clock.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/EntityRenderer.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/EntityRenderer.cpp.o: ../src/include.hpp
@@ -111,7 +108,6 @@ CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/RenderEn
 CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/RenderEngine/ParticlesRenderer.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/RenderEngine/rlights.h
 CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Shaders/LightShader.hpp
-CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Shaders/LightShaderColor.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Shaders/ParticlesShader.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Tools/Clock.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Tools/Maths.hpp
@@ -133,12 +129,6 @@ CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.o: ../src/Shaders/LightSha
 CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.o: ../src/Tools/Clock.hpp
 CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.o: ../src/include.hpp
-
-CMakeFiles/my_project.dir/src/Shaders/LightShaderColor.cpp.o: ../src/Shaders/LightShaderColor.cpp
-CMakeFiles/my_project.dir/src/Shaders/LightShaderColor.cpp.o: ../src/Shaders/LightShaderColor.hpp
-CMakeFiles/my_project.dir/src/Shaders/LightShaderColor.cpp.o: ../src/Tools/Clock.hpp
-CMakeFiles/my_project.dir/src/Shaders/LightShaderColor.cpp.o: ../src/Tools/Maths.hpp
-CMakeFiles/my_project.dir/src/Shaders/LightShaderColor.cpp.o: ../src/include.hpp
 
 CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.o: ../src/Shaders/ParticlesShader.cpp
 CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.o: ../src/Shaders/ParticlesShader.hpp
@@ -167,7 +157,6 @@ CMakeFiles/my_project.dir/src/main.cpp.o: ../src/RenderEngine/MasterRenderer.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/RenderEngine/ParticlesRenderer.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/RenderEngine/rlights.h
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Shaders/LightShader.hpp
-CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Shaders/LightShaderColor.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Shaders/ParticlesShader.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Tools/Clock.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Tools/Maths.hpp

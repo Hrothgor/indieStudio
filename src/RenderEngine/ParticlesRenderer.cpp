@@ -17,18 +17,10 @@ IS::ParticlesRenderer::~ParticlesRenderer()
 
 void IS::ParticlesRenderer::update(int scene, Camera3D camera)
 {
-    std::map<int, Particle>::iterator iter;
-    for (iter = _particles.begin(); iter != _particles.end(); ) {
-        if (!iter->second.update())
-            iter = _particles.erase(iter);
-        else
-            ++iter;
-    }
-    for (iter = _particles.begin(); iter != _particles.end(); iter++) {
-        auto nodeHandler = _particles.extract(iter->first);
-        nodeHandler.key() = iter->second.distanceToCamera(camera);
-        _particles.insert(std::move(nodeHandler));
-    }
+    for (auto it = _particles.begin(); it != _particles.end(); it++)
+        if (!it->update(camera))
+            _particles.erase(it--);
+    std::sort(_particles.begin(), _particles.end());
 }
 
 void IS::ParticlesRenderer::render(int scene, IS::Camera camera)
@@ -36,15 +28,15 @@ void IS::ParticlesRenderer::render(int scene, IS::Camera camera)
     Matrix viewMatrix = GetCameraMatrix(camera.getCamera3D());
 
     update(scene, camera.getCamera3D());
-    for (auto &particle : _particles) {
-        updateModelViewMatrix(particle.second, viewMatrix);
+    for (Particle &particle : _particles) {
+        updateModelViewMatrix(particle, viewMatrix);
         _particlesShader.loadData(
-            particle.second.getTexOffset1(),
-            particle.second.getTexOffset2(),
-            particle.second.getTexturedModel().getNumberOfRows(),
-            particle.second.getBlendFactor()
+            particle.getTexOffset1(),
+            particle.getTexOffset2(),
+            particle.getTexturedModel().getNumberOfRows(),
+            particle.getBlendFactor()
         );
-        DrawModel(particle.second.getTexturedModel().getModel(), particle.second.getPosition(), particle.second.getScale(), WHITE);
+        DrawModel(particle.getTexturedModel().getModel(), particle.getPosition(), particle.getScale(), WHITE);
     }
 }
 
@@ -68,5 +60,5 @@ void IS::ParticlesRenderer::updateModelViewMatrix(Particle &particle, Matrix vie
 
 void IS::ParticlesRenderer::addParticles(const Particle &particle)
 {
-    _particles.insert(std::make_pair(0, particle));
+    _particles.push_back(particle);
 }

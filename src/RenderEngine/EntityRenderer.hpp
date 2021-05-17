@@ -13,7 +13,6 @@
 #include "../Entities/Entity.hpp"
 #include "../Entities/Light.hpp"
 #include "../Shaders/LightShader.hpp"
-#include "../Shaders/LightShaderColor.hpp"
 #include "rlights.h"
 
 namespace IS {
@@ -32,7 +31,6 @@ namespace IS {
         protected:
         private:
             LightShader _lightShader;
-            LightShaderColor _lightShaderColor;
 
             std::vector<Light> _lights;
             std::map<int, std::vector<Entity>> _entities;

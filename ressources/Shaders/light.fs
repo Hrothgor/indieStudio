@@ -2,12 +2,14 @@
 
 // Input vertex attributes (from vertex shader)
 in vec2 fragTexCoords;
+in vec4 fragColor;
 in vec3 surfaceNormal;
 in vec3 toCameraVector;
 in vec3 worldPosition;
 
 // Input uniform values
 uniform sampler2D texture0;
+uniform vec4 colDiffuse;
 
 // Output fragment color
 out vec4 out_Pixel;
@@ -68,5 +70,5 @@ void main(void)
         }
     }
 
-    out_Pixel = vec4(lightDiffuse, 1.0) * texture(texture0, fragTexCoords) + vec4(specular, 1.0);
+    out_Pixel = vec4(lightDiffuse, 1.0) * (texture(texture0, fragTexCoords) * colDiffuse * fragColor) + vec4(specular, 1.0);
 }

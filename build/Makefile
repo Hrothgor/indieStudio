@@ -474,33 +474,6 @@ src/Shaders/LightShader.cpp.s:
 	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.s
 .PHONY : src/Shaders/LightShader.cpp.s
 
-src/Shaders/LightShaderColor.o: src/Shaders/LightShaderColor.cpp.o
-
-.PHONY : src/Shaders/LightShaderColor.o
-
-# target to build an object file
-src/Shaders/LightShaderColor.cpp.o:
-	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Shaders/LightShaderColor.cpp.o
-.PHONY : src/Shaders/LightShaderColor.cpp.o
-
-src/Shaders/LightShaderColor.i: src/Shaders/LightShaderColor.cpp.i
-
-.PHONY : src/Shaders/LightShaderColor.i
-
-# target to preprocess a source file
-src/Shaders/LightShaderColor.cpp.i:
-	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Shaders/LightShaderColor.cpp.i
-.PHONY : src/Shaders/LightShaderColor.cpp.i
-
-src/Shaders/LightShaderColor.s: src/Shaders/LightShaderColor.cpp.s
-
-.PHONY : src/Shaders/LightShaderColor.s
-
-# target to generate assembly for a file
-src/Shaders/LightShaderColor.cpp.s:
-	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Shaders/LightShaderColor.cpp.s
-.PHONY : src/Shaders/LightShaderColor.cpp.s
-
 src/Shaders/ParticlesShader.o: src/Shaders/ParticlesShader.cpp.o
 
 .PHONY : src/Shaders/ParticlesShader.o
@@ -657,9 +630,6 @@ help:
 	@echo "... src/Shaders/LightShader.o"
 	@echo "... src/Shaders/LightShader.i"
 	@echo "... src/Shaders/LightShader.s"
-	@echo "... src/Shaders/LightShaderColor.o"
-	@echo "... src/Shaders/LightShaderColor.i"
-	@echo "... src/Shaders/LightShaderColor.s"
 	@echo "... src/Shaders/ParticlesShader.o"
 	@echo "... src/Shaders/ParticlesShader.i"
 	@echo "... src/Shaders/ParticlesShader.s"

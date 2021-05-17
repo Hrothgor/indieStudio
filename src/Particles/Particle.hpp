@@ -17,9 +17,8 @@ namespace IS {
             Particle(Vector3 position, Vector3 velocity, float gravityEffect, float lifeLenght, float rotation, float scale, ParticleTexturedModel &particleTexturedModel);
             ~Particle();
 
-            bool update();
+            bool update(Camera3D camera);
             void updateTextureCoordInfo();
-            float distanceToCamera(Camera3D camera);
 
             Vector3 getPosition() const;
             Vector3 getVelocity() const;
@@ -31,8 +30,11 @@ namespace IS {
             Vector2 getTexOffset1() const;
             Vector2 getTexOffset2() const;
             float getBlendFactor() const;
+            float getDistanceToCamera() const;
 
             void setModelTransform(Matrix &matrix);
+
+            bool operator<(const Particle &other) const;
 
         protected:
         private:
@@ -47,6 +49,7 @@ namespace IS {
             Vector2 _texOffset1 = {0};
             Vector2 _texOffset2 = {0};
             float _blendFactor = 0;
+            float _distanceToCamera = 0;
     };
 }
 

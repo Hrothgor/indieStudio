@@ -17,6 +17,7 @@ namespace IS {
             Entity(const TexturedModel &texturedModel, Vector3 position, Vector3 rotation, float scale);
             ~Entity();
 
+            void update();
             void increasePosition(Vector3 vec);
             void increaseRotation(Vector3 vec);
 
@@ -29,6 +30,7 @@ namespace IS {
             void setPosition(Vector3 position);
             void setRotation(Vector3 rotation);
             void setScale(float scale);
+            void setColor(Color color, int materialNumber);
 
         protected:
         private:
@@ -36,6 +38,7 @@ namespace IS {
             Vector3 _position;
             Vector3 _rotation;
             float _scale;
+            std::vector<Color> _colors;
     };
 }
 

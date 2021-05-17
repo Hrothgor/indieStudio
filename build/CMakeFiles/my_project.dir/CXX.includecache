@@ -75,8 +75,6 @@ MasterRenderer.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/Entities/Light.hpp
 ../Shaders/LightShader.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShader.hpp
-../Shaders/LightShaderColor.hpp
-/home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShaderColor.hpp
 rlights.h
 /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/rlights.h
 
@@ -105,10 +103,6 @@ raylib.h
 /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/raylib.h
 
 /home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShader.hpp
-../include.hpp
-/home/julesminguet/EPI_2020/indieStudio/src/include.hpp
-
-/home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShaderColor.hpp
 ../include.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
 
@@ -142,6 +136,14 @@ regex
 unordered_map
 -
 type_traits
+-
+atomic
+-
+time.h
+-
+thread
+-
+unistd.h
 -
 raylib.h
 /home/julesminguet/EPI_2020/indieStudio/src/raylib.h

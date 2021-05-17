@@ -7,18 +7,31 @@
 
 #include "Entity.hpp"
 
+Color listColor[10] = { GREEN, YELLOW, RED, BLACK, WHITE, ORANGE, BEIGE, MAROON, LIME, PINK };
+
 IS::Entity::Entity(const TexturedModel &texturedModel, Vector3 position, Vector3 rotation, float scale)
+    : _texturedModel(texturedModel)
+    , _colors(_texturedModel.getModel().materialCount)
 {
-    _texturedModel = texturedModel;
     _position = position;
     _rotation = rotation;
     _scale = scale;
-    _texturedModel.getModel().transform = MatrixRotateXYZ({
-        DEG2RAD*_rotation.x, DEG2RAD*_rotation.y, DEG2RAD*_rotation.z });
+    _texturedModel.setTransform(MatrixRotateXYZ({
+        DEG2RAD*_rotation.x, DEG2RAD*_rotation.y, DEG2RAD*_rotation.z }));
+    for (Color &color : _colors)
+        color = listColor[rand() % 10];
 }
 
 IS::Entity::~Entity()
 {
+}
+
+void IS::Entity::update()
+{
+    int i = 0;
+
+    for (Color color : _colors)
+        _texturedModel.setColor(color, i++);
 }
 
 void IS::Entity::increasePosition(Vector3 vec)
@@ -33,8 +46,8 @@ void IS::Entity::increaseRotation(Vector3 vec)
     _rotation.x += vec.x;
     _rotation.y += vec.y;
     _rotation.z += vec.z;
-    _texturedModel.getModel().transform = MatrixRotateXYZ({
-        DEG2RAD*_rotation.x, DEG2RAD*_rotation.y, DEG2RAD*_rotation.z });
+    _texturedModel.setTransform(MatrixRotateXYZ({
+        DEG2RAD*_rotation.x, DEG2RAD*_rotation.y, DEG2RAD*_rotation.z }));
 }
 
 
@@ -76,4 +89,9 @@ void IS::Entity::setRotation(Vector3 rotation)
 void IS::Entity::setScale(float scale)
 {
     _scale = scale;
+}
+
+void IS::Entity::setColor(Color color, int materialNumber)
+{
+    _colors[materialNumber] = color;
 }

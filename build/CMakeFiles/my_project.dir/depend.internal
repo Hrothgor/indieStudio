@@ -55,7 +55,6 @@ CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o
  /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/ParticlesRenderer.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/rlights.h
  /home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShader.hpp
- /home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShaderColor.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Shaders/ParticlesShader.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Tools/Clock.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Tools/Maths.hpp
@@ -75,7 +74,6 @@ CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o
  /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/ParticlesRenderer.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/rlights.h
  /home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShader.hpp
- /home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShaderColor.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Shaders/ParticlesShader.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Tools/Clock.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Tools/Maths.hpp
@@ -89,7 +87,6 @@ CMakeFiles/my_project.dir/src/RenderEngine/EntityRenderer.cpp.o
  /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/EntityRenderer.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/rlights.h
  /home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShader.hpp
- /home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShaderColor.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Tools/Clock.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Tools/Maths.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
@@ -112,7 +109,6 @@ CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o
  /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/ParticlesRenderer.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/rlights.h
  /home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShader.hpp
- /home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShaderColor.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Shaders/ParticlesShader.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Tools/Clock.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Tools/Maths.hpp
@@ -131,12 +127,6 @@ CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o
 CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.o
  /home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShader.cpp
  /home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShader.hpp
- /home/julesminguet/EPI_2020/indieStudio/src/Tools/Clock.hpp
- /home/julesminguet/EPI_2020/indieStudio/src/Tools/Maths.hpp
- /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
-CMakeFiles/my_project.dir/src/Shaders/LightShaderColor.cpp.o
- /home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShaderColor.cpp
- /home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShaderColor.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Tools/Clock.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Tools/Maths.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
@@ -168,7 +158,6 @@ CMakeFiles/my_project.dir/src/main.cpp.o
  /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/ParticlesRenderer.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/rlights.h
  /home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShader.hpp
- /home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShaderColor.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Shaders/ParticlesShader.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Tools/Clock.hpp
  /home/julesminguet/EPI_2020/indieStudio/src/Tools/Maths.hpp

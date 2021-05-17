@@ -22,11 +22,6 @@ IS::Particle::~Particle()
 {
 }
 
-float IS::Particle::distanceToCamera(Camera3D camera)
-{
-    return (-std::pow(Vector3Distance(_position, camera.position), 2));
-}
-
 Vector3 IS::Particle::getPosition() const
 {
     return (_position);
@@ -77,14 +72,20 @@ float IS::Particle::getBlendFactor() const
     return (_blendFactor);
 }
 
+float IS::Particle::getDistanceToCamera() const
+{
+    return (_distanceToCamera);
+}
+
 void IS::Particle::setModelTransform(Matrix &matrix)
 {
-    _particleTexturedModel.getModel().transform = matrix;
+    _particleTexturedModel.setTransform(matrix);
 }
 
 
-bool IS::Particle::update()
+bool IS::Particle::update(Camera3D camera)
 {
+    _distanceToCamera = std::pow(Vector3Distance(_position, camera.position), 2);
     updateTextureCoordInfo();
     _velocity.y += GRAVITY * _gravityEffect * GetFrameTime();
     _position.x += _velocity.x * GetFrameTime();
@@ -112,4 +113,9 @@ void IS::Particle::updateTextureCoordInfo()
     int row2 = index2 / _particleTexturedModel.getNumberOfRows();
     _texOffset2.x = (float) column2 / _particleTexturedModel.getNumberOfRows();
     _texOffset2.y = (float) row2 / _particleTexturedModel.getNumberOfRows();
+}
+
+bool IS::Particle::operator<(const Particle &other) const
+{
+    return other.getDistanceToCamera() < _distanceToCamera;
 }

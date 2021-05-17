@@ -29,7 +29,7 @@ namespace IS {
         private:
             ParticlesShader _particlesShader;
 
-            std::multimap<int, Particle> _particles;
+            std::vector<Particle> _particles;
     };
 }
 

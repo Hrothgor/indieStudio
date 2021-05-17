@@ -10,8 +10,6 @@
 IS::TexturedModel::TexturedModel(const std::string &modelPath)
 {
     _model = LoadModel(modelPath.c_str());
-    _model.materials[0].maps[MATERIAL_MAP_ALBEDO].color = RED;
-    _model.materials[1].maps[MATERIAL_MAP_ALBEDO].color = GREEN;
 }
 
 IS::TexturedModel::TexturedModel(const std::string &modelPath, const std::string &texturePath)
@@ -32,7 +30,7 @@ IS::TexturedModel::~TexturedModel()
 {
 }
 
-Model &IS::TexturedModel::getModel()
+Model IS::TexturedModel::getModel() const
 {
     return (_model);
 }
@@ -40,6 +38,21 @@ Model &IS::TexturedModel::getModel()
 Texture2D IS::TexturedModel::getTexture() const
 {
     return (_texture);
+}
+
+void IS::TexturedModel::setModel(Model model)
+{
+    _model = model;
+}
+
+void IS::TexturedModel::setTexture(Texture2D texture)
+{
+    _texture = texture;
+}
+
+void IS::TexturedModel::setTransform(Matrix matrix)
+{
+    _model.transform = matrix;
 }
 
 bool IS::TexturedModel::hasShader()
@@ -51,5 +64,13 @@ bool IS::TexturedModel::hasShader()
 
 void IS::TexturedModel::setShader(Shader shader)
 {
-    _model.materials[0].shader = shader;
+    for (int i = 0; i < _model.materialCount; i++)
+        _model.materials[i].shader = shader;
+}
+
+void IS::TexturedModel::setColor(Color color, int materialNumber)
+{
+    for (int i = 0; i < _model.materialCount; i++)
+        if (i == materialNumber)
+            _model.materials[i].maps[MATERIAL_MAP_ALBEDO].color = color;
 }

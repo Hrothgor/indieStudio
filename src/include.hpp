@@ -25,6 +25,10 @@
 #include <regex>
 #include <unordered_map>
 #include <type_traits>
+#include <atomic>
+#include <time.h>
+#include <thread>
+#include <unistd.h>
 
 #include "raylib.h"
 #include "raymath.h"

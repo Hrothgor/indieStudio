@@ -20,10 +20,14 @@ namespace IS {
             ~TexturedModel();
 
             void setShader(Shader shader);
+            void setColor(Color color, int materialNumber);
             bool hasShader();
 
-            Model &getModel();
+            Model getModel() const;
             Texture2D getTexture() const;
+            void setModel(Model model);
+            void setTexture(Texture2D texture);
+            void setTransform(Matrix matrix);
 
         protected:
         private:

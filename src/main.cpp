@@ -10,6 +10,7 @@
 
 int main(void)
 {
+    srand(time(NULL));
     IS::DisplayManager core;
     core.run();
     return 0;
