@@ -6,6 +6,22 @@
 
 #IncludeRegexTransform: 
 
+/home/julesminguet/EPI_2020/indieStudio/src/Entities/Bomb.hpp
+../include.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/include.hpp
+Entity.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Entities/Entity.hpp
+../Particles/ParticleSystem.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Particles/ParticleSystem.hpp
+
+/home/julesminguet/EPI_2020/indieStudio/src/Entities/Bomberman.hpp
+../include.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/include.hpp
+Entity.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Entities/Entity.hpp
+../Particles/ParticleSystem.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Particles/ParticleSystem.hpp
+
 /home/julesminguet/EPI_2020/indieStudio/src/Entities/Camera.hpp
 ../include.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
@@ -20,15 +36,49 @@
 ../include.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
 
+/home/julesminguet/EPI_2020/indieStudio/src/Models/ParticleTexturedModel.hpp
+../include.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/include.hpp
+../Models/TexturedModel.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Models/TexturedModel.hpp
+
 /home/julesminguet/EPI_2020/indieStudio/src/Models/TexturedModel.hpp
 ../include.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
 
-/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/EntityRenderer.cpp
-EntityRenderer.hpp
-/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/EntityRenderer.hpp
-rlights.h
-/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/rlights.h
+/home/julesminguet/EPI_2020/indieStudio/src/Particles/Particle.hpp
+../include.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/include.hpp
+../Models/ParticleTexturedModel.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Models/ParticleTexturedModel.hpp
+
+/home/julesminguet/EPI_2020/indieStudio/src/Particles/ParticleSystem.hpp
+../include.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/include.hpp
+Particle.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Particles/Particle.hpp
+
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/DisplayManager.cpp
+DisplayManager.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/DisplayManager.hpp
+
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/DisplayManager.hpp
+../include.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/include.hpp
+../Entities/Camera.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Entities/Camera.hpp
+../Entities/Light.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Entities/Light.hpp
+../Entities/Bomb.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Entities/Bomb.hpp
+../Entities/Bomberman.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Entities/Bomberman.hpp
+../Models/TexturedModel.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Models/TexturedModel.hpp
+../Particles/ParticleSystem.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Particles/ParticleSystem.hpp
+MasterRenderer.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/MasterRenderer.hpp
 
 /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/EntityRenderer.hpp
 ../include.hpp
@@ -44,11 +94,35 @@ rlights.h
 rlights.h
 /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/rlights.h
 
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/MasterRenderer.hpp
+../include.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/include.hpp
+../Entities/Camera.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Entities/Camera.hpp
+EntityRenderer.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/EntityRenderer.hpp
+ParticlesRenderer.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/ParticlesRenderer.hpp
+
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/ParticlesRenderer.hpp
+../include.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/include.hpp
+../Entities/Camera.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Entities/Camera.hpp
+../Particles/Particle.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Particles/Particle.hpp
+../Shaders/ParticlesShader.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Shaders/ParticlesShader.hpp
+
 /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/rlights.h
 raylib.h
 /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/raylib.h
 
 /home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShader.hpp
+../include.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/include.hpp
+
+/home/julesminguet/EPI_2020/indieStudio/src/Shaders/ParticlesShader.hpp
 ../include.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
 
@@ -77,13 +151,7 @@ regex
 -
 unordered_map
 -
-type_traits
--
-atomic
--
 time.h
--
-thread
 -
 unistd.h
 -
