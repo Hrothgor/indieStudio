@@ -5,6 +5,7 @@
 ** ParticlesShader
 */
 
+#pragma once
 #ifndef PARTICLESSHADER_HPP_
 #define PARTICLESSHADER_HPP_
 

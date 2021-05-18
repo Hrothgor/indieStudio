@@ -6,6 +6,7 @@
 */
 
 #include "ParticleSystem.hpp"
+#include "../RenderEngine/MasterRenderer.hpp"
 
 IS::ParticleSystem::ParticleSystem(float pps, float speed, float gravityComplient, float lifeLength, float scale, const std::string &texturePath, MasterRenderer *renderer, PARTICLE_EMISSION emissionType)
     : _particleTexturedModel(GenMeshCube(0.5, 0.5, 0.5), texturePath, 1)
@@ -59,6 +60,12 @@ void IS::ParticleSystem::emitParticle(Vector3 center)
         case CIRCLE:
             emitParticleCircle(center);
             break;
+        case STATIC:
+            emitParticleStatic(center);
+            break;
+        case FLYING:
+            emitParticleFlying(center);
+            break;
         default:
             break;
     }
@@ -93,5 +100,17 @@ void IS::ParticleSystem::emitParticleCircle(Vector3 center)
     Vector3 velocity = { dirX, dirY, dirZ };
     velocity = Vector3Normalize(velocity);
     velocity = Vector3Scale(velocity, _speed);
+    _renderer->addParticles(Particle(center, velocity, _gravityComplient, _lifeLength, 0, _scale, _particleTexturedModel));
+}
+
+void IS::ParticleSystem::emitParticleStatic(Vector3 center)
+{
+    Vector3 velocity = { 0, 0, 0 };
+    _renderer->addParticles(Particle(center, velocity, _gravityComplient, _lifeLength, 0, _scale, _particleTexturedModel));
+}
+
+void IS::ParticleSystem::emitParticleFlying(Vector3 center)
+{
+    Vector3 velocity = { 0, 1, 0 };
     _renderer->addParticles(Particle(center, velocity, _gravityComplient, _lifeLength, 0, _scale, _particleTexturedModel));
 }

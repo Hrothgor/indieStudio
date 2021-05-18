@@ -5,6 +5,7 @@
 ** ParticleTexturedModel
 */
 
+#pragma once
 #ifndef PARTICLETEXTUREDMODEL_HPP_
 #define PARTICLETEXTUREDMODEL_HPP_
 

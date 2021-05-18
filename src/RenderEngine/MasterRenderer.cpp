@@ -44,7 +44,7 @@ void IS::MasterRenderer::addLight(const LightValue &light)
     _entityRenderer.addLight(0, light);
 }
 
-void IS::MasterRenderer::addEntity(int scene, const Entity &entity)
+void IS::MasterRenderer::addEntity(int scene, Entity *entity)
 {
     _entityRenderer.addEntity(scene, entity);
 }

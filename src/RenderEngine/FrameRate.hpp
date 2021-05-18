@@ -5,6 +5,7 @@
 ** FrameRate
 */
 
+#pragma once
 #ifndef FRAMERATE_HPP_
 #define FRAMERATE_HPP_
 

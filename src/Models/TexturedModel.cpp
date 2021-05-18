@@ -7,32 +7,57 @@
 
 #include "TexturedModel.hpp"
 
-IS::TexturedModel::TexturedModel(const std::string &modelPath)
+std::string IntPlusPadding(int i, int paddingLength)
 {
-    _model = LoadModel(modelPath.c_str());
+    std::ostringstream ss;
+    ss << std::setw(paddingLength) << std::setfill('0') << i;
+    return ss.str();
 }
 
-IS::TexturedModel::TexturedModel(const std::string &modelPath, const std::string &texturePath)
+IS::TexturedModel::TexturedModel(const std::string &modelPath)
 {
-    _model = LoadModel(modelPath.c_str());
-    _texture = LoadTexture(texturePath.c_str());
-    _model.materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = _texture;
+    std::string path = "ressources/" + modelPath + ".obj";
+    std::string pathTexture = "ressources/" + modelPath + ".png";
+
+    if (std::filesystem::exists(path)) {
+        _models.push_back(LoadModel(path.c_str()));
+        if (std::filesystem::exists(pathTexture)) {
+            _texture = LoadTexture(pathTexture.c_str());
+            _models[0].materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = _texture;
+        }
+    } else {
+        int i = 0;
+        while (std::filesystem::exists((path = std::string("ressources/" + modelPath + "/" + modelPath + "_" + IntPlusPadding(i, 6) + ".obj")))) {
+            _models.push_back(LoadModel(path.c_str()));
+            i += 1;
+        }
+    }
 }
 
 IS::TexturedModel::TexturedModel(Mesh mesh, const std::string &texturePath)
 {
-    _model = LoadModelFromMesh(mesh);
+    _models.push_back(LoadModelFromMesh(mesh));
     _texture = LoadTexture(texturePath.c_str());
-    _model.materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = _texture;
+    _models[0].materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = _texture;
 }
 
 IS::TexturedModel::~TexturedModel()
 {
 }
 
+void IS::TexturedModel::nextFrame()
+{
+    std::rotate(_models.begin(), _models.begin() + 1, _models.end());
+}
+
+void IS::TexturedModel::prevFrame()
+{
+    std::rotate(_models.rbegin(), _models.rbegin() + 1, _models.rend());
+}
+
 Model IS::TexturedModel::getModel() const
 {
-    return (_model);
+    return (_models[0]);
 }
 
 Texture2D IS::TexturedModel::getTexture() const
@@ -42,35 +67,36 @@ Texture2D IS::TexturedModel::getTexture() const
 
 void IS::TexturedModel::setModel(Model model)
 {
-    _model = model;
-}
-
-void IS::TexturedModel::setTexture(Texture2D texture)
-{
-    _texture = texture;
+    _models[0] = model;
 }
 
 void IS::TexturedModel::setTransform(Matrix matrix)
 {
-    _model.transform = matrix;
+    for (Model &_model : _models) {
+        _model.transform = matrix;
+    }
 }
 
 bool IS::TexturedModel::hasShader()
 {
-    if (_model.materials[0].shader.id == 3)
+    if (_models[0].materials[0].shader.id == 3)
         return (false);
     return (true);
 }
 
 void IS::TexturedModel::setShader(Shader shader)
 {
-    for (int i = 0; i < _model.materialCount; i++)
-        _model.materials[i].shader = shader;
+    for (Model &_model : _models) {
+        for (int i = 0; i < _model.materialCount; i++)
+            _model.materials[i].shader = shader;
+    }
 }
 
 void IS::TexturedModel::setColor(Color color, int materialNumber)
 {
-    for (int i = 0; i < _model.materialCount; i++)
-        if (i == materialNumber)
-            _model.materials[i].maps[MATERIAL_MAP_ALBEDO].color = color;
+    for (Model &_model : _models) {
+        for (int i = 0; i < _model.materialCount; i++)
+            if (i == materialNumber)
+                _model.materials[i].maps[MATERIAL_MAP_ALBEDO].color = color;
+    }
 }

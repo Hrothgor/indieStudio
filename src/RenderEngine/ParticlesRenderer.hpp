@@ -5,6 +5,7 @@
 ** ParticlesRenderer
 */
 
+#pragma once
 #ifndef PARTICLESRENDERER_HPP_
 #define PARTICLESRENDERER_HPP_
 
@@ -19,7 +20,7 @@ namespace IS {
             ParticlesRenderer();
             ~ParticlesRenderer();
 
-            void update(int scene, Camera3D camera);
+            void prepare(int scene, Camera3D camera);
             void render(int scene, IS::Camera camera);
             void updateModelViewMatrix(Particle &particle, Matrix viewMatrix);
 

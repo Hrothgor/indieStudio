@@ -5,6 +5,7 @@
 ** MasterRenderer
 */
 
+#pragma once
 #ifndef MASTERRENDERER_HPP_
 #define MASTERRENDERER_HPP_
 
@@ -24,7 +25,7 @@ namespace IS {
             void render(int scene, IS::Camera camera);
 
             void addLight(const LightValue &light);
-            void addEntity(int scene, const Entity &entity);
+            void addEntity(int scene, Entity *entity);
             void addParticles(const Particle &particles);
 
         protected:

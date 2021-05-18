@@ -5,6 +5,7 @@
 ** TexturedModel
 */
 
+#pragma once
 #ifndef TEXTUREDMODEL_HPP_
 #define TEXTUREDMODEL_HPP_
 
@@ -19,6 +20,9 @@ namespace IS {
             TexturedModel(Mesh mesh, const std::string &texturePath);
             ~TexturedModel();
 
+            void nextFrame();
+            void prevFrame();
+
             void setShader(Shader shader);
             void setColor(Color color, int materialNumber);
             bool hasShader();
@@ -26,12 +30,11 @@ namespace IS {
             Model getModel() const;
             Texture2D getTexture() const;
             void setModel(Model model);
-            void setTexture(Texture2D texture);
             void setTransform(Matrix matrix);
 
         protected:
         private:
-            Model _model;
+            std::vector<Model> _models;
             Texture2D _texture = {0};
     };
 }

@@ -18,20 +18,25 @@ IS::Entity::Entity(const TexturedModel &texturedModel, Vector3 position, Vector3
     _scale = scale;
     _texturedModel.setTransform(MatrixRotateXYZ({
         DEG2RAD*_rotation.x, DEG2RAD*_rotation.y, DEG2RAD*_rotation.z }));
-    for (Color &color : _colors)
+    for (Color &color : _colors) {
         color = listColor[rand() % 10];
+    }
+    std::cout << "r: " << (int)_colors[0].r << " ";
+    std::cout << "g: " << (int)_colors[0].g << " ";
+    std::cout << "b: " << (int)_colors[0].b << std::endl;
 }
 
 IS::Entity::~Entity()
 {
 }
 
-void IS::Entity::update()
+bool IS::Entity::update()
 {
     int i = 0;
 
     for (Color color : _colors)
         _texturedModel.setColor(color, i++);
+    return (true);
 }
 
 void IS::Entity::increasePosition(Vector3 vec)
@@ -50,6 +55,15 @@ void IS::Entity::increaseRotation(Vector3 vec)
         DEG2RAD*_rotation.x, DEG2RAD*_rotation.y, DEG2RAD*_rotation.z }));
 }
 
+void IS::Entity::nextFrame()
+{
+    _texturedModel.nextFrame();
+}
+
+void IS::Entity::prevFrame()
+{
+    _texturedModel.prevFrame();
+}
 
 IS::TexturedModel IS::Entity::getTexturedModel() const
 {
@@ -93,5 +107,7 @@ void IS::Entity::setScale(float scale)
 
 void IS::Entity::setColor(Color color, int materialNumber)
 {
+    if (materialNumber >= _colors.size() || materialNumber < 0)
+        return;
     _colors[materialNumber] = color;
 }

@@ -8,6 +8,7 @@
 #ifndef ENTITY_HPP_
 #define ENTITY_HPP_
 
+#pragma once
 #include "../include.hpp"
 #include "../Models/TexturedModel.hpp"
 
@@ -17,9 +18,12 @@ namespace IS {
             Entity(const TexturedModel &texturedModel, Vector3 position, Vector3 rotation, float scale);
             ~Entity();
 
-            void update();
+            virtual bool update();
             void increasePosition(Vector3 vec);
             void increaseRotation(Vector3 vec);
+
+            void nextFrame();
+            void prevFrame();
 
             TexturedModel getTexturedModel() const;
             Vector3 getPosition() const;
@@ -33,12 +37,12 @@ namespace IS {
             void setColor(Color color, int materialNumber);
 
         protected:
-        private:
             TexturedModel _texturedModel;
             Vector3 _position;
             Vector3 _rotation;
             float _scale;
             std::vector<Color> _colors;
+        private:
     };
 }
 

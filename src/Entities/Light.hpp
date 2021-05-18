@@ -5,6 +5,7 @@
 ** Light
 */
 
+#pragma once
 #ifndef LIGHTVALUE_HPP_
 #define LIGHTVALUE_HPP_
 

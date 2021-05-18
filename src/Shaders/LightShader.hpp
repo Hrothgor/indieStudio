@@ -5,6 +5,7 @@
 ** LightShader
 */
 
+#pragma once
 #ifndef LIGHTSHADER_HPP_
 #define LIGHTSHADER_HPP_
 

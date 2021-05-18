@@ -15,7 +15,7 @@ IS::ParticlesRenderer::~ParticlesRenderer()
 {
 }
 
-void IS::ParticlesRenderer::update(int scene, Camera3D camera)
+void IS::ParticlesRenderer::prepare(int scene, Camera3D camera)
 {
     for (auto it = _particles.begin(); it != _particles.end(); it++)
         if (!it->update(camera))
@@ -27,7 +27,7 @@ void IS::ParticlesRenderer::render(int scene, IS::Camera camera)
 {
     Matrix viewMatrix = GetCameraMatrix(camera.getCamera3D());
 
-    update(scene, camera.getCamera3D());
+    prepare(scene, camera.getCamera3D());
     for (Particle &particle : _particles) {
         updateModelViewMatrix(particle, viewMatrix);
         _particlesShader.loadData(

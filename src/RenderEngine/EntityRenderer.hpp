@@ -5,6 +5,7 @@
 ** EntityRenderer
 */
 
+#pragma once
 #ifndef ENTITYRENDERER_HPP_
 #define ENTITYRENDERER_HPP_
 
@@ -21,19 +22,19 @@ namespace IS {
             EntityRenderer();
             ~EntityRenderer();
 
-            void prepare(Camera camera);
+            void prepare(int scene, Camera camera);
             void render(int scene, IS::Camera camera);
-            void prepareEntity(Entity &entity);
+            void prepareEntity(Entity *entity);
 
             void addLight(int scene, const LightValue &light);
-            void addEntity(int scene, const Entity &entity);
+            void addEntity(int scene, Entity *entity);
 
         protected:
         private:
             LightShader _lightShader;
 
             std::vector<Light> _lights;
-            std::map<int, std::vector<Entity>> _entities;
+            std::map<int, std::vector<Entity *>> _entities;
     };
 }
 

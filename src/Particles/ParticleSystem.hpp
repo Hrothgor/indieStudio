@@ -5,22 +5,28 @@
 ** ParticleSystem
 */
 
+#pragma once
 #ifndef PARTICLESYSTEM_HPP_
 #define PARTICLESYSTEM_HPP_
 
 #include "../include.hpp"
 #include "Particle.hpp"
-#include "../RenderEngine/MasterRenderer.hpp"
 
 namespace IS {
+
+    class MasterRenderer;
+
     enum PARTICLE_EMISSION {
         PARABOLIC = 0,
         DIRECTIONAL,
         CIRCLE,
+        STATIC,
+        FLYING,
     };
 
     class ParticleSystem {
         public:
+            ParticleSystem() {};
             ParticleSystem(float pps, float speed, float gravityComplient, float lifeLength, float scale, const std::string &fileTexture, MasterRenderer *renderer, PARTICLE_EMISSION emissionType = PARABOLIC);
             ParticleSystem(float pps, float speed, float gravityComplient, float lifeLength, float scale, ParticleTexturedModel &particleTexturedModel, MasterRenderer *renderer, PARTICLE_EMISSION emissionType = PARABOLIC);
             ~ParticleSystem();
@@ -33,6 +39,8 @@ namespace IS {
             void emitParticleParabolic(Vector3 center);
             void emitParticleDirectional(Vector3 center, Vector3 direction);
             void emitParticleCircle(Vector3 center);
+            void emitParticleStatic(Vector3 center);
+            void emitParticleFlying(Vector3 center);
 
         	float _pps;
             float _speed;

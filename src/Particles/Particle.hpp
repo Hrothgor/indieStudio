@@ -5,6 +5,7 @@
 ** Particles
 */
 
+#pragma once
 #ifndef PARTICLES_HPP_
 #define PARTICLES_HPP_
 
