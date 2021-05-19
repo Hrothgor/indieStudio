@@ -14,8 +14,6 @@ IS::LightShader::LightShader()
 
 IS::LightShader::~LightShader()
 {
-    if (_shader.id != -1)
-        UnloadShader(_shader);
 }
 
 void IS::LightShader::initShader()
@@ -32,4 +30,10 @@ Shader IS::LightShader::getShader()
     if (_shader.id == -1)
         initShader();
     return (_shader);
+}
+
+void IS::LightShader::clean()
+{
+    if (_shader.id == -1)
+        UnloadShader(_shader);
 }

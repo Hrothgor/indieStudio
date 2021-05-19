@@ -14,8 +14,6 @@ IS::ParticlesShader::ParticlesShader()
 
 IS::ParticlesShader::~ParticlesShader()
 {
-    if (_shader.id != -1)
-        UnloadShader(_shader);
 }
 
 void IS::ParticlesShader::initShader()
@@ -41,4 +39,10 @@ Shader IS::ParticlesShader::getShader()
     if (_shader.id == -1)
         initShader();
     return (_shader);
+}
+
+void IS::ParticlesShader::clean()
+{
+    if (_shader.id == -1)
+        UnloadShader(_shader);
 }

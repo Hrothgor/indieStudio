@@ -29,14 +29,31 @@ void IS::Master3DRenderer::stop()
 void IS::Master3DRenderer::render(int scene, IS::Camera camera)
 {
     start(camera);
-    _entityRenderer.render(scene, camera);
-    DrawGrid(100, 1.0f);
-    rlDisableDepthMask();
-    //BeginBlendMode(BLEND_ADDITIVE);
-    _particlesRenderer.render(scene, camera);
-    //EndBlendMode();
-    rlEnableDepthMask();
+    {
+        if (_skybox.getModel().meshCount != 0) {
+            rlDisableBackfaceCulling();
+            rlDisableDepthMask();
+                DrawModel(_skybox.getModel(), {0, 0, 0}, 1.0f, WHITE);
+            rlEnableBackfaceCulling();
+            rlEnableDepthMask();
+        }
+    }
+    {
+        _entityRenderer.render(scene, camera);
+    }
+    {
+        rlDisableDepthMask();
+        //BeginBlendMode(BLEND_ADDITIVE);
+        _particlesRenderer.render(scene, camera);
+        //EndBlendMode();
+        rlEnableDepthMask();
+    }
     stop();
+}
+
+void IS::Master3DRenderer::addSkybox(const Skybox &skybox)
+{
+    _skybox = skybox;
 }
 
 void IS::Master3DRenderer::addLight(const LightValue &light)

@@ -258,6 +258,33 @@ src/Entities/Light.cpp.s:
 	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Entities/Light.cpp.s
 .PHONY : src/Entities/Light.cpp.s
 
+src/Entities/Skybox.o: src/Entities/Skybox.cpp.o
+
+.PHONY : src/Entities/Skybox.o
+
+# target to build an object file
+src/Entities/Skybox.cpp.o:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Entities/Skybox.cpp.o
+.PHONY : src/Entities/Skybox.cpp.o
+
+src/Entities/Skybox.i: src/Entities/Skybox.cpp.i
+
+.PHONY : src/Entities/Skybox.i
+
+# target to preprocess a source file
+src/Entities/Skybox.cpp.i:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Entities/Skybox.cpp.i
+.PHONY : src/Entities/Skybox.cpp.i
+
+src/Entities/Skybox.s: src/Entities/Skybox.cpp.s
+
+.PHONY : src/Entities/Skybox.s
+
+# target to generate assembly for a file
+src/Entities/Skybox.cpp.s:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Entities/Skybox.cpp.s
+.PHONY : src/Entities/Skybox.cpp.s
+
 src/Models/ParticleTexturedModel.o: src/Models/ParticleTexturedModel.cpp.o
 
 .PHONY : src/Models/ParticleTexturedModel.o
@@ -582,6 +609,33 @@ src/Shaders/ParticlesShader.cpp.s:
 	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.s
 .PHONY : src/Shaders/ParticlesShader.cpp.s
 
+src/Shaders/SkyboxShader.o: src/Shaders/SkyboxShader.cpp.o
+
+.PHONY : src/Shaders/SkyboxShader.o
+
+# target to build an object file
+src/Shaders/SkyboxShader.cpp.o:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Shaders/SkyboxShader.cpp.o
+.PHONY : src/Shaders/SkyboxShader.cpp.o
+
+src/Shaders/SkyboxShader.i: src/Shaders/SkyboxShader.cpp.i
+
+.PHONY : src/Shaders/SkyboxShader.i
+
+# target to preprocess a source file
+src/Shaders/SkyboxShader.cpp.i:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Shaders/SkyboxShader.cpp.i
+.PHONY : src/Shaders/SkyboxShader.cpp.i
+
+src/Shaders/SkyboxShader.s: src/Shaders/SkyboxShader.cpp.s
+
+.PHONY : src/Shaders/SkyboxShader.s
+
+# target to generate assembly for a file
+src/Shaders/SkyboxShader.cpp.s:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Shaders/SkyboxShader.cpp.s
+.PHONY : src/Shaders/SkyboxShader.cpp.s
+
 src/Tools/Clock.o: src/Tools/Clock.cpp.o
 
 .PHONY : src/Tools/Clock.o
@@ -714,6 +768,9 @@ help:
 	@echo "... src/Entities/Light.o"
 	@echo "... src/Entities/Light.i"
 	@echo "... src/Entities/Light.s"
+	@echo "... src/Entities/Skybox.o"
+	@echo "... src/Entities/Skybox.i"
+	@echo "... src/Entities/Skybox.s"
 	@echo "... src/Models/ParticleTexturedModel.o"
 	@echo "... src/Models/ParticleTexturedModel.i"
 	@echo "... src/Models/ParticleTexturedModel.s"
@@ -750,6 +807,9 @@ help:
 	@echo "... src/Shaders/ParticlesShader.o"
 	@echo "... src/Shaders/ParticlesShader.i"
 	@echo "... src/Shaders/ParticlesShader.s"
+	@echo "... src/Shaders/SkyboxShader.o"
+	@echo "... src/Shaders/SkyboxShader.i"
+	@echo "... src/Shaders/SkyboxShader.s"
 	@echo "... src/Tools/Clock.o"
 	@echo "... src/Tools/Clock.i"
 	@echo "... src/Tools/Clock.s"

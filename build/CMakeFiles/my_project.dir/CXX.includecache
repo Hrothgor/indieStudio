@@ -36,6 +36,18 @@ Entity.hpp
 ../include.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
 
+/home/julesminguet/EPI_2020/indieStudio/src/Entities/Skybox.cpp
+Skybox.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Entities/Skybox.hpp
+
+/home/julesminguet/EPI_2020/indieStudio/src/Entities/Skybox.hpp
+../include.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/include.hpp
+../Models/TexturedModel.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Models/TexturedModel.hpp
+../Shaders/SkyboxShader.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Shaders/SkyboxShader.hpp
+
 /home/julesminguet/EPI_2020/indieStudio/src/Models/ParticleTexturedModel.hpp
 ../include.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
@@ -51,6 +63,12 @@ Entity.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
 ../Models/ParticleTexturedModel.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/Models/ParticleTexturedModel.hpp
+
+/home/julesminguet/EPI_2020/indieStudio/src/Particles/ParticleSystem.cpp
+ParticleSystem.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Particles/ParticleSystem.hpp
+../RenderEngine/Master3DRenderer.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/Master3DRenderer.hpp
 
 /home/julesminguet/EPI_2020/indieStudio/src/Particles/ParticleSystem.hpp
 ../include.hpp
@@ -82,6 +100,12 @@ Master3DRenderer.hpp
 Master2DRenderer.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/Master2DRenderer.hpp
 
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/EntityRenderer.cpp
+EntityRenderer.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/EntityRenderer.hpp
+rlights.h
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/rlights.h
+
 /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/EntityRenderer.hpp
 ../include.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
@@ -100,6 +124,10 @@ rlights.h
 ../include.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
 
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/Master3DRenderer.cpp
+Master3DRenderer.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/Master3DRenderer.hpp
+
 /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/Master3DRenderer.hpp
 ../include.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
@@ -107,6 +135,12 @@ rlights.h
 /home/julesminguet/EPI_2020/indieStudio/src/Entities/Camera.hpp
 EntityRenderer.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/EntityRenderer.hpp
+ParticlesRenderer.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/ParticlesRenderer.hpp
+../Entities/Skybox.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Entities/Skybox.hpp
+
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/ParticlesRenderer.cpp
 ParticlesRenderer.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/ParticlesRenderer.hpp
 
@@ -124,11 +158,27 @@ ParticlesRenderer.hpp
 raylib.h
 /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/raylib.h
 
+/home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShader.cpp
+LightShader.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShader.hpp
+
 /home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShader.hpp
 ../include.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
 
+/home/julesminguet/EPI_2020/indieStudio/src/Shaders/ParticlesShader.cpp
+ParticlesShader.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/Shaders/ParticlesShader.hpp
+
+/home/julesminguet/EPI_2020/indieStudio/src/Shaders/ParticlesShader.hpp
+../include.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/include.hpp
+
+/home/julesminguet/EPI_2020/indieStudio/src/Shaders/SkyboxShader.cpp
+SkyboxShader.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/Shaders/SkyboxShader.hpp
+
+/home/julesminguet/EPI_2020/indieStudio/src/Shaders/SkyboxShader.hpp
 ../include.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/include.hpp
 
@@ -179,4 +229,10 @@ Tools/GenMesh.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/Tools/GenMesh.hpp
 Tools/Clock.hpp
 /home/julesminguet/EPI_2020/indieStudio/src/Tools/Clock.hpp
+
+/home/julesminguet/EPI_2020/indieStudio/src/main.cpp
+include.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/include.hpp
+RenderEngine/DisplayManager.hpp
+/home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/DisplayManager.hpp
 

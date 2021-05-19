@@ -55,7 +55,7 @@ void IS::ParticleSystem::emitParticle(Vector3 center)
             emitParticleParabolic(center);
             break;
         case DIRECTIONAL:
-            emitParticleDirectional(center, {-1, 0, 0});
+            emitParticleDirectional(center, {0, 0, -1});
             break;
         case CIRCLE:
             emitParticleCircle(center);

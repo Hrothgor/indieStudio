@@ -21,16 +21,16 @@ IS::DisplayManager::~DisplayManager()
 
 void IS::DisplayManager::load()
 {
-    Image image = LoadImage("ressources/cubicmap.png");      // Load cubicmap image (RAM)
-    Texture2D cubicmap = LoadTextureFromImage(image);       // Convert image to texture to display (VRAM)
+    Image image = LoadImage("ressources/cubicmap.png");
+    Texture2D cubicmap = LoadTextureFromImage(image);
 
     Mesh mesh = GenMeshCubicmap(image, {1.0, 1.0, 1.0});
     Model model = LoadModelFromMesh(mesh);
 
-    Texture2D texture = LoadTexture("ressources/cubicmap_atlas.png");    // Load map texture
-    model.materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = texture;             // Set map diffuse texture
-    UnloadImage(image);     // Unload cubesmap image from RAM, already uploaded to VRAM
-    _entities.push_back(new Entity(TexturedModel(mesh, "ressources/cubicmap_atlas.png"), {-50, 0, 50}, {0,0,0}, 10));
+    Texture2D texture = LoadTexture("ressources/cubicmap_atlas.png");
+    model.materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = texture;
+    UnloadImage(image);
+    _entities.push_back(new Entity(TexturedModel(mesh, "ressources/cubicmap_atlas.png"), {-60, 0, -60}, {0,0,0}, 10));
 
     _texturedModels["dragon"] = TexturedModel("dragon");
     _texturedModels["bomberman"] = TexturedModel("bomberman");
@@ -50,15 +50,15 @@ void IS::DisplayManager::load()
     _particleSystem["fireBomb"] = ParticleSystem(20, 2, 0, 2, 5, _particleTexturedModels["fire"], &_3Drenderer);
     _particleSystem["explosionBomb"] = ParticleSystem(5000, 4, 0, 2, 3, _particleTexturedModels["cosmic"], &_3Drenderer, IS::PARTICLE_EMISSION::CIRCLE);
 
-    _entities.push_back(new Entity(_texturedModels["dragon"], { 20, 0, 0 }, { 0, 0, 0 }, 2));
+    _entities.push_back(new Entity(_texturedModels["dragon"], { 60, 10, 0 }, { 0, 90, 0 }, 2));
     _entities.push_back(new Bomberman(Entity(_texturedModels["bomberman"], { -50, 0, -50 }, { 0, 0, 0 }, 2), _particleSystem["smokeFeet"]));
-    _entities.push_back(new Bomberman(Entity(_texturedModels["bomberman"], { -40, 0, -50 }, { 0, 0, 0 }, 2), _particleSystem["smokeFeet"]));
     _entities.push_back(new Bomberman(Entity(_texturedModels["bomberman"], { -30, 0, -50 }, { 0, 0, 0 }, 2), _particleSystem["smokeFeet"]));
-    _entities.push_back(new Bomb(Entity(_texturedModels["bomb"], { 10, 0, -50 }, { 0, 0, 0 }, 2), _particleSystem["fireBomb"], _particleSystem["explosionBomb"]));
-    _entities.push_back(new Bomb(Entity(_texturedModels["bomb"], { 20, 0, -50 }, { 0, 0, 0 }, 2), _particleSystem["fireBomb"], _particleSystem["explosionBomb"]));
-    _entities.push_back(new Bomb(Entity(_texturedModels["bomb"], { 30, 0, -50 }, { 0, 0, 0 }, 2), _particleSystem["fireBomb"], _particleSystem["explosionBomb"]));
-    _entities.push_back(new Bomb(Entity(_texturedModels["bomb"], { 40, 0, -50 }, { 0, 0, 0 }, 2), _particleSystem["fireBomb"], _particleSystem["explosionBomb"]));
-    _entities.push_back(new Bomb(Entity(_texturedModels["bomb"], { 50, 0, -50 }, { 0, 0, 0 }, 2), _particleSystem["fireBomb"], _particleSystem["explosionBomb"]));
+    _entities.push_back(new Bomberman(Entity(_texturedModels["bomberman"], { -10, 0, -50 }, { 0, 0, 0 }, 2), _particleSystem["smokeFeet"]));
+    _entities.push_back(new Bomb(Entity(_texturedModels["bomb"], { 10, 10, -50 }, { 0, 0, 0 }, 2), _particleSystem["fireBomb"], _particleSystem["explosionBomb"]));
+    _entities.push_back(new Bomb(Entity(_texturedModels["bomb"], { 20, 10, -50 }, { 0, 0, 0 }, 2), _particleSystem["fireBomb"], _particleSystem["explosionBomb"]));
+    _entities.push_back(new Bomb(Entity(_texturedModels["bomb"], { 30, 10, -50 }, { 0, 0, 0 }, 2), _particleSystem["fireBomb"], _particleSystem["explosionBomb"]));
+    _entities.push_back(new Bomb(Entity(_texturedModels["bomb"], { 40, 10, -50 }, { 0, 0, 0 }, 2), _particleSystem["fireBomb"], _particleSystem["explosionBomb"]));
+    _entities.push_back(new Bomb(Entity(_texturedModels["bomb"], { 50, 10, -50 }, { 0, 0, 0 }, 2), _particleSystem["fireBomb"], _particleSystem["explosionBomb"]));
 
     _lights.push_back(LightValue({ 2000, 3000, 2000 }, WHITE));
 }
@@ -78,6 +78,7 @@ void IS::DisplayManager::run()
 {
     load();
     ///// 3D INIT /////
+    _3Drenderer.addSkybox(Skybox("ressources/skybox.png"));
     _3Drenderer.addLight(_lights[0]);
 
     Camera camera;
@@ -90,11 +91,11 @@ void IS::DisplayManager::run()
     while (!WindowShouldClose())
     {
         if (IsKeyPressed(KEY_SPACE))
-            _entities.push_back(new Bomb(Entity(_texturedModels["bomb"], { Maths::randFloat() * 100 - 50, 0, Maths::randFloat() * 100 - 50 }, { 0, 0, 0 }, 2), _particleSystem["fireBomb"], _particleSystem["explosionBomb"]));
+            _entities.push_back(new Bomb(Entity(_texturedModels["bomb"], { Maths::randFloat() * 100 - 50, 10, Maths::randFloat() * 100 - 50 }, { 0, 0, 0 }, 2), _particleSystem["fireBomb"], _particleSystem["explosionBomb"]));
         //// UPDATE GAME ////
         camera.update();
-        _particleSystem["star"].generateParticles({10, 10, -10});
-        _particleSystem["burn"].generateParticles({12, 14, 0});
+        _particleSystem["star"].generateParticles({0, 40, -20});
+        _particleSystem["burn"].generateParticles({60, 24, -12});
         // _particleSystem["smoke"].generateParticles({-11.7, 16.5, 0});
         // _particleSystem["cosmic"].generateParticles({-5, 10, -25});
         for (auto it = _entities.begin(); it != _entities.end(); it++)

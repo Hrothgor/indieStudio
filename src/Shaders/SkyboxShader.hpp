@@ -2,20 +2,20 @@
 ** EPITECH PROJECT, 2021
 ** indieStudio
 ** File description:
-** LightShader
+** SkyboxShader
 */
 
 #pragma once
-#ifndef LIGHTSHADER_HPP_
-#define LIGHTSHADER_HPP_
+#ifndef SKYBOXSHADER_HPP_
+#define SKYBOXSHADER_HPP_
 
 #include "../include.hpp"
 
 namespace IS {
-    class LightShader {
+    class SkyboxShader {
         public:
-            LightShader();
-            ~LightShader();
+            SkyboxShader();
+            ~SkyboxShader();
 
             void initShader();
             Shader getShader();
@@ -27,4 +27,4 @@ namespace IS {
     };
 }
 
-#endif /* !LIGHTSHADER_HPP_ */
+#endif /* !SKYBOXSHADER_HPP_ */

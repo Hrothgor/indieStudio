@@ -47,6 +47,15 @@ CMakeFiles/my_project.dir/src/Entities/Light.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/Entities/Light.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/Entities/Light.cpp.o: ../src/include.hpp
 
+CMakeFiles/my_project.dir/src/Entities/Skybox.cpp.o: ../src/Entities/Skybox.cpp
+CMakeFiles/my_project.dir/src/Entities/Skybox.cpp.o: ../src/Entities/Skybox.hpp
+CMakeFiles/my_project.dir/src/Entities/Skybox.cpp.o: ../src/Models/TexturedModel.hpp
+CMakeFiles/my_project.dir/src/Entities/Skybox.cpp.o: ../src/Shaders/SkyboxShader.hpp
+CMakeFiles/my_project.dir/src/Entities/Skybox.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/Entities/Skybox.cpp.o: ../src/Tools/GenMesh.hpp
+CMakeFiles/my_project.dir/src/Entities/Skybox.cpp.o: ../src/Tools/Maths.hpp
+CMakeFiles/my_project.dir/src/Entities/Skybox.cpp.o: ../src/include.hpp
+
 CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.o: ../src/Models/ParticleTexturedModel.cpp
 CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.o: ../src/Models/ParticleTexturedModel.hpp
 CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.o: ../src/Models/TexturedModel.hpp
@@ -74,6 +83,7 @@ CMakeFiles/my_project.dir/src/Particles/Particle.cpp.o: ../src/include.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Entities/Camera.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Entities/Entity.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Entities/Light.hpp
+CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Entities/Skybox.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Models/ParticleTexturedModel.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Models/TexturedModel.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Particles/Particle.hpp
@@ -85,6 +95,7 @@ CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/RenderEngin
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/RenderEngine/rlights.h
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Shaders/LightShader.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Shaders/ParticlesShader.hpp
+CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Shaders/SkyboxShader.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Tools/Clock.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Tools/Maths.hpp
@@ -95,6 +106,7 @@ CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Entities
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Entities/Camera.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Entities/Entity.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Entities/Light.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Entities/Skybox.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Models/ParticleTexturedModel.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Models/TexturedModel.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Particles/Particle.hpp
@@ -108,6 +120,7 @@ CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/RenderEn
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/RenderEngine/rlights.h
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Shaders/LightShader.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Shaders/ParticlesShader.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Shaders/SkyboxShader.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Tools/Clock.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Tools/Maths.hpp
@@ -143,6 +156,7 @@ CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.o: ../src/includ
 CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Entities/Camera.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Entities/Entity.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Entities/Light.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Entities/Skybox.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Models/ParticleTexturedModel.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Models/TexturedModel.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Particles/Particle.hpp
@@ -153,6 +167,7 @@ CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Render
 CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/RenderEngine/rlights.h
 CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Shaders/LightShader.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Shaders/ParticlesShader.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Shaders/SkyboxShader.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Tools/Clock.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Tools/Maths.hpp
@@ -184,6 +199,13 @@ CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.o: ../src/Tools/GenMes
 CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.o: ../src/include.hpp
 
+CMakeFiles/my_project.dir/src/Shaders/SkyboxShader.cpp.o: ../src/Shaders/SkyboxShader.cpp
+CMakeFiles/my_project.dir/src/Shaders/SkyboxShader.cpp.o: ../src/Shaders/SkyboxShader.hpp
+CMakeFiles/my_project.dir/src/Shaders/SkyboxShader.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/Shaders/SkyboxShader.cpp.o: ../src/Tools/GenMesh.hpp
+CMakeFiles/my_project.dir/src/Shaders/SkyboxShader.cpp.o: ../src/Tools/Maths.hpp
+CMakeFiles/my_project.dir/src/Shaders/SkyboxShader.cpp.o: ../src/include.hpp
+
 CMakeFiles/my_project.dir/src/Tools/Clock.cpp.o: ../src/Tools/Clock.cpp
 CMakeFiles/my_project.dir/src/Tools/Clock.cpp.o: ../src/Tools/Clock.hpp
 
@@ -204,6 +226,7 @@ CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Entities/Bomberman.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Entities/Camera.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Entities/Entity.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Entities/Light.hpp
+CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Entities/Skybox.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Models/ParticleTexturedModel.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Models/TexturedModel.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Particles/Particle.hpp
@@ -216,6 +239,7 @@ CMakeFiles/my_project.dir/src/main.cpp.o: ../src/RenderEngine/ParticlesRenderer.
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/RenderEngine/rlights.h
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Shaders/LightShader.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Shaders/ParticlesShader.hpp
+CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Shaders/SkyboxShader.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Tools/Clock.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Tools/Maths.hpp

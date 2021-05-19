@@ -13,6 +13,7 @@
 #include "../Entities/Camera.hpp"
 #include "EntityRenderer.hpp"
 #include "ParticlesRenderer.hpp"
+#include "../Entities/Skybox.hpp"
 
 namespace IS {
     class Master3DRenderer {
@@ -24,6 +25,7 @@ namespace IS {
             void stop();
             void render(int scene, IS::Camera camera);
 
+            void addSkybox(const Skybox &skybox);
             void addLight(const LightValue &light);
             void addEntity(int scene, Entity *entity);
             void addParticles(const Particle &particles);
@@ -32,6 +34,7 @@ namespace IS {
         private:
             EntityRenderer _entityRenderer;
             ParticlesRenderer _particlesRenderer;
+            Skybox _skybox;
     };
 }
 

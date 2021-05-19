@@ -20,6 +20,7 @@ namespace IS {
             void initShader();
             Shader getShader();
             void loadData(Vector2 texoffset1, Vector2 texoffset2, int numberOfRows, float blend);
+            void clean();
 
         protected:
         private:
