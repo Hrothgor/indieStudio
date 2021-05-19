@@ -9,6 +9,7 @@ CMakeFiles/my_project.dir/src/Entities/Bomb.cpp.o: ../src/Models/TexturedModel.h
 CMakeFiles/my_project.dir/src/Entities/Bomb.cpp.o: ../src/Particles/Particle.hpp
 CMakeFiles/my_project.dir/src/Entities/Bomb.cpp.o: ../src/Particles/ParticleSystem.hpp
 CMakeFiles/my_project.dir/src/Entities/Bomb.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/Entities/Bomb.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/Entities/Bomb.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/Entities/Bomb.cpp.o: ../src/include.hpp
 
@@ -20,12 +21,14 @@ CMakeFiles/my_project.dir/src/Entities/Bomberman.cpp.o: ../src/Models/TexturedMo
 CMakeFiles/my_project.dir/src/Entities/Bomberman.cpp.o: ../src/Particles/Particle.hpp
 CMakeFiles/my_project.dir/src/Entities/Bomberman.cpp.o: ../src/Particles/ParticleSystem.hpp
 CMakeFiles/my_project.dir/src/Entities/Bomberman.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/Entities/Bomberman.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/Entities/Bomberman.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/Entities/Bomberman.cpp.o: ../src/include.hpp
 
 CMakeFiles/my_project.dir/src/Entities/Camera.cpp.o: ../src/Entities/Camera.cpp
 CMakeFiles/my_project.dir/src/Entities/Camera.cpp.o: ../src/Entities/Camera.hpp
 CMakeFiles/my_project.dir/src/Entities/Camera.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/Entities/Camera.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/Entities/Camera.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/Entities/Camera.cpp.o: ../src/include.hpp
 
@@ -33,12 +36,14 @@ CMakeFiles/my_project.dir/src/Entities/Entity.cpp.o: ../src/Entities/Entity.cpp
 CMakeFiles/my_project.dir/src/Entities/Entity.cpp.o: ../src/Entities/Entity.hpp
 CMakeFiles/my_project.dir/src/Entities/Entity.cpp.o: ../src/Models/TexturedModel.hpp
 CMakeFiles/my_project.dir/src/Entities/Entity.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/Entities/Entity.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/Entities/Entity.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/Entities/Entity.cpp.o: ../src/include.hpp
 
 CMakeFiles/my_project.dir/src/Entities/Light.cpp.o: ../src/Entities/Light.cpp
 CMakeFiles/my_project.dir/src/Entities/Light.cpp.o: ../src/Entities/Light.hpp
 CMakeFiles/my_project.dir/src/Entities/Light.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/Entities/Light.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/Entities/Light.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/Entities/Light.cpp.o: ../src/include.hpp
 
@@ -46,12 +51,14 @@ CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.o: ../src/Models/
 CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.o: ../src/Models/ParticleTexturedModel.hpp
 CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.o: ../src/Models/TexturedModel.hpp
 CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/Models/ParticleTexturedModel.cpp.o: ../src/include.hpp
 
 CMakeFiles/my_project.dir/src/Models/TexturedModel.cpp.o: ../src/Models/TexturedModel.cpp
 CMakeFiles/my_project.dir/src/Models/TexturedModel.cpp.o: ../src/Models/TexturedModel.hpp
 CMakeFiles/my_project.dir/src/Models/TexturedModel.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/Models/TexturedModel.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/Models/TexturedModel.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/Models/TexturedModel.cpp.o: ../src/include.hpp
 
@@ -60,6 +67,7 @@ CMakeFiles/my_project.dir/src/Particles/Particle.cpp.o: ../src/Models/TexturedMo
 CMakeFiles/my_project.dir/src/Particles/Particle.cpp.o: ../src/Particles/Particle.cpp
 CMakeFiles/my_project.dir/src/Particles/Particle.cpp.o: ../src/Particles/Particle.hpp
 CMakeFiles/my_project.dir/src/Particles/Particle.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/Particles/Particle.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/Particles/Particle.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/Particles/Particle.cpp.o: ../src/include.hpp
 
@@ -72,12 +80,13 @@ CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Particles/P
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Particles/ParticleSystem.cpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Particles/ParticleSystem.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/RenderEngine/EntityRenderer.hpp
-CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/RenderEngine/MasterRenderer.hpp
+CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/RenderEngine/Master3DRenderer.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/RenderEngine/ParticlesRenderer.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/RenderEngine/rlights.h
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Shaders/LightShader.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Shaders/ParticlesShader.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o: ../src/include.hpp
 
@@ -93,12 +102,14 @@ CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Particle
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/RenderEngine/DisplayManager.cpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/RenderEngine/DisplayManager.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/RenderEngine/EntityRenderer.hpp
-CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/RenderEngine/MasterRenderer.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/RenderEngine/Master2DRenderer.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/RenderEngine/Master3DRenderer.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/RenderEngine/ParticlesRenderer.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/RenderEngine/rlights.h
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Shaders/LightShader.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Shaders/ParticlesShader.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o: ../src/include.hpp
 
@@ -111,31 +122,41 @@ CMakeFiles/my_project.dir/src/RenderEngine/EntityRenderer.cpp.o: ../src/RenderEn
 CMakeFiles/my_project.dir/src/RenderEngine/EntityRenderer.cpp.o: ../src/RenderEngine/rlights.h
 CMakeFiles/my_project.dir/src/RenderEngine/EntityRenderer.cpp.o: ../src/Shaders/LightShader.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/EntityRenderer.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/EntityRenderer.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/EntityRenderer.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/EntityRenderer.cpp.o: ../src/include.hpp
 
 CMakeFiles/my_project.dir/src/RenderEngine/FrameRate.cpp.o: ../src/RenderEngine/FrameRate.cpp
 CMakeFiles/my_project.dir/src/RenderEngine/FrameRate.cpp.o: ../src/RenderEngine/FrameRate.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/FrameRate.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/FrameRate.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/FrameRate.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/FrameRate.cpp.o: ../src/include.hpp
 
-CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Entities/Camera.hpp
-CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Entities/Entity.hpp
-CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Entities/Light.hpp
-CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Models/ParticleTexturedModel.hpp
-CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Models/TexturedModel.hpp
-CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Particles/Particle.hpp
-CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/RenderEngine/EntityRenderer.hpp
-CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/RenderEngine/MasterRenderer.cpp
-CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/RenderEngine/MasterRenderer.hpp
-CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/RenderEngine/ParticlesRenderer.hpp
-CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/RenderEngine/rlights.h
-CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Shaders/LightShader.hpp
-CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Shaders/ParticlesShader.hpp
-CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Tools/Clock.hpp
-CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/Tools/Maths.hpp
-CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/include.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.o: ../src/RenderEngine/Master2DRenderer.cpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.o: ../src/RenderEngine/Master2DRenderer.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.o: ../src/Tools/GenMesh.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.o: ../src/Tools/Maths.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.o: ../src/include.hpp
+
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Entities/Camera.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Entities/Entity.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Entities/Light.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Models/ParticleTexturedModel.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Models/TexturedModel.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Particles/Particle.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/RenderEngine/EntityRenderer.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/RenderEngine/Master3DRenderer.cpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/RenderEngine/Master3DRenderer.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/RenderEngine/ParticlesRenderer.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/RenderEngine/rlights.h
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Shaders/LightShader.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Shaders/ParticlesShader.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Tools/GenMesh.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/Tools/Maths.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/include.hpp
 
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/Entities/Camera.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/Models/ParticleTexturedModel.hpp
@@ -145,25 +166,35 @@ CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/Rende
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/RenderEngine/ParticlesRenderer.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/Shaders/ParticlesShader.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/include.hpp
 
 CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.o: ../src/Shaders/LightShader.cpp
 CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.o: ../src/Shaders/LightShader.hpp
 CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.o: ../src/include.hpp
 
 CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.o: ../src/Shaders/ParticlesShader.cpp
 CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.o: ../src/Shaders/ParticlesShader.hpp
 CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.o: ../src/include.hpp
 
 CMakeFiles/my_project.dir/src/Tools/Clock.cpp.o: ../src/Tools/Clock.cpp
 CMakeFiles/my_project.dir/src/Tools/Clock.cpp.o: ../src/Tools/Clock.hpp
 
+CMakeFiles/my_project.dir/src/Tools/GenMesh.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/Tools/GenMesh.cpp.o: ../src/Tools/GenMesh.cpp
+CMakeFiles/my_project.dir/src/Tools/GenMesh.cpp.o: ../src/Tools/GenMesh.hpp
+CMakeFiles/my_project.dir/src/Tools/GenMesh.cpp.o: ../src/Tools/Maths.hpp
+CMakeFiles/my_project.dir/src/Tools/GenMesh.cpp.o: ../src/include.hpp
+
 CMakeFiles/my_project.dir/src/Tools/Maths.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/Tools/Maths.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/Tools/Maths.cpp.o: ../src/Tools/Maths.cpp
 CMakeFiles/my_project.dir/src/Tools/Maths.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/Tools/Maths.cpp.o: ../src/include.hpp
@@ -179,12 +210,14 @@ CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Particles/Particle.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Particles/ParticleSystem.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/RenderEngine/DisplayManager.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/RenderEngine/EntityRenderer.hpp
-CMakeFiles/my_project.dir/src/main.cpp.o: ../src/RenderEngine/MasterRenderer.hpp
+CMakeFiles/my_project.dir/src/main.cpp.o: ../src/RenderEngine/Master2DRenderer.hpp
+CMakeFiles/my_project.dir/src/main.cpp.o: ../src/RenderEngine/Master3DRenderer.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/RenderEngine/ParticlesRenderer.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/RenderEngine/rlights.h
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Shaders/LightShader.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Shaders/ParticlesShader.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Tools/Clock.hpp
+CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Tools/GenMesh.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/Tools/Maths.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/include.hpp
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/main.cpp

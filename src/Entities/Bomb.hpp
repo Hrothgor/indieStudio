@@ -16,13 +16,14 @@
 namespace IS {
     class Bomb : public Entity {
         public:
-            Bomb(Entity entity, ParticleSystem &smokeBomb, ParticleSystem &explosionBomb);
+            Bomb(Entity entity, ParticleSystem smokeBomb, ParticleSystem explosionBomb);
             ~Bomb();
 
-            bool update();
+            bool update(Camera3D camera);
 
         protected:
         private:
+            Clock _life;
             ParticleSystem _smokeBomb;
             ParticleSystem _explosionBomb;
     };

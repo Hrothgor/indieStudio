@@ -18,23 +18,12 @@ IS::EntityRenderer::~EntityRenderer()
 {
 }
 
-float angle = 0;
 
 void IS::EntityRenderer::prepare(int scene, Camera camera)
 {
     for (Light &light : _lights) {
-        light.position.z = std::cos(angle) * 500;
-        light.position.y = std::sin(angle) * 500;
-        angle += 0.003;
         UpdateLightValues(_lightShader.getShader(), light);
-        DrawSphere(light.position, 4, YELLOW);
-    }
-    for (auto &list : _entities) {
-        if (list.first != scene)
-            continue;
-        for (auto it = list.second.begin(); it != list.second.end(); it++)
-            if (!(*it)->update())
-                list.second.erase(it--);
+        DrawSphere(light.position, 1000, YELLOW);
     }
 }
 
@@ -46,16 +35,27 @@ void IS::EntityRenderer::render(int scene, IS::Camera camera)
             continue;
         for (Entity *entity : list.second) {
             prepareEntity(entity);
+            entity->IS::Entity::update(camera.getCamera3D());
+
             DrawModel(entity->getTexturedModel().getModel(), entity->getPosition(), entity->getScale(), WHITE);
         }
     }
+    clear(scene);
 }
 
 void IS::EntityRenderer::prepareEntity(Entity *entity)
 {
     if (!entity->getTexturedModel().hasShader())
         entity->getTexturedModel().setShader(_lightShader.getShader());
-    entity->IS::Entity::update();
+}
+
+void IS::EntityRenderer::clear(int scene)
+{
+    for (auto &list : _entities) {
+        if (list.first != scene)
+            continue;
+        list.second.clear();
+    }
 }
 
 void IS::EntityRenderer::addLight(int scene, const LightValue &light)

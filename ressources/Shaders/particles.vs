@@ -25,5 +25,5 @@ void main()
     fragTexCoord2 = texCoord + texOffset2;
 
     // Calculate final vertex position
-    gl_Position = mvp * vec4(vertexPosition.xy, 0.0, 1.0);
+    gl_Position = mvp * vec4(vertexPosition.xyz, 1.0);
 }

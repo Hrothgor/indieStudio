@@ -6,10 +6,10 @@
 */
 
 #include "ParticleSystem.hpp"
-#include "../RenderEngine/MasterRenderer.hpp"
+#include "../RenderEngine/Master3DRenderer.hpp"
 
-IS::ParticleSystem::ParticleSystem(float pps, float speed, float gravityComplient, float lifeLength, float scale, const std::string &texturePath, MasterRenderer *renderer, PARTICLE_EMISSION emissionType)
-    : _particleTexturedModel(GenMeshCube(0.5, 0.5, 0.5), texturePath, 1)
+IS::ParticleSystem::ParticleSystem(float pps, float speed, float gravityComplient, float lifeLength, float scale, const std::string &texturePath, Master3DRenderer *renderer, PARTICLE_EMISSION emissionType)
+    : _particleTexturedModel(GenMesh::GenMeshSquare(0.5), texturePath, 1)
 {
     _pps = pps;
     _speed = speed;
@@ -20,7 +20,7 @@ IS::ParticleSystem::ParticleSystem(float pps, float speed, float gravityComplien
     _emissionType = emissionType;
 }
 
-IS::ParticleSystem::ParticleSystem(float pps, float speed, float gravityComplient, float lifeLength, float scale, ParticleTexturedModel &particleTexturedModel, MasterRenderer *renderer, PARTICLE_EMISSION emissionType)
+IS::ParticleSystem::ParticleSystem(float pps, float speed, float gravityComplient, float lifeLength, float scale, ParticleTexturedModel &particleTexturedModel, Master3DRenderer *renderer, PARTICLE_EMISSION emissionType)
 {
     _pps = pps;
     _speed = speed;

@@ -25,6 +25,7 @@ namespace IS {
             void prepare(int scene, Camera camera);
             void render(int scene, IS::Camera camera);
             void prepareEntity(Entity *entity);
+            void clear(int scene);
 
             void addLight(int scene, const LightValue &light);
             void addEntity(int scene, Entity *entity);

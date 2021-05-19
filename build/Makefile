@@ -447,32 +447,59 @@ src/RenderEngine/FrameRate.cpp.s:
 	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/RenderEngine/FrameRate.cpp.s
 .PHONY : src/RenderEngine/FrameRate.cpp.s
 
-src/RenderEngine/MasterRenderer.o: src/RenderEngine/MasterRenderer.cpp.o
+src/RenderEngine/Master2DRenderer.o: src/RenderEngine/Master2DRenderer.cpp.o
 
-.PHONY : src/RenderEngine/MasterRenderer.o
+.PHONY : src/RenderEngine/Master2DRenderer.o
 
 # target to build an object file
-src/RenderEngine/MasterRenderer.cpp.o:
-	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o
-.PHONY : src/RenderEngine/MasterRenderer.cpp.o
+src/RenderEngine/Master2DRenderer.cpp.o:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.o
+.PHONY : src/RenderEngine/Master2DRenderer.cpp.o
 
-src/RenderEngine/MasterRenderer.i: src/RenderEngine/MasterRenderer.cpp.i
+src/RenderEngine/Master2DRenderer.i: src/RenderEngine/Master2DRenderer.cpp.i
 
-.PHONY : src/RenderEngine/MasterRenderer.i
+.PHONY : src/RenderEngine/Master2DRenderer.i
 
 # target to preprocess a source file
-src/RenderEngine/MasterRenderer.cpp.i:
-	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.i
-.PHONY : src/RenderEngine/MasterRenderer.cpp.i
+src/RenderEngine/Master2DRenderer.cpp.i:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.i
+.PHONY : src/RenderEngine/Master2DRenderer.cpp.i
 
-src/RenderEngine/MasterRenderer.s: src/RenderEngine/MasterRenderer.cpp.s
+src/RenderEngine/Master2DRenderer.s: src/RenderEngine/Master2DRenderer.cpp.s
 
-.PHONY : src/RenderEngine/MasterRenderer.s
+.PHONY : src/RenderEngine/Master2DRenderer.s
 
 # target to generate assembly for a file
-src/RenderEngine/MasterRenderer.cpp.s:
-	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.s
-.PHONY : src/RenderEngine/MasterRenderer.cpp.s
+src/RenderEngine/Master2DRenderer.cpp.s:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.s
+.PHONY : src/RenderEngine/Master2DRenderer.cpp.s
+
+src/RenderEngine/Master3DRenderer.o: src/RenderEngine/Master3DRenderer.cpp.o
+
+.PHONY : src/RenderEngine/Master3DRenderer.o
+
+# target to build an object file
+src/RenderEngine/Master3DRenderer.cpp.o:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o
+.PHONY : src/RenderEngine/Master3DRenderer.cpp.o
+
+src/RenderEngine/Master3DRenderer.i: src/RenderEngine/Master3DRenderer.cpp.i
+
+.PHONY : src/RenderEngine/Master3DRenderer.i
+
+# target to preprocess a source file
+src/RenderEngine/Master3DRenderer.cpp.i:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.i
+.PHONY : src/RenderEngine/Master3DRenderer.cpp.i
+
+src/RenderEngine/Master3DRenderer.s: src/RenderEngine/Master3DRenderer.cpp.s
+
+.PHONY : src/RenderEngine/Master3DRenderer.s
+
+# target to generate assembly for a file
+src/RenderEngine/Master3DRenderer.cpp.s:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.s
+.PHONY : src/RenderEngine/Master3DRenderer.cpp.s
 
 src/RenderEngine/ParticlesRenderer.o: src/RenderEngine/ParticlesRenderer.cpp.o
 
@@ -582,6 +609,33 @@ src/Tools/Clock.cpp.s:
 	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Tools/Clock.cpp.s
 .PHONY : src/Tools/Clock.cpp.s
 
+src/Tools/GenMesh.o: src/Tools/GenMesh.cpp.o
+
+.PHONY : src/Tools/GenMesh.o
+
+# target to build an object file
+src/Tools/GenMesh.cpp.o:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Tools/GenMesh.cpp.o
+.PHONY : src/Tools/GenMesh.cpp.o
+
+src/Tools/GenMesh.i: src/Tools/GenMesh.cpp.i
+
+.PHONY : src/Tools/GenMesh.i
+
+# target to preprocess a source file
+src/Tools/GenMesh.cpp.i:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Tools/GenMesh.cpp.i
+.PHONY : src/Tools/GenMesh.cpp.i
+
+src/Tools/GenMesh.s: src/Tools/GenMesh.cpp.s
+
+.PHONY : src/Tools/GenMesh.s
+
+# target to generate assembly for a file
+src/Tools/GenMesh.cpp.s:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Tools/GenMesh.cpp.s
+.PHONY : src/Tools/GenMesh.cpp.s
+
 src/Tools/Maths.o: src/Tools/Maths.cpp.o
 
 .PHONY : src/Tools/Maths.o
@@ -681,9 +735,12 @@ help:
 	@echo "... src/RenderEngine/FrameRate.o"
 	@echo "... src/RenderEngine/FrameRate.i"
 	@echo "... src/RenderEngine/FrameRate.s"
-	@echo "... src/RenderEngine/MasterRenderer.o"
-	@echo "... src/RenderEngine/MasterRenderer.i"
-	@echo "... src/RenderEngine/MasterRenderer.s"
+	@echo "... src/RenderEngine/Master2DRenderer.o"
+	@echo "... src/RenderEngine/Master2DRenderer.i"
+	@echo "... src/RenderEngine/Master2DRenderer.s"
+	@echo "... src/RenderEngine/Master3DRenderer.o"
+	@echo "... src/RenderEngine/Master3DRenderer.i"
+	@echo "... src/RenderEngine/Master3DRenderer.s"
 	@echo "... src/RenderEngine/ParticlesRenderer.o"
 	@echo "... src/RenderEngine/ParticlesRenderer.i"
 	@echo "... src/RenderEngine/ParticlesRenderer.s"
@@ -696,6 +753,9 @@ help:
 	@echo "... src/Tools/Clock.o"
 	@echo "... src/Tools/Clock.i"
 	@echo "... src/Tools/Clock.s"
+	@echo "... src/Tools/GenMesh.o"
+	@echo "... src/Tools/GenMesh.i"
+	@echo "... src/Tools/GenMesh.s"
 	@echo "... src/Tools/Maths.o"
 	@echo "... src/Tools/Maths.i"
 	@echo "... src/Tools/Maths.s"

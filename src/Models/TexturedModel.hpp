@@ -23,6 +23,8 @@ namespace IS {
             void nextFrame();
             void prevFrame();
 
+            void clean();
+
             void setShader(Shader shader);
             void setColor(Color color, int materialNumber);
             bool hasShader();

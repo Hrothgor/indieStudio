@@ -16,15 +16,16 @@
 namespace IS {
     class Bomberman : public Entity {
         public:
-            Bomberman(Entity entity, ParticleSystem &smokeFeet);
+            Bomberman(Entity entity, ParticleSystem smokeFeet);
             ~Bomberman();
 
-            bool update();
+            bool update(Camera3D camera);
 
         protected:
         private:
             Vector3 _velocity = { 0 };
             ParticleSystem _smokeFeet;
+            Clock _animationClock;
     };
 }
 

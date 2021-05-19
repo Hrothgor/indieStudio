@@ -7,7 +7,7 @@
 
 #include "Bomberman.hpp"
 
-IS::Bomberman::Bomberman(Entity entity, ParticleSystem &smokeFeet)
+IS::Bomberman::Bomberman(Entity entity, ParticleSystem smokeFeet)
     : Entity(entity)
 {
     _smokeFeet = smokeFeet;
@@ -18,7 +18,7 @@ IS::Bomberman::~Bomberman()
 {
 }
 
-bool IS::Bomberman::update()
+bool IS::Bomberman::update(Camera3D camera)
 {
     //if (Vector3ToFloat(_velocity) != 0) {
         if (_position.z > 50) {
@@ -30,7 +30,10 @@ bool IS::Bomberman::update()
             increaseRotation({0,180,0});
         }
         increasePosition({0, 0, _velocity.z});
-        nextFrame();
+        if (_animationClock.getElapsedTime() > 0.05) {
+            nextFrame();
+            _animationClock.reset();
+        }
         _smokeFeet.generateParticles({_position.x, _position.y, _position.z});
     //}
     //_velocity = { 0 };

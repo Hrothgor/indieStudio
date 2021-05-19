@@ -16,7 +16,8 @@
 #include "../Entities/Bomberman.hpp"
 #include "../Models/TexturedModel.hpp"
 #include "../Particles/ParticleSystem.hpp"
-#include "MasterRenderer.hpp"
+#include "Master3DRenderer.hpp"
+#include "Master2DRenderer.hpp"
 
 namespace IS {
     class DisplayManager {
@@ -26,16 +27,19 @@ namespace IS {
 
             void run();
             void load();
+            void clean();
 
         protected:
         private:
-            MasterRenderer _renderer;
+            Master3DRenderer _3Drenderer;
+            Master2DRenderer _2Drenderer;
+            int _actualscene = 0;
 
             std::map<std::string, TexturedModel> _texturedModels;
             std::map<std::string, ParticleTexturedModel> _particleTexturedModels;
+            std::map<std::string, ParticleSystem> _particleSystem;
 
-            std::vector<ParticleSystem> _particleSystem;
-            std::vector<Entity> _entities;
+            std::vector<Entity *> _entities;
             std::vector<LightValue> _lights;
     };
 }

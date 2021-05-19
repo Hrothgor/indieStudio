@@ -24,6 +24,8 @@ IS::Camera::~Camera()
 
 void IS::Camera::update()
 {
+    if (IsKeyPressed(KEY_ONE))
+        startAnimation(_camera.position, {-20,10,50}, {12,14,0}, 5);
     if (_currentAnimation.isRunning) {
         Vector3 direction = Vector3Subtract(_currentAnimation.end, _currentAnimation.begin);
         direction = Vector3Normalize(direction);
@@ -31,7 +33,7 @@ void IS::Camera::update()
         float speed = distance * (GetFrameTime() / _currentAnimation.length);
         direction = Vector3Multiply(direction, {speed, speed, speed});
         _camera.position = Vector3Add(_camera.position, direction);
-        if (Vector3Distance(_camera.position, _currentAnimation.end) < 0.5) {
+        if (Vector3Distance(_camera.position, _currentAnimation.end) <= speed) {
             SetCameraMode(_camera, CAMERA_FIRST_PERSON);
             _currentAnimation = { 0 };
         }

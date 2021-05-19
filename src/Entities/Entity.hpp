@@ -18,7 +18,7 @@ namespace IS {
             Entity(const TexturedModel &texturedModel, Vector3 position, Vector3 rotation, float scale);
             ~Entity();
 
-            virtual bool update();
+            virtual bool update(Camera3D camera);
             void increasePosition(Vector3 vec);
             void increaseRotation(Vector3 vec);
 
@@ -36,6 +36,7 @@ namespace IS {
             void setScale(float scale);
             void setColor(Color color, int materialNumber);
 
+            int test = 0;
         protected:
             TexturedModel _texturedModel;
             Vector3 _position;

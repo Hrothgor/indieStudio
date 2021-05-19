@@ -7,7 +7,10 @@
 
 #include "Entity.hpp"
 
-Color listColor[10] = { GREEN, YELLOW, RED, BLACK, WHITE, ORANGE, BEIGE, MAROON, LIME, PINK };
+Color listColor[21] = {
+        DARKGRAY, MAROON, ORANGE, DARKGREEN, DARKBLUE, DARKPURPLE, DARKBROWN,
+        GRAY, RED, GOLD, LIME, BLUE, VIOLET, BROWN, LIGHTGRAY, PINK, YELLOW,
+        GREEN, SKYBLUE, PURPLE, BEIGE };
 
 IS::Entity::Entity(const TexturedModel &texturedModel, Vector3 position, Vector3 rotation, float scale)
     : _texturedModel(texturedModel)
@@ -18,19 +21,15 @@ IS::Entity::Entity(const TexturedModel &texturedModel, Vector3 position, Vector3
     _scale = scale;
     _texturedModel.setTransform(MatrixRotateXYZ({
         DEG2RAD*_rotation.x, DEG2RAD*_rotation.y, DEG2RAD*_rotation.z }));
-    for (Color &color : _colors) {
-        color = listColor[rand() % 10];
-    }
-    std::cout << "r: " << (int)_colors[0].r << " ";
-    std::cout << "g: " << (int)_colors[0].g << " ";
-    std::cout << "b: " << (int)_colors[0].b << std::endl;
+    for (Color &color : _colors)
+        color = listColor[rand() % 21];
 }
 
 IS::Entity::~Entity()
 {
 }
 
-bool IS::Entity::update()
+bool IS::Entity::update(Camera3D camera)
 {
     int i = 0;
 

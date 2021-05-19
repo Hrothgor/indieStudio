@@ -55,6 +55,13 @@ void IS::TexturedModel::prevFrame()
     std::rotate(_models.rbegin(), _models.rbegin() + 1, _models.rend());
 }
 
+void IS::TexturedModel::clean()
+{
+    for (auto &model : _models)
+        UnloadModel(model);
+    UnloadTexture(_texture);
+}
+
 Model IS::TexturedModel::getModel() const
 {
     return (_models[0]);

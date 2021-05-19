@@ -2,12 +2,12 @@
 ** EPITECH PROJECT, 2021
 ** indieStudio
 ** File description:
-** MasterRenderer
+** Master3DRenderer
 */
 
 #pragma once
-#ifndef MASTERRENDERER_HPP_
-#define MASTERRENDERER_HPP_
+#ifndef MASTER3DRENDERER_HPP_
+#define MASTER3DRENDERER_HPP_
 
 #include "../include.hpp"
 #include "../Entities/Camera.hpp"
@@ -15,10 +15,10 @@
 #include "ParticlesRenderer.hpp"
 
 namespace IS {
-    class MasterRenderer {
+    class Master3DRenderer {
         public:
-            MasterRenderer();
-            ~MasterRenderer();
+            Master3DRenderer();
+            ~Master3DRenderer();
 
             void start(IS::Camera camera);
             void stop();
@@ -35,4 +35,4 @@ namespace IS {
     };
 }
 
-#endif /* !MASTERRENDERER_HPP_ */
+#endif /* !MASTER3DRENDERER_HPP_ */

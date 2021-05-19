@@ -2,31 +2,31 @@
 ** EPITECH PROJECT, 2021
 ** indieStudio
 ** File description:
-** MasterRenderer
+** Master3DRenderer
 */
 
-#include "MasterRenderer.hpp"
+#include "Master3DRenderer.hpp"
 
-IS::MasterRenderer::MasterRenderer()
+IS::Master3DRenderer::Master3DRenderer()
 {
 }
 
-IS::MasterRenderer::~MasterRenderer()
+IS::Master3DRenderer::~Master3DRenderer()
 {
 }
 
-void IS::MasterRenderer::start(IS::Camera camera)
+void IS::Master3DRenderer::start(IS::Camera camera)
 {
     ClearBackground(DARKBLUE);
     BeginMode3D(camera.getCamera3D());
 }
 
-void IS::MasterRenderer::stop()
+void IS::Master3DRenderer::stop()
 {
     EndMode3D();
 }
 
-void IS::MasterRenderer::render(int scene, IS::Camera camera)
+void IS::Master3DRenderer::render(int scene, IS::Camera camera)
 {
     start(camera);
     _entityRenderer.render(scene, camera);
@@ -39,17 +39,17 @@ void IS::MasterRenderer::render(int scene, IS::Camera camera)
     stop();
 }
 
-void IS::MasterRenderer::addLight(const LightValue &light)
+void IS::Master3DRenderer::addLight(const LightValue &light)
 {
     _entityRenderer.addLight(0, light);
 }
 
-void IS::MasterRenderer::addEntity(int scene, Entity *entity)
+void IS::Master3DRenderer::addEntity(int scene, Entity *entity)
 {
     _entityRenderer.addEntity(scene, entity);
 }
 
-void IS::MasterRenderer::addParticles(const Particle &particles)
+void IS::Master3DRenderer::addParticles(const Particle &particles)
 {
     _particlesRenderer.addParticles(particles);
 }

@@ -213,22 +213,35 @@ CMakeFiles/my_project.dir/src/RenderEngine/FrameRate.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/my_project.dir/src/RenderEngine/FrameRate.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/FrameRate.cpp -o CMakeFiles/my_project.dir/src/RenderEngine/FrameRate.cpp.s
 
-CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: CMakeFiles/my_project.dir/flags.make
-CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o: ../src/RenderEngine/MasterRenderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o -c /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/MasterRenderer.cpp
+CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.o: CMakeFiles/my_project.dir/flags.make
+CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.o: ../src/RenderEngine/Master2DRenderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.o -c /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/Master2DRenderer.cpp
 
-CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/MasterRenderer.cpp > CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.i
+CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/Master2DRenderer.cpp > CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.i
 
-CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/MasterRenderer.cpp -o CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.s
+CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/Master2DRenderer.cpp -o CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.s
+
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: CMakeFiles/my_project.dir/flags.make
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o: ../src/RenderEngine/Master3DRenderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o -c /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/Master3DRenderer.cpp
+
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/Master3DRenderer.cpp > CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.i
+
+CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/Master3DRenderer.cpp -o CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.s
 
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: CMakeFiles/my_project.dir/flags.make
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o: ../src/RenderEngine/ParticlesRenderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o -c /home/julesminguet/EPI_2020/indieStudio/src/RenderEngine/ParticlesRenderer.cpp
 
 CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.i: cmake_force
@@ -241,7 +254,7 @@ CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.s: cmake_force
 
 CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.o: CMakeFiles/my_project.dir/flags.make
 CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.o: ../src/Shaders/LightShader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.o -c /home/julesminguet/EPI_2020/indieStudio/src/Shaders/LightShader.cpp
 
 CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.i: cmake_force
@@ -254,7 +267,7 @@ CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.s: cmake_force
 
 CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.o: CMakeFiles/my_project.dir/flags.make
 CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.o: ../src/Shaders/ParticlesShader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.o -c /home/julesminguet/EPI_2020/indieStudio/src/Shaders/ParticlesShader.cpp
 
 CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.i: cmake_force
@@ -267,7 +280,7 @@ CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.s: cmake_force
 
 CMakeFiles/my_project.dir/src/Tools/Clock.cpp.o: CMakeFiles/my_project.dir/flags.make
 CMakeFiles/my_project.dir/src/Tools/Clock.cpp.o: ../src/Tools/Clock.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/my_project.dir/src/Tools/Clock.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/my_project.dir/src/Tools/Clock.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/my_project.dir/src/Tools/Clock.cpp.o -c /home/julesminguet/EPI_2020/indieStudio/src/Tools/Clock.cpp
 
 CMakeFiles/my_project.dir/src/Tools/Clock.cpp.i: cmake_force
@@ -278,9 +291,22 @@ CMakeFiles/my_project.dir/src/Tools/Clock.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/my_project.dir/src/Tools/Clock.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julesminguet/EPI_2020/indieStudio/src/Tools/Clock.cpp -o CMakeFiles/my_project.dir/src/Tools/Clock.cpp.s
 
+CMakeFiles/my_project.dir/src/Tools/GenMesh.cpp.o: CMakeFiles/my_project.dir/flags.make
+CMakeFiles/my_project.dir/src/Tools/GenMesh.cpp.o: ../src/Tools/GenMesh.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/my_project.dir/src/Tools/GenMesh.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/my_project.dir/src/Tools/GenMesh.cpp.o -c /home/julesminguet/EPI_2020/indieStudio/src/Tools/GenMesh.cpp
+
+CMakeFiles/my_project.dir/src/Tools/GenMesh.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/my_project.dir/src/Tools/GenMesh.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/julesminguet/EPI_2020/indieStudio/src/Tools/GenMesh.cpp > CMakeFiles/my_project.dir/src/Tools/GenMesh.cpp.i
+
+CMakeFiles/my_project.dir/src/Tools/GenMesh.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/my_project.dir/src/Tools/GenMesh.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/julesminguet/EPI_2020/indieStudio/src/Tools/GenMesh.cpp -o CMakeFiles/my_project.dir/src/Tools/GenMesh.cpp.s
+
 CMakeFiles/my_project.dir/src/Tools/Maths.cpp.o: CMakeFiles/my_project.dir/flags.make
 CMakeFiles/my_project.dir/src/Tools/Maths.cpp.o: ../src/Tools/Maths.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/my_project.dir/src/Tools/Maths.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/my_project.dir/src/Tools/Maths.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/my_project.dir/src/Tools/Maths.cpp.o -c /home/julesminguet/EPI_2020/indieStudio/src/Tools/Maths.cpp
 
 CMakeFiles/my_project.dir/src/Tools/Maths.cpp.i: cmake_force
@@ -293,7 +319,7 @@ CMakeFiles/my_project.dir/src/Tools/Maths.cpp.s: cmake_force
 
 CMakeFiles/my_project.dir/src/main.cpp.o: CMakeFiles/my_project.dir/flags.make
 CMakeFiles/my_project.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/my_project.dir/src/main.cpp.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/my_project.dir/src/main.cpp.o"
 	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/my_project.dir/src/main.cpp.o -c /home/julesminguet/EPI_2020/indieStudio/src/main.cpp
 
 CMakeFiles/my_project.dir/src/main.cpp.i: cmake_force
@@ -318,11 +344,13 @@ my_project_OBJECTS = \
 "CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o" \
 "CMakeFiles/my_project.dir/src/RenderEngine/EntityRenderer.cpp.o" \
 "CMakeFiles/my_project.dir/src/RenderEngine/FrameRate.cpp.o" \
-"CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o" \
+"CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.o" \
+"CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o" \
 "CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o" \
 "CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.o" \
 "CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.o" \
 "CMakeFiles/my_project.dir/src/Tools/Clock.cpp.o" \
+"CMakeFiles/my_project.dir/src/Tools/GenMesh.cpp.o" \
 "CMakeFiles/my_project.dir/src/Tools/Maths.cpp.o" \
 "CMakeFiles/my_project.dir/src/main.cpp.o"
 
@@ -341,17 +369,19 @@ my_project: CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.o
 my_project: CMakeFiles/my_project.dir/src/RenderEngine/DisplayManager.cpp.o
 my_project: CMakeFiles/my_project.dir/src/RenderEngine/EntityRenderer.cpp.o
 my_project: CMakeFiles/my_project.dir/src/RenderEngine/FrameRate.cpp.o
-my_project: CMakeFiles/my_project.dir/src/RenderEngine/MasterRenderer.cpp.o
+my_project: CMakeFiles/my_project.dir/src/RenderEngine/Master2DRenderer.cpp.o
+my_project: CMakeFiles/my_project.dir/src/RenderEngine/Master3DRenderer.cpp.o
 my_project: CMakeFiles/my_project.dir/src/RenderEngine/ParticlesRenderer.cpp.o
 my_project: CMakeFiles/my_project.dir/src/Shaders/LightShader.cpp.o
 my_project: CMakeFiles/my_project.dir/src/Shaders/ParticlesShader.cpp.o
 my_project: CMakeFiles/my_project.dir/src/Tools/Clock.cpp.o
+my_project: CMakeFiles/my_project.dir/src/Tools/GenMesh.cpp.o
 my_project: CMakeFiles/my_project.dir/src/Tools/Maths.cpp.o
 my_project: CMakeFiles/my_project.dir/src/main.cpp.o
 my_project: CMakeFiles/my_project.dir/build.make
 my_project: /usr/local/lib64/libraylib.so
 my_project: CMakeFiles/my_project.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Linking CXX executable my_project"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Linking CXX executable my_project"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/my_project.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
