@@ -35,8 +35,8 @@ void IS::EntityRenderer::render(int scene, IS::Camera camera)
             continue;
         for (Entity *entity : list.second) {
             prepareEntity(entity);
-            entity->IS::Entity::update(camera.getCamera3D());
-
+            if (!entity->update(camera.getCamera3D()))
+                continue;
             DrawModel(entity->getTexturedModel().getModel(), entity->getPosition(), entity->getScale(), WHITE);
         }
     }

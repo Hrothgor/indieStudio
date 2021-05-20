@@ -84,6 +84,11 @@ float IS::Entity::getScale() const
     return (_scale);
 }
 
+bool IS::Entity::IsAlive() const
+{
+    return (_alive);
+}
+
 void IS::Entity::setTexturedModel(TexturedModel texturedModel)
 {
     _texturedModel = texturedModel;

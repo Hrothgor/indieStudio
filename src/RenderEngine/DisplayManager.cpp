@@ -98,12 +98,10 @@ void IS::DisplayManager::run()
         _particleSystem["burn"].generateParticles({60, 24, -12});
         // _particleSystem["smoke"].generateParticles({-11.7, 16.5, 0});
         // _particleSystem["cosmic"].generateParticles({-5, 10, -25});
-        for (auto it = _entities.begin(); it != _entities.end(); it++)
-            if (!(*it)->update(camera.getCamera3D()))
-                _entities.erase(it--);
-        for (int i = 0; i < _entities.size(); i++)
-            _3Drenderer.addEntity(0, _entities[i]);
         ////////////
+        for (int i = 0; i < _entities.size(); i++)
+            if (_entities[i]->IsAlive())
+                _3Drenderer.addEntity(0, _entities[i]);
 
         BeginDrawing();
         {

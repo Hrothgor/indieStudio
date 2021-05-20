@@ -29,6 +29,7 @@ namespace IS {
             Vector3 getPosition() const;
             Vector3 getRotation() const;
             float getScale() const;
+            bool IsAlive() const;
 
             void setTexturedModel(TexturedModel texturedModel);
             void setPosition(Vector3 position);
@@ -42,6 +43,7 @@ namespace IS {
             Vector3 _rotation;
             float _scale;
             std::vector<Color> _colors;
+            bool _alive = true;
         private:
     };
 }

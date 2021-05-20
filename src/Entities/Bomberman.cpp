@@ -20,6 +20,7 @@ IS::Bomberman::~Bomberman()
 
 bool IS::Bomberman::update(Camera3D camera)
 {
+    IS::Entity::update(camera);
     //if (Vector3ToFloat(_velocity) != 0) {
         if (_position.z > 50) {
             _velocity.z *= -1;
