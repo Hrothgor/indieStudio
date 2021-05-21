@@ -27,15 +27,16 @@ void IS::EntityRenderer::prepare(int scene, Camera camera)
     }
 }
 
-void IS::EntityRenderer::render(int scene, IS::Camera camera)
+void IS::EntityRenderer::render(int scene, IS::Camera camera, Map map)
 {
     prepare(scene, camera);
+    map.render();
     for (auto &list : _entities) {
         if (list.first != scene)
             continue;
         for (Entity *entity : list.second) {
             prepareEntity(entity);
-            if (!entity->update(camera.getCamera3D()))
+            if (!entity->update(camera.getCamera3D(), map))
                 continue;
             DrawModel(entity->getTexturedModel().getModel(), entity->getPosition(), entity->getScale(), WHITE);
         }

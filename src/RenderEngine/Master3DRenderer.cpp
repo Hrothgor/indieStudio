@@ -26,7 +26,7 @@ void IS::Master3DRenderer::stop()
     EndMode3D();
 }
 
-void IS::Master3DRenderer::render(int scene, IS::Camera camera)
+void IS::Master3DRenderer::render(int scene, IS::Camera camera, Map map)
 {
     start(camera);
     {
@@ -39,7 +39,7 @@ void IS::Master3DRenderer::render(int scene, IS::Camera camera)
         }
     }
     {
-        _entityRenderer.render(scene, camera);
+        _entityRenderer.render(scene, camera, map);
     }
     {
         rlDisableDepthMask();

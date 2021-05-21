@@ -9,13 +9,14 @@
 #ifndef DISPLAYMANAGER_HPP_
 #define DISPLAYMANAGER_HPP_
 
-#include "../include.hpp"
+#include "../global.hpp"
 #include "../Entities/Camera.hpp"
 #include "../Entities/Light.hpp"
 #include "../Entities/Bomb.hpp"
 #include "../Entities/Bomberman.hpp"
 #include "../Models/TexturedModel.hpp"
 #include "../Particles/ParticleSystem.hpp"
+#include "../Entities/Map.hpp"
 #include "Master3DRenderer.hpp"
 #include "Master2DRenderer.hpp"
 
@@ -35,12 +36,7 @@ namespace IS {
             Master2DRenderer _2Drenderer;
             int _actualscene = 0;
 
-            std::map<std::string, TexturedModel> _texturedModels;
-            std::map<std::string, ParticleTexturedModel> _particleTexturedModels;
-            std::map<std::string, ParticleSystem> _particleSystem;
-
-            std::vector<Entity *> _entities;
-            std::vector<LightValue> _lights;
+            Map _map;
     };
 }
 

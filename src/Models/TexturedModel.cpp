@@ -41,6 +41,11 @@ IS::TexturedModel::TexturedModel(Mesh mesh, const std::string &texturePath)
     _models[0].materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = _texture;
 }
 
+IS::TexturedModel::TexturedModel(Model model)
+{
+    _models.push_back(model);
+}
+
 IS::TexturedModel::~TexturedModel()
 {
 }

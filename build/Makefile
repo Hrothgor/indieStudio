@@ -258,6 +258,33 @@ src/Entities/Light.cpp.s:
 	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Entities/Light.cpp.s
 .PHONY : src/Entities/Light.cpp.s
 
+src/Entities/Map.o: src/Entities/Map.cpp.o
+
+.PHONY : src/Entities/Map.o
+
+# target to build an object file
+src/Entities/Map.cpp.o:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Entities/Map.cpp.o
+.PHONY : src/Entities/Map.cpp.o
+
+src/Entities/Map.i: src/Entities/Map.cpp.i
+
+.PHONY : src/Entities/Map.i
+
+# target to preprocess a source file
+src/Entities/Map.cpp.i:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Entities/Map.cpp.i
+.PHONY : src/Entities/Map.cpp.i
+
+src/Entities/Map.s: src/Entities/Map.cpp.s
+
+.PHONY : src/Entities/Map.s
+
+# target to generate assembly for a file
+src/Entities/Map.cpp.s:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Entities/Map.cpp.s
+.PHONY : src/Entities/Map.cpp.s
+
 src/Entities/Skybox.o: src/Entities/Skybox.cpp.o
 
 .PHONY : src/Entities/Skybox.o
@@ -768,6 +795,9 @@ help:
 	@echo "... src/Entities/Light.o"
 	@echo "... src/Entities/Light.i"
 	@echo "... src/Entities/Light.s"
+	@echo "... src/Entities/Map.o"
+	@echo "... src/Entities/Map.i"
+	@echo "... src/Entities/Map.s"
 	@echo "... src/Entities/Skybox.o"
 	@echo "... src/Entities/Skybox.i"
 	@echo "... src/Entities/Skybox.s"

@@ -23,7 +23,7 @@ namespace IS {
 
             void start(IS::Camera camera);
             void stop();
-            void render(int scene, IS::Camera camera);
+            void render(int scene, IS::Camera camera, Map map);
 
             void addSkybox(const Skybox &skybox);
             void addLight(const LightValue &light);

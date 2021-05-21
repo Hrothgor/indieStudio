@@ -15,7 +15,7 @@ IS::Camera::Camera()
     _camera.up = { 0.0, 1.0, 0.0 };          // _camera up vector (rotation towards target)
     _camera.fovy = 70;
     _camera.projection = CAMERA_PERSPECTIVE;
-    SetCameraMode(_camera, CAMERA_FIRST_PERSON);
+    //SetCameraMode(_camera, CAMERA_FIRST_PERSON);
 }
 
 IS::Camera::~Camera()
@@ -34,7 +34,7 @@ void IS::Camera::update()
         direction = Vector3Multiply(direction, {speed, speed, speed});
         _camera.position = Vector3Add(_camera.position, direction);
         if (Vector3Distance(_camera.position, _currentAnimation.end) <= speed) {
-            SetCameraMode(_camera, CAMERA_FIRST_PERSON);
+            //SetCameraMode(_camera, CAMERA_FIRST_PERSON);
             _currentAnimation = { 0 };
         }
     }

@@ -18,12 +18,12 @@ IS::Bomb::~Bomb()
 {
 }
 
-bool IS::Bomb::update(Camera3D camera)
+bool IS::Bomb::update(Camera3D camera, Map map)
 {
-    IS::Entity::update(camera);
+    IS::Entity::update(camera, map);
     Vector2 bombScreenPosition = GetWorldToScreen({_position.x, _position.y + 14, _position.z}, camera);
     int flooredLife = _life.getElapsedTime();
-    std::string lifeTime("Bomb: " + std::to_string(10 - flooredLife));
+    std::string lifeTime("Bomb: " + std::to_string(_lifeLenght - flooredLife));
     float distanceToCam = std::fabs(Vector3Distance(_position, camera.position) / 20) + 1;
     int sizeFont = 100 * (1/distanceToCam);
     EndMode3D();
@@ -31,7 +31,7 @@ bool IS::Bomb::update(Camera3D camera)
     BeginMode3D(camera);
 
     _smokeBomb.generateParticles({_position.x, _position.y + 8, _position.z});
-    if (_life.getElapsedTime() > 10) {
+    if (_life.getElapsedTime() > _lifeLenght) {
         _explosionBomb.generateParticles({_position.x, _position.y + 4, _position.z});
         _alive = false;
         return (false);

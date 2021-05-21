@@ -29,7 +29,7 @@ IS::Entity::~Entity()
 {
 }
 
-bool IS::Entity::update(Camera3D camera)
+bool IS::Entity::update(Camera3D camera, Map map)
 {
     int i = 0;
 
@@ -99,9 +99,16 @@ void IS::Entity::setPosition(Vector3 position)
     _position = position;
 }
 
+void IS::Entity::setVelocity(Vector3 velocity)
+{
+    _velocity = velocity;
+}
+
 void IS::Entity::setRotation(Vector3 rotation)
 {
     _rotation = rotation;
+    _texturedModel.setTransform(MatrixRotateXYZ({
+        DEG2RAD*_rotation.x, DEG2RAD*_rotation.y, DEG2RAD*_rotation.z }));
 }
 
 void IS::Entity::setScale(float scale)

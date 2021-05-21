@@ -9,23 +9,26 @@
 #ifndef BOMBERMAN_HPP_
 #define BOMBERMAN_HPP_
 
-#include "../include.hpp"
-#include "Entity.hpp"
+#include "../global.hpp"
+#include "Bomb.hpp"
 #include "../Particles/ParticleSystem.hpp"
 
 namespace IS {
     class Bomberman : public Entity {
         public:
-            Bomberman(Entity entity, ParticleSystem smokeFeet);
+            Bomberman(Entity entity, ParticleSystem smokeFeet, bool IsAI);
             ~Bomberman();
 
-            bool update(Camera3D camera);
+            void changeModelRotation();
+            void checkCollisionMap(Map map);
+            void dropBomb();
+            bool update(Camera3D camera, Map map);
 
         protected:
         private:
-            Vector3 _velocity = { 0 };
             ParticleSystem _smokeFeet;
             Clock _animationClock;
+            bool _IsAI;
     };
 }
 

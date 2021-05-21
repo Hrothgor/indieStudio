@@ -18,6 +18,7 @@ namespace IS {
             TexturedModel(const std::string &modelPath);
             TexturedModel(const std::string &modelPath, const std::string &texturePath);
             TexturedModel(Mesh mesh, const std::string &texturePath);
+            TexturedModel(Model model);
             ~TexturedModel();
 
             void nextFrame();

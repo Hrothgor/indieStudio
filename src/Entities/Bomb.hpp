@@ -19,11 +19,12 @@ namespace IS {
             Bomb(Entity entity, ParticleSystem smokeBomb, ParticleSystem explosionBomb);
             ~Bomb();
 
-            bool update(Camera3D camera);
+            bool update(Camera3D camera, Map map);
 
         protected:
         private:
             Clock _life;
+            int _lifeLenght = 3;
             ParticleSystem _smokeBomb;
             ParticleSystem _explosionBomb;
     };

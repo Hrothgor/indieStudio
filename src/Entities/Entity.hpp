@@ -11,6 +11,7 @@
 #pragma once
 #include "../include.hpp"
 #include "../Models/TexturedModel.hpp"
+#include "Map.hpp"
 
 namespace IS {
     class Entity {
@@ -18,7 +19,7 @@ namespace IS {
             Entity(const TexturedModel &texturedModel, Vector3 position, Vector3 rotation, float scale);
             ~Entity();
 
-            virtual bool update(Camera3D camera);
+            virtual bool update(Camera3D camera, Map map);
             void increasePosition(Vector3 vec);
             void increaseRotation(Vector3 vec);
 
@@ -33,6 +34,7 @@ namespace IS {
 
             void setTexturedModel(TexturedModel texturedModel);
             void setPosition(Vector3 position);
+            void setVelocity(Vector3 velocity);
             void setRotation(Vector3 rotation);
             void setScale(float scale);
             void setColor(Color color, int materialNumber);
@@ -40,6 +42,7 @@ namespace IS {
         protected:
             TexturedModel _texturedModel;
             Vector3 _position;
+            Vector3 _velocity = {0};
             Vector3 _rotation;
             float _scale;
             std::vector<Color> _colors;

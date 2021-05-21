@@ -9,6 +9,7 @@
 
 IS::DisplayManager::DisplayManager()
 {
+    SetTraceLogLevel(TraceLogLevel::LOG_WARNING);
     InitWindow(WIDTH, HEIGHT, "Indie Studio Window");
     SetTargetFPS(120);
     SetConfigFlags(FLAG_MSAA_4X_HINT);
@@ -21,57 +22,50 @@ IS::DisplayManager::~DisplayManager()
 
 void IS::DisplayManager::load()
 {
-    Image image = LoadImage("ressources/cubicmap.png");
-    Texture2D cubicmap = LoadTextureFromImage(image);
+    _map = Map("ressources/cubicmap.png", "ressources/cubicmap_atlas.png");
 
-    Mesh mesh = GenMeshCubicmap(image, {1.0, 1.0, 1.0});
-    Model model = LoadModelFromMesh(mesh);
+    GLOBAL::_texturedModels["dragon"] = new TexturedModel("dragon");
+    GLOBAL::_texturedModels["bomberman"] = new TexturedModel("bomberman");
+    GLOBAL::_texturedModels["bomb"] = new TexturedModel("bomb");
+    GLOBAL::_texturedModels["crate"] = new TexturedModel("crate");
 
-    Texture2D texture = LoadTexture("ressources/cubicmap_atlas.png");
-    model.materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = texture;
-    UnloadImage(image);
-    _entities.push_back(new Entity(TexturedModel(mesh, "ressources/cubicmap_atlas.png"), {-60, 0, -60}, {0,0,0}, 10));
+    GLOBAL::_particleTexturedModels["burn"] = new ParticleTexturedModel(GenMesh::GenMeshSquare(0.5), "ressources/burn.png", 4);
+    GLOBAL::_particleTexturedModels["smoke"] = new ParticleTexturedModel(GenMesh::GenMeshSquare(0.5), "ressources/smoke.png", 8);
+    GLOBAL::_particleTexturedModels["cosmic"] = new ParticleTexturedModel(GenMesh::GenMeshSquare(0.5), "ressources/cosmic.png", 4);
+    GLOBAL::_particleTexturedModels["fire"] = new ParticleTexturedModel(GenMesh::GenMeshSquare(0.5), "ressources/fire.png", 8);
 
-    _texturedModels["dragon"] = TexturedModel("dragon");
-    _texturedModels["bomberman"] = TexturedModel("bomberman");
-    _texturedModels["bomb"] = TexturedModel("bomb");
+    GLOBAL::_particleSystem["star"] = new ParticleSystem(100, 6, 1, 3, 1, "ressources/particleStar.png", &_3Drenderer);
+    GLOBAL::_particleSystem["burn"] = new ParticleSystem(100, 10, 0, 3, 3, *GLOBAL::_particleTexturedModels["burn"], &_3Drenderer, IS::PARTICLE_EMISSION::DIRECTIONAL);
+    GLOBAL::_particleSystem["smoke"] = new ParticleSystem(50, 2, 0, 6, 5, *GLOBAL::_particleTexturedModels["smoke"], &_3Drenderer);
+    GLOBAL::_particleSystem["cosmic"] = new ParticleSystem(100, 1, 0, 3, 1, *GLOBAL::_particleTexturedModels["cosmic"], &_3Drenderer, IS::PARTICLE_EMISSION::CIRCLE);
 
-    _particleTexturedModels["burn"] = ParticleTexturedModel(GenMesh::GenMeshSquare(0.5), "ressources/burn.png", 4);
-    _particleTexturedModels["smoke"] = ParticleTexturedModel(GenMesh::GenMeshSquare(0.5), "ressources/smoke.png", 8);
-    _particleTexturedModels["cosmic"] = ParticleTexturedModel(GenMesh::GenMeshSquare(0.5), "ressources/cosmic.png", 4);
-    _particleTexturedModels["fire"] = ParticleTexturedModel(GenMesh::GenMeshSquare(0.5), "ressources/fire.png", 8);
+    GLOBAL::_particleSystem["smokeFeet"] = new ParticleSystem(15, 2, 0, 3, 15, *GLOBAL::_particleTexturedModels["smoke"], &_3Drenderer, IS::PARTICLE_EMISSION::FLYING);
+    GLOBAL::_particleSystem["fireBomb"] = new ParticleSystem(20, 2, 0, 2, 5, *GLOBAL::_particleTexturedModels["fire"], &_3Drenderer);
+    GLOBAL::_particleSystem["explosionBomb"] = new ParticleSystem(5000, 4, 0, 2, 3, *GLOBAL::_particleTexturedModels["cosmic"], &_3Drenderer, IS::PARTICLE_EMISSION::CIRCLE);
 
-    _particleSystem["star"] = ParticleSystem(100, 6, 1, 3, 1, "ressources/particleStar.png", &_3Drenderer);
-    _particleSystem["burn"] = ParticleSystem(100, 10, 0, 3, 3, _particleTexturedModels["burn"], &_3Drenderer, IS::PARTICLE_EMISSION::DIRECTIONAL);
-    _particleSystem["smoke"] = ParticleSystem(50, 2, 0, 6, 5, _particleTexturedModels["smoke"], &_3Drenderer);
-    _particleSystem["cosmic"] = ParticleSystem(100, 1, 0, 3, 1, _particleTexturedModels["cosmic"], &_3Drenderer, IS::PARTICLE_EMISSION::CIRCLE);
+    GLOBAL::_entities.push_back(new Entity(*GLOBAL::_texturedModels["dragon"], { 120, 10, 60 }, { 0, 90, 0 }, 2));
+    GLOBAL::_entities.push_back(new Bomberman(Entity(*GLOBAL::_texturedModels["bomberman"], { 10, 0, 10 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["smokeFeet"], false));
+    GLOBAL::_entities.push_back(new Bomberman(Entity(*GLOBAL::_texturedModels["bomberman"], { 110, 0, 10 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["smokeFeet"], true));
+    GLOBAL::_entities.push_back(new Bomberman(Entity(*GLOBAL::_texturedModels["bomberman"], { 10, 0, 110 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["smokeFeet"], true));
+    GLOBAL::_entities.push_back(new Bomberman(Entity(*GLOBAL::_texturedModels["bomberman"], { 110, 0, 110 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["smokeFeet"], true));
+    GLOBAL::_entities.push_back(new Bomb(Entity(*GLOBAL::_texturedModels["bomb"], { 70, 10, 10 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["fireBomb"], *GLOBAL::_particleSystem["explosionBomb"]));
+    GLOBAL::_entities.push_back(new Bomb(Entity(*GLOBAL::_texturedModels["bomb"], { 80, 10, 10 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["fireBomb"], *GLOBAL::_particleSystem["explosionBomb"]));
+    GLOBAL::_entities.push_back(new Bomb(Entity(*GLOBAL::_texturedModels["bomb"], { 90, 10, 10 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["fireBomb"], *GLOBAL::_particleSystem["explosionBomb"]));
+    GLOBAL::_entities.push_back(new Bomb(Entity(*GLOBAL::_texturedModels["bomb"], { 100, 10, 10 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["fireBomb"], *GLOBAL::_particleSystem["explosionBomb"]));
+    GLOBAL::_entities.push_back(new Bomb(Entity(*GLOBAL::_texturedModels["bomb"], { 110, 10, 10 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["fireBomb"], *GLOBAL::_particleSystem["explosionBomb"]));
 
-    _particleSystem["smokeFeet"] = ParticleSystem(15, 2, 0, 3, 15, _particleTexturedModels["smoke"], &_3Drenderer, IS::PARTICLE_EMISSION::FLYING);
-    _particleSystem["fireBomb"] = ParticleSystem(20, 2, 0, 2, 5, _particleTexturedModels["fire"], &_3Drenderer);
-    _particleSystem["explosionBomb"] = ParticleSystem(5000, 4, 0, 2, 3, _particleTexturedModels["cosmic"], &_3Drenderer, IS::PARTICLE_EMISSION::CIRCLE);
-
-    _entities.push_back(new Entity(_texturedModels["dragon"], { 60, 10, 0 }, { 0, 90, 0 }, 2));
-    _entities.push_back(new Bomberman(Entity(_texturedModels["bomberman"], { -50, 0, -50 }, { 0, 0, 0 }, 2), _particleSystem["smokeFeet"]));
-    _entities.push_back(new Bomberman(Entity(_texturedModels["bomberman"], { -30, 0, -50 }, { 0, 0, 0 }, 2), _particleSystem["smokeFeet"]));
-    _entities.push_back(new Bomberman(Entity(_texturedModels["bomberman"], { -10, 0, -50 }, { 0, 0, 0 }, 2), _particleSystem["smokeFeet"]));
-    _entities.push_back(new Bomb(Entity(_texturedModels["bomb"], { 10, 10, -50 }, { 0, 0, 0 }, 2), _particleSystem["fireBomb"], _particleSystem["explosionBomb"]));
-    _entities.push_back(new Bomb(Entity(_texturedModels["bomb"], { 20, 10, -50 }, { 0, 0, 0 }, 2), _particleSystem["fireBomb"], _particleSystem["explosionBomb"]));
-    _entities.push_back(new Bomb(Entity(_texturedModels["bomb"], { 30, 10, -50 }, { 0, 0, 0 }, 2), _particleSystem["fireBomb"], _particleSystem["explosionBomb"]));
-    _entities.push_back(new Bomb(Entity(_texturedModels["bomb"], { 40, 10, -50 }, { 0, 0, 0 }, 2), _particleSystem["fireBomb"], _particleSystem["explosionBomb"]));
-    _entities.push_back(new Bomb(Entity(_texturedModels["bomb"], { 50, 10, -50 }, { 0, 0, 0 }, 2), _particleSystem["fireBomb"], _particleSystem["explosionBomb"]));
-
-    _lights.push_back(LightValue({ 2000, 3000, 2000 }, WHITE));
+    GLOBAL::_lights.push_back(new LightValue({ 2000, 3000, 2000 }, WHITE));
 }
 
 void IS::DisplayManager::clean()
 {
-    for (auto &texturedModel : _texturedModels)
-        texturedModel.second.clean();
-    for (auto &particleTexturedModel : _particleTexturedModels)
-        particleTexturedModel.second.clean();
-    _particleSystem.clear();
-    _entities.clear();
-    _lights.clear();
+    for (auto &texturedModel : GLOBAL::_texturedModels)
+        texturedModel.second->clean();
+    for (auto &particleTexturedModel : GLOBAL::_particleTexturedModels)
+        particleTexturedModel.second->clean();
+    GLOBAL::_particleSystem.clear();
+    GLOBAL::_entities.clear();
+    GLOBAL::_lights.clear();
 }
 
 void IS::DisplayManager::run()
@@ -79,10 +73,10 @@ void IS::DisplayManager::run()
     load();
     ///// 3D INIT /////
     _3Drenderer.addSkybox(Skybox("ressources/skybox.png"));
-    _3Drenderer.addLight(_lights[0]);
+    _3Drenderer.addLight(*GLOBAL::_lights[0]);
 
     Camera camera;
-    camera.startAnimation({-200, 500, 100}, {0,30, 50}, {12,14,0}, 5);
+    camera.startAnimation({-200, 500, 100}, {60, 100, 150}, {60, 0, 50}, 5);
     ///////////////////
 
     ///// 2D INIT /////
@@ -90,23 +84,29 @@ void IS::DisplayManager::run()
 
     while (!WindowShouldClose())
     {
-        if (IsKeyPressed(KEY_SPACE))
-            _entities.push_back(new Bomb(Entity(_texturedModels["bomb"], { Maths::randFloat() * 100 - 50, 10, Maths::randFloat() * 100 - 50 }, { 0, 0, 0 }, 2), _particleSystem["fireBomb"], _particleSystem["explosionBomb"]));
+        Vector3 velocity = { 0 };
+        if (IsKeyDown(KEY_UP))
+            velocity.z = -0.3;
+        if (IsKeyDown(KEY_DOWN))
+            velocity.z = 0.3;
+        if (IsKeyDown(KEY_LEFT))
+            velocity.x = -0.3;
+        if (IsKeyDown(KEY_RIGHT))
+            velocity.x = 0.3;
+        GLOBAL::_entities[2]->setVelocity(velocity);
+
         //// UPDATE GAME ////
         camera.update();
-        _particleSystem["star"].generateParticles({0, 40, -20});
-        _particleSystem["burn"].generateParticles({60, 24, -12});
-        // _particleSystem["smoke"].generateParticles({-11.7, 16.5, 0});
-        // _particleSystem["cosmic"].generateParticles({-5, 10, -25});
+        GLOBAL::_particleSystem["burn"]->generateParticles({120, 24, 48});
         ////////////
-        for (int i = 0; i < _entities.size(); i++)
-            if (_entities[i]->IsAlive())
-                _3Drenderer.addEntity(0, _entities[i]);
 
+        for (int i = 0; i < GLOBAL::_entities.size(); i++)
+            if (GLOBAL::_entities[i]->IsAlive())
+                _3Drenderer.addEntity(0, GLOBAL::_entities[i]);
         BeginDrawing();
         {
             //// 3D ////
-            _3Drenderer.render(_actualscene, camera);
+            _3Drenderer.render(_actualscene, camera, _map);
             ////////////
             //// 2D ////
             _2Drenderer.render(_actualscene);
