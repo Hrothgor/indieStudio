@@ -9,7 +9,7 @@
 
 IS::DisplayManager::DisplayManager()
 {
-    SetTraceLogLevel(TraceLogLevel::LOG_WARNING);
+    //SetTraceLogLevel(TraceLogLevel::LOG_WARNING);
     InitWindow(WIDTH, HEIGHT, "Indie Studio Window");
     SetTargetFPS(120);
     SetConfigFlags(FLAG_MSAA_4X_HINT);
@@ -41,37 +41,21 @@ void IS::DisplayManager::load()
 
     GLOBAL::_particleSystem["smokeFeet"] = new ParticleSystem(15, 2, 0, 3, 15, *GLOBAL::_particleTexturedModels["smoke"], &_3Drenderer, IS::PARTICLE_EMISSION::FLYING);
     GLOBAL::_particleSystem["fireBomb"] = new ParticleSystem(20, 2, 0, 2, 5, *GLOBAL::_particleTexturedModels["fire"], &_3Drenderer);
-    GLOBAL::_particleSystem["explosionBomb"] = new ParticleSystem(5000, 4, 0, 2, 3, *GLOBAL::_particleTexturedModels["cosmic"], &_3Drenderer, IS::PARTICLE_EMISSION::CIRCLE);
+    GLOBAL::_particleSystem["explosionBomb"] = new ParticleSystem(1, 0, 0, 0.8, 12, *GLOBAL::_particleTexturedModels["cosmic"], &_3Drenderer, IS::PARTICLE_EMISSION::STATIC);
 
     GLOBAL::_entities.push_back(new Entity(*GLOBAL::_texturedModels["dragon"], { 120, 10, 60 }, { 0, 90, 0 }, 2));
-    GLOBAL::_entities.push_back(new Bomberman(Entity(*GLOBAL::_texturedModels["bomberman"], { 10, 0, 10 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["smokeFeet"], false));
-    GLOBAL::_entities.push_back(new Bomberman(Entity(*GLOBAL::_texturedModels["bomberman"], { 110, 0, 10 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["smokeFeet"], true));
-    GLOBAL::_entities.push_back(new Bomberman(Entity(*GLOBAL::_texturedModels["bomberman"], { 10, 0, 110 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["smokeFeet"], true));
-    GLOBAL::_entities.push_back(new Bomberman(Entity(*GLOBAL::_texturedModels["bomberman"], { 110, 0, 110 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["smokeFeet"], true));
-    GLOBAL::_entities.push_back(new Bomb(Entity(*GLOBAL::_texturedModels["bomb"], { 70, 10, 10 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["fireBomb"], *GLOBAL::_particleSystem["explosionBomb"]));
-    GLOBAL::_entities.push_back(new Bomb(Entity(*GLOBAL::_texturedModels["bomb"], { 80, 10, 10 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["fireBomb"], *GLOBAL::_particleSystem["explosionBomb"]));
-    GLOBAL::_entities.push_back(new Bomb(Entity(*GLOBAL::_texturedModels["bomb"], { 90, 10, 10 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["fireBomb"], *GLOBAL::_particleSystem["explosionBomb"]));
-    GLOBAL::_entities.push_back(new Bomb(Entity(*GLOBAL::_texturedModels["bomb"], { 100, 10, 10 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["fireBomb"], *GLOBAL::_particleSystem["explosionBomb"]));
-    GLOBAL::_entities.push_back(new Bomb(Entity(*GLOBAL::_texturedModels["bomb"], { 110, 10, 10 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["fireBomb"], *GLOBAL::_particleSystem["explosionBomb"]));
+    GLOBAL::_entities.push_back(new Bomberman(Entity(*GLOBAL::_texturedModels["bomberman"], { 10, 0, 10 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["smokeFeet"], {KEY_W, KEY_S, KEY_A, KEY_D, KEY_E}));
+    GLOBAL::_entities.push_back(new Bomberman(Entity(*GLOBAL::_texturedModels["bomberman"], { 110, 0, 10 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["smokeFeet"], {KEY_UP, KEY_DOWN, KEY_LEFT, KEY_RIGHT, KEY_RIGHT_CONTROL}));
+    GLOBAL::_entities.push_back(new Bomberman(Entity(*GLOBAL::_texturedModels["bomberman"], { 10, 0, 110 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["smokeFeet"]));
+    GLOBAL::_entities.push_back(new Bomberman(Entity(*GLOBAL::_texturedModels["bomberman"], { 110, 0, 110 }, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["smokeFeet"]));
 
     GLOBAL::_lights.push_back(new LightValue({ 2000, 3000, 2000 }, WHITE));
 }
 
-void IS::DisplayManager::clean()
-{
-    for (auto &texturedModel : GLOBAL::_texturedModels)
-        texturedModel.second->clean();
-    for (auto &particleTexturedModel : GLOBAL::_particleTexturedModels)
-        particleTexturedModel.second->clean();
-    GLOBAL::_particleSystem.clear();
-    GLOBAL::_entities.clear();
-    GLOBAL::_lights.clear();
-}
-
 void IS::DisplayManager::run()
 {
-    load();
     ///// 3D INIT /////
+    load();
     _3Drenderer.addSkybox(Skybox("ressources/skybox.png"));
     _3Drenderer.addLight(*GLOBAL::_lights[0]);
 
@@ -84,17 +68,6 @@ void IS::DisplayManager::run()
 
     while (!WindowShouldClose())
     {
-        Vector3 velocity = { 0 };
-        if (IsKeyDown(KEY_UP))
-            velocity.z = -0.3;
-        if (IsKeyDown(KEY_DOWN))
-            velocity.z = 0.3;
-        if (IsKeyDown(KEY_LEFT))
-            velocity.x = -0.3;
-        if (IsKeyDown(KEY_RIGHT))
-            velocity.x = 0.3;
-        GLOBAL::_entities[2]->setVelocity(velocity);
-
         //// UPDATE GAME ////
         camera.update();
         GLOBAL::_particleSystem["burn"]->generateParticles({120, 24, 48});
@@ -116,4 +89,15 @@ void IS::DisplayManager::run()
     }
     clean();
     CloseWindow();
+}
+
+void IS::DisplayManager::clean()
+{
+    for (auto &texturedModel : GLOBAL::_texturedModels)
+        texturedModel.second->clean();
+    for (auto &particleTexturedModel : GLOBAL::_particleTexturedModels)
+        particleTexturedModel.second->clean();
+    GLOBAL::_particleSystem.clear();
+    GLOBAL::_entities.clear();
+    GLOBAL::_lights.clear();
 }

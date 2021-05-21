@@ -7,17 +7,40 @@
 
 #include "Bomberman.hpp"
 
-IS::Bomberman::Bomberman(Entity entity, ParticleSystem smokeFeet, bool IsAI)
+IS::Bomberman::Bomberman(Entity entity, ParticleSystem smokeFeet)
     : Entity(entity)
 {
-    _IsAI = IsAI;
+    _IsAI = true;
     _smokeFeet = smokeFeet;
-    if (IsAI)
-        _velocity.z = 0.2;
+    _velocity.z = 0.2;
+}
+
+IS::Bomberman::Bomberman(Entity entity, ParticleSystem smokeFeet, keyPlayer_t keys)
+    : Entity(entity)
+{
+    _IsAI = false;
+    _smokeFeet = smokeFeet;
+    _keys = keys;
 }
 
 IS::Bomberman::~Bomberman()
 {
+}
+
+void IS::Bomberman::checkKeyPressed()
+{
+    if (IsKeyDown(_keys.up))
+        _velocity.z = -0.3;
+    if (IsKeyDown(_keys.down))
+        _velocity.z = 0.3;
+    if (IsKeyDown(_keys.left))
+        _velocity.x = -0.3;
+    if (IsKeyDown(_keys.right))
+        _velocity.x = 0.3;
+    float x = floor((_position.x + 4) / 10) * 10;
+    float y = floor((_position.z + 4) / 10) * 10;
+    if (IsKeyPressed(_keys.bomb))
+        GLOBAL::_entities.push_back(new Bomb(Entity(*GLOBAL::_texturedModels["bomb"], {x, 0, y}, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["fireBomb"], *GLOBAL::_particleSystem["explosionBomb"], getColor(0), getColor(1)));
 }
 
 void IS::Bomberman::changeModelRotation()
@@ -73,7 +96,7 @@ void IS::Bomberman::changeModelRotation()
     }
 }
 
-void IS::Bomberman::checkCollisionMap(Map map)
+void IS::Bomberman::checkCollisionMap(Map &map)
 {
     bool moved = false;
     int nextx1 = (_position.x + _velocity.x) / 10;
@@ -84,7 +107,8 @@ void IS::Bomberman::checkCollisionMap(Map map)
     if (map.IsEmpty(nextx1, nexty1) &&
         map.IsEmpty(nextx2, nexty1) &&
         map.IsEmpty(nextx1, nexty2) &&
-        map.IsEmpty(nextx2, nexty2)) {
+        map.IsEmpty(nextx2, nexty2) &&
+        _velocity.x != 0) {
         increasePosition({_velocity.x, 0, 0});
         moved = true;
     }
@@ -95,7 +119,8 @@ void IS::Bomberman::checkCollisionMap(Map map)
     if (map.IsEmpty(nextx1, nexty1) &&
         map.IsEmpty(nextx2, nexty1) &&
         map.IsEmpty(nextx1, nexty2) &&
-        map.IsEmpty(nextx2, nexty2)) {
+        map.IsEmpty(nextx2, nexty2) &&
+        _velocity.z != 0) {
         increasePosition({0, 0, _velocity.z});
         moved = true;
     }
@@ -121,22 +146,15 @@ void IS::Bomberman::checkCollisionMap(Map map)
     }
 }
 
-void IS::Bomberman::dropBomb()
-{
-    float x = floor((_position.x + 4) / 10) * 10;
-    float y = floor((_position.z + 4) / 10) * 10;
-
-    if (IsKeyPressed(KEY_SPACE))
-        GLOBAL::_entities.push_back(new Bomb(Entity(*GLOBAL::_texturedModels["bomb"], {x, 0, y}, { 0, 0, 0 }, 2), *GLOBAL::_particleSystem["fireBomb"], *GLOBAL::_particleSystem["explosionBomb"]));
-}
-
-bool IS::Bomberman::update(Camera3D camera, Map map)
+bool IS::Bomberman::update(Camera3D camera, Map &map)
 {
     IS::Entity::update(camera, map);
 
+    if (!_IsAI)
+        checkKeyPressed();
     changeModelRotation();
     checkCollisionMap(map);
-    dropBomb();
-    _velocity = { 0 };
+    if (!_IsAI)
+        _velocity = { 0 };
     return (true);
 }

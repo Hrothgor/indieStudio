@@ -26,7 +26,7 @@ void IS::Master3DRenderer::stop()
     EndMode3D();
 }
 
-void IS::Master3DRenderer::render(int scene, IS::Camera camera, Map map)
+void IS::Master3DRenderer::render(int scene, IS::Camera camera, Map &map)
 {
     start(camera);
     {

@@ -29,7 +29,7 @@ IS::Entity::~Entity()
 {
 }
 
-bool IS::Entity::update(Camera3D camera, Map map)
+bool IS::Entity::update(Camera3D camera, Map &map)
 {
     int i = 0;
 
@@ -82,6 +82,13 @@ Vector3 IS::Entity::getRotation() const
 float IS::Entity::getScale() const
 {
     return (_scale);
+}
+
+Color IS::Entity::getColor(int materialNumber) const
+{
+    if (materialNumber >= _colors.size() || materialNumber < 0)
+        return (WHITE);
+    return (_colors[materialNumber]);
 }
 
 bool IS::Entity::IsAlive() const

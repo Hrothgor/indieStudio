@@ -27,7 +27,7 @@ void IS::EntityRenderer::prepare(int scene, Camera camera)
     }
 }
 
-void IS::EntityRenderer::render(int scene, IS::Camera camera, Map map)
+void IS::EntityRenderer::render(int scene, IS::Camera camera, Map &map)
 {
     prepare(scene, camera);
     map.render();

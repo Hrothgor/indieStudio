@@ -33,7 +33,7 @@ void IS::Map::render()
     DrawModel(_model, {0, 0, 0}, 10, WHITE);
     for (float y = 0; y < _height; y++) {
         for (float x = 0; x < _width; x++) {
-            if (_collisionMap[y][x] == CRATE)
+            if (_2DMap[y][x] == CRATE)
                 DrawModel(crate, {x * 10, 0, y * 10}, 1, WHITE);
         }
     }
@@ -65,12 +65,12 @@ void IS::Map::createCollisionFromImage(Image image)
     Color *pixels = LoadImageColors(image);
 
     for (int y = 0; y < _height; y++) {
-        _collisionMap.push_back(std::vector<MAP_TILES>(_width, BLOCK));
+        _2DMap.push_back(std::vector<MAP_TILES>(_width, BLOCK));
         for (int x = 0; x < _width; x++) {
             if (pixels[_height * y + x].r == BLACK.r &&
             pixels[_height * y + x].g == BLACK.g &&
             pixels[_height * y + x].b == BLACK.b) {
-                _collisionMap[y][x] = IsCorner(x, y) ? EMPTY : CRATE;
+                _2DMap[y][x] = IsCorner(x, y) ? EMPTY : CRATE;
             }
         }
     }
@@ -80,8 +80,18 @@ bool IS::Map::IsEmpty(int x, int y)
 {
     if (y < 0 || y >= _height || x < 0 || x >= _width)
         return (false);
-    if (_collisionMap[y][x] == EMPTY)
+    if (_2DMap[y][x] == EMPTY)
         return (true);
+    return (false);
+}
+
+bool IS::Map::TryDestroy(int x, int y)
+{
+    if (!IsEmpty(x, y)) {
+        if (_2DMap[y][x] == CRATE)
+            _2DMap[y][x] = EMPTY;
+        return (true);
+    }
     return (false);
 }
 

@@ -16,10 +16,11 @@
 namespace IS {
     class Bomb : public Entity {
         public:
-            Bomb(Entity entity, ParticleSystem smokeBomb, ParticleSystem explosionBomb);
+            Bomb(Entity entity, ParticleSystem smokeBomb, ParticleSystem explosionBomb,  Color color1, Color color2);
             ~Bomb();
 
-            bool update(Camera3D camera, Map map);
+            void explode(Map &map);
+            bool update(Camera3D camera, Map &map);
 
         protected:
         private:

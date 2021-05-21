@@ -29,6 +29,7 @@ namespace IS {
             bool IsCorner(int x, int y);
             void createCollisionFromImage(Image image);
             bool IsEmpty(int x, int y);
+            bool TryDestroy(int x, int y);
 
             Model getModel() const;
             int getHeight() const;
@@ -41,7 +42,7 @@ namespace IS {
             Model _model;
             int _height;
             int _width;
-            std::vector<std::vector<MAP_TILES>> _collisionMap;
+            std::vector<std::vector<MAP_TILES>> _2DMap;
     };
 }
 

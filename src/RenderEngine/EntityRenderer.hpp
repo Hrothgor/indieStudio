@@ -23,7 +23,7 @@ namespace IS {
             ~EntityRenderer();
 
             void prepare(int scene, Camera camera);
-            void render(int scene, IS::Camera camera, Map map);
+            void render(int scene, IS::Camera camera, Map &map);
             void prepareEntity(Entity *entity);
             void clear(int scene);
 
