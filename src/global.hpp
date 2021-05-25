@@ -14,16 +14,25 @@ namespace IS {
     class TexturedModel;
     class ParticleTexturedModel;
     class ParticleSystem;
+    class Sounds;
     class Entity;
-    class LightValue;
+    class Bomberman;
+    class PowerUp;
+    class Map;
 
     namespace GLOBAL {
         inline std::map<std::string, TexturedModel *> _texturedModels;
         inline std::map<std::string, ParticleTexturedModel *> _particleTexturedModels;
         inline std::map<std::string, ParticleSystem *> _particleSystem;
+        inline std::map<std::string, Sounds *> _sounds;
 
         inline std::vector<Entity *> _entities;
-        inline std::vector<LightValue *> _lights;
+        inline std::vector<Bomberman *> _bombermans;
+        inline std::vector<PowerUp *> _powerups;
+        inline Map *_map;
+
+        inline int _slowfactor = 1;
+        inline int _nbFrame = 0;
     }
 }
 

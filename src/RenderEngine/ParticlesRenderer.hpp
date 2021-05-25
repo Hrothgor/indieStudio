@@ -9,7 +9,7 @@
 #ifndef PARTICLESRENDERER_HPP_
 #define PARTICLESRENDERER_HPP_
 
-#include "../include.hpp"
+#include "../global.hpp"
 #include "../Entities/Camera.hpp"
 #include "../Particles/Particle.hpp"
 #include "../Shaders/ParticlesShader.hpp"
@@ -21,7 +21,7 @@ namespace IS {
             ~ParticlesRenderer();
 
             void prepare(int scene, Camera3D camera);
-            void render(int scene, IS::Camera camera);
+            void render(int scene, IS::Camera *camera);
             void updateModelViewMatrix(Particle &particle, Matrix viewMatrix);
 
             void addParticles(const Particle &particle);

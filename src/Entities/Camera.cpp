@@ -10,7 +10,7 @@
 IS::Camera::Camera()
 {
     _camera = { 0 };
-    _camera.position = { 0, 10.0, -40.0 }; // _camera position
+    _camera.position = { 0, 0, 0 }; // _camera position
     _camera.target = { 0.0, 0.0, 0.0 };     // _camera looking at point
     _camera.up = { 0.0, 1.0, 0.0 };          // _camera up vector (rotation towards target)
     _camera.fovy = 70;
@@ -24,8 +24,6 @@ IS::Camera::~Camera()
 
 void IS::Camera::update()
 {
-    if (IsKeyPressed(KEY_ONE))
-        startAnimation(_camera.position, {0,50,50}, {0,0,0}, 5);
     if (_currentAnimation.isRunning) {
         Vector3 direction = Vector3Subtract(_currentAnimation.end, _currentAnimation.begin);
         direction = Vector3Normalize(direction);
@@ -34,8 +32,10 @@ void IS::Camera::update()
         direction = Vector3Multiply(direction, {speed, speed, speed});
         _camera.position = Vector3Add(_camera.position, direction);
         if (Vector3Distance(_camera.position, _currentAnimation.end) <= speed) {
-            //SetCameraMode(_camera, CAMERA_FIRST_PERSON);
+            GLOBAL::_slowfactor = 1;
             _currentAnimation = { 0 };
+            _camera.position = {60, 120, 130};
+            _camera.target = {60, 0, 50};
         }
     }
     UpdateCamera(&_camera);

@@ -11,21 +11,23 @@
 
 #include "../include.hpp"
 #include "Entity.hpp"
+#include "Bomberman.hpp"
 #include "../Particles/ParticleSystem.hpp"
 
 namespace IS {
     class Bomb : public Entity {
         public:
-            Bomb(Entity entity, ParticleSystem smokeBomb, ParticleSystem explosionBomb,  Color color1, Color color2);
+            Bomb(Entity entity, Bomberman *player, ParticleSystem smokeBomb, ParticleSystem explosionBomb);
             ~Bomb();
 
-            void explode(Map &map);
-            bool update(Camera3D camera, Map &map);
+            void checkKillPlayer(int x, int y, Camera *camera);
+            void explode(Camera *camera);
+            bool update(Camera *camera);
 
         protected:
         private:
-            Clock _life;
-            int _lifeLenght = 3;
+            float _lifeLenght = 3;
+            Bomberman *_player;
             ParticleSystem _smokeBomb;
             ParticleSystem _explosionBomb;
     };

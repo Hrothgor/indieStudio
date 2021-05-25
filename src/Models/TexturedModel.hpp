@@ -21,6 +21,7 @@ namespace IS {
             TexturedModel(Model model);
             ~TexturedModel();
 
+            void resetFrame();
             void nextFrame();
             void prevFrame();
 
@@ -39,6 +40,8 @@ namespace IS {
         private:
             std::vector<Model> _models;
             Texture2D _texture = {0};
+            int _currentFrame = 0;
+            int _nbFrame = 0;
     };
 }
 

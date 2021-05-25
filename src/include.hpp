@@ -37,4 +37,6 @@
 #include "Tools/GenMesh.hpp"
 #include "Tools/Clock.hpp"
 
+#include "Audio/Sounds.hpp"
+
 #endif /* !INCLUDE_HPP_ */

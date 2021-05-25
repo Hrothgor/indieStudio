@@ -19,7 +19,7 @@ IS::EntityRenderer::~EntityRenderer()
 }
 
 
-void IS::EntityRenderer::prepare(int scene, Camera camera)
+void IS::EntityRenderer::prepare(int scene, Camera *camera)
 {
     for (Light &light : _lights) {
         UpdateLightValues(_lightShader.getShader(), light);
@@ -27,17 +27,19 @@ void IS::EntityRenderer::prepare(int scene, Camera camera)
     }
 }
 
-void IS::EntityRenderer::render(int scene, IS::Camera camera, Map &map)
+void IS::EntityRenderer::render(int scene, IS::Camera *camera)
 {
     prepare(scene, camera);
-    map.render();
+    GLOBAL::_map->render();
     for (auto &list : _entities) {
         if (list.first != scene)
             continue;
         for (Entity *entity : list.second) {
             prepareEntity(entity);
-            if (!entity->update(camera.getCamera3D(), map))
-                continue;
+            entity->IS::Entity::update(camera);
+            if (GLOBAL::_nbFrame >= GLOBAL::_slowfactor)
+                if (!entity->update(camera))
+                    continue;
             DrawModel(entity->getTexturedModel().getModel(), entity->getPosition(), entity->getScale(), WHITE);
         }
     }
@@ -53,8 +55,6 @@ void IS::EntityRenderer::prepareEntity(Entity *entity)
 void IS::EntityRenderer::clear(int scene)
 {
     for (auto &list : _entities) {
-        if (list.first != scene)
-            continue;
         list.second.clear();
     }
 }

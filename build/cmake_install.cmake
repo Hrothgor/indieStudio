@@ -1,4 +1,4 @@
-# Install script for directory: /home/julesminguet/EPI_2020/indieStudio
+# Install script for directory: /home/julesminguet/EPI_2020/B-YEP-400-MPL-4-1-indiestudio-cyril.grosjean
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +45,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/julesminguet/EPI_2020/indieStudio/build/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/julesminguet/EPI_2020/B-YEP-400-MPL-4-1-indiestudio-cyril.grosjean/build/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

@@ -21,9 +21,9 @@ namespace IS {
             Master3DRenderer();
             ~Master3DRenderer();
 
-            void start(IS::Camera camera);
+            void start(IS::Camera *camera);
             void stop();
-            void render(int scene, IS::Camera camera, Map &map);
+            void render(int scene, IS::Camera *camera);
 
             void addSkybox(const Skybox &skybox);
             void addLight(const LightValue &light);

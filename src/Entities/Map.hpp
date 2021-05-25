@@ -16,6 +16,7 @@ namespace IS {
         EMPTY = 0,
         BLOCK,
         CRATE,
+        BOMB,
     };
 
     class Map {
@@ -26,16 +27,20 @@ namespace IS {
 
             void render();
 
+            void addElement(MAP_TILES elem, int x, int y);
             bool IsCorner(int x, int y);
             void createCollisionFromImage(Image image);
             bool IsEmpty(int x, int y);
+            void spawnPowerUp(int x, int y);
             bool TryDestroy(int x, int y);
 
             Model getModel() const;
             int getHeight() const;
             int getWidth() const;
+            MAP_TILES getElement(int x, int y) const;
 
             void setModel(Model model);
+            void setElement(MAP_TILES elem, int x, int y);
 
         protected:
         private:

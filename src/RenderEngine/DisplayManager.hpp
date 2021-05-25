@@ -13,6 +13,7 @@
 #include "../Entities/Camera.hpp"
 #include "../Entities/Light.hpp"
 #include "../Entities/Bomb.hpp"
+#include "../Entities/PowerUp.hpp"
 #include "../Entities/Bomberman.hpp"
 #include "../Models/TexturedModel.hpp"
 #include "../Particles/ParticleSystem.hpp"
@@ -35,8 +36,6 @@ namespace IS {
             Master3DRenderer _3Drenderer;
             Master2DRenderer _2Drenderer;
             int _actualscene = 0;
-
-            Map _map;
     };
 }
 

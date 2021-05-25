@@ -9,7 +9,7 @@
 #ifndef CAMERA_HPP_
 #define CAMERA_HPP_
 
-#include "../include.hpp"
+#include "../global.hpp"
 
 namespace IS {
 

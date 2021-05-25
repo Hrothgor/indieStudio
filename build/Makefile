@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/julesminguet/EPI_2020/indieStudio
+CMAKE_SOURCE_DIR = /home/julesminguet/EPI_2020/B-YEP-400-MPL-4-1-indiestudio-cyril.grosjean
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/julesminguet/EPI_2020/indieStudio/build
+CMAKE_BINARY_DIR = /home/julesminguet/EPI_2020/B-YEP-400-MPL-4-1-indiestudio-cyril.grosjean/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles /home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/julesminguet/EPI_2020/B-YEP-400-MPL-4-1-indiestudio-cyril.grosjean/build/CMakeFiles /home/julesminguet/EPI_2020/B-YEP-400-MPL-4-1-indiestudio-cyril.grosjean/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/julesminguet/EPI_2020/indieStudio/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/julesminguet/EPI_2020/B-YEP-400-MPL-4-1-indiestudio-cyril.grosjean/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -122,6 +122,60 @@ my_project: cmake_check_build_system
 my_project/fast:
 	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/build
 .PHONY : my_project/fast
+
+src/Audio/Sounds.o: src/Audio/Sounds.cpp.o
+
+.PHONY : src/Audio/Sounds.o
+
+# target to build an object file
+src/Audio/Sounds.cpp.o:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Audio/Sounds.cpp.o
+.PHONY : src/Audio/Sounds.cpp.o
+
+src/Audio/Sounds.i: src/Audio/Sounds.cpp.i
+
+.PHONY : src/Audio/Sounds.i
+
+# target to preprocess a source file
+src/Audio/Sounds.cpp.i:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Audio/Sounds.cpp.i
+.PHONY : src/Audio/Sounds.cpp.i
+
+src/Audio/Sounds.s: src/Audio/Sounds.cpp.s
+
+.PHONY : src/Audio/Sounds.s
+
+# target to generate assembly for a file
+src/Audio/Sounds.cpp.s:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Audio/Sounds.cpp.s
+.PHONY : src/Audio/Sounds.cpp.s
+
+src/Buttons/Button.o: src/Buttons/Button.cpp.o
+
+.PHONY : src/Buttons/Button.o
+
+# target to build an object file
+src/Buttons/Button.cpp.o:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Buttons/Button.cpp.o
+.PHONY : src/Buttons/Button.cpp.o
+
+src/Buttons/Button.i: src/Buttons/Button.cpp.i
+
+.PHONY : src/Buttons/Button.i
+
+# target to preprocess a source file
+src/Buttons/Button.cpp.i:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Buttons/Button.cpp.i
+.PHONY : src/Buttons/Button.cpp.i
+
+src/Buttons/Button.s: src/Buttons/Button.cpp.s
+
+.PHONY : src/Buttons/Button.s
+
+# target to generate assembly for a file
+src/Buttons/Button.cpp.s:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Buttons/Button.cpp.s
+.PHONY : src/Buttons/Button.cpp.s
 
 src/Entities/Bomb.o: src/Entities/Bomb.cpp.o
 
@@ -285,6 +339,33 @@ src/Entities/Map.cpp.s:
 	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Entities/Map.cpp.s
 .PHONY : src/Entities/Map.cpp.s
 
+src/Entities/PowerUp.o: src/Entities/PowerUp.cpp.o
+
+.PHONY : src/Entities/PowerUp.o
+
+# target to build an object file
+src/Entities/PowerUp.cpp.o:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Entities/PowerUp.cpp.o
+.PHONY : src/Entities/PowerUp.cpp.o
+
+src/Entities/PowerUp.i: src/Entities/PowerUp.cpp.i
+
+.PHONY : src/Entities/PowerUp.i
+
+# target to preprocess a source file
+src/Entities/PowerUp.cpp.i:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Entities/PowerUp.cpp.i
+.PHONY : src/Entities/PowerUp.cpp.i
+
+src/Entities/PowerUp.s: src/Entities/PowerUp.cpp.s
+
+.PHONY : src/Entities/PowerUp.s
+
+# target to generate assembly for a file
+src/Entities/PowerUp.cpp.s:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Entities/PowerUp.cpp.s
+.PHONY : src/Entities/PowerUp.cpp.s
+
 src/Entities/Skybox.o: src/Entities/Skybox.cpp.o
 
 .PHONY : src/Entities/Skybox.o
@@ -419,6 +500,33 @@ src/Particles/ParticleSystem.s: src/Particles/ParticleSystem.cpp.s
 src/Particles/ParticleSystem.cpp.s:
 	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/Particles/ParticleSystem.cpp.s
 .PHONY : src/Particles/ParticleSystem.cpp.s
+
+src/RenderEngine/ButtonsRenderer.o: src/RenderEngine/ButtonsRenderer.cpp.o
+
+.PHONY : src/RenderEngine/ButtonsRenderer.o
+
+# target to build an object file
+src/RenderEngine/ButtonsRenderer.cpp.o:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/RenderEngine/ButtonsRenderer.cpp.o
+.PHONY : src/RenderEngine/ButtonsRenderer.cpp.o
+
+src/RenderEngine/ButtonsRenderer.i: src/RenderEngine/ButtonsRenderer.cpp.i
+
+.PHONY : src/RenderEngine/ButtonsRenderer.i
+
+# target to preprocess a source file
+src/RenderEngine/ButtonsRenderer.cpp.i:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/RenderEngine/ButtonsRenderer.cpp.i
+.PHONY : src/RenderEngine/ButtonsRenderer.cpp.i
+
+src/RenderEngine/ButtonsRenderer.s: src/RenderEngine/ButtonsRenderer.cpp.s
+
+.PHONY : src/RenderEngine/ButtonsRenderer.s
+
+# target to generate assembly for a file
+src/RenderEngine/ButtonsRenderer.cpp.s:
+	$(MAKE) -f CMakeFiles/my_project.dir/build.make CMakeFiles/my_project.dir/src/RenderEngine/ButtonsRenderer.cpp.s
+.PHONY : src/RenderEngine/ButtonsRenderer.cpp.s
 
 src/RenderEngine/DisplayManager.o: src/RenderEngine/DisplayManager.cpp.o
 
@@ -780,6 +888,12 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... my_project"
 	@echo "... edit_cache"
+	@echo "... src/Audio/Sounds.o"
+	@echo "... src/Audio/Sounds.i"
+	@echo "... src/Audio/Sounds.s"
+	@echo "... src/Buttons/Button.o"
+	@echo "... src/Buttons/Button.i"
+	@echo "... src/Buttons/Button.s"
 	@echo "... src/Entities/Bomb.o"
 	@echo "... src/Entities/Bomb.i"
 	@echo "... src/Entities/Bomb.s"
@@ -798,6 +912,9 @@ help:
 	@echo "... src/Entities/Map.o"
 	@echo "... src/Entities/Map.i"
 	@echo "... src/Entities/Map.s"
+	@echo "... src/Entities/PowerUp.o"
+	@echo "... src/Entities/PowerUp.i"
+	@echo "... src/Entities/PowerUp.s"
 	@echo "... src/Entities/Skybox.o"
 	@echo "... src/Entities/Skybox.i"
 	@echo "... src/Entities/Skybox.s"
@@ -813,6 +930,9 @@ help:
 	@echo "... src/Particles/ParticleSystem.o"
 	@echo "... src/Particles/ParticleSystem.i"
 	@echo "... src/Particles/ParticleSystem.s"
+	@echo "... src/RenderEngine/ButtonsRenderer.o"
+	@echo "... src/RenderEngine/ButtonsRenderer.i"
+	@echo "... src/RenderEngine/ButtonsRenderer.s"
 	@echo "... src/RenderEngine/DisplayManager.o"
 	@echo "... src/RenderEngine/DisplayManager.i"
 	@echo "... src/RenderEngine/DisplayManager.s"

@@ -10,6 +10,7 @@
 #define MASTER2DRENDERER_HPP_
 
 #include "../include.hpp"
+#include "ButtonsRenderer.hpp"
 
 namespace IS {
     class Master2DRenderer {
@@ -23,6 +24,7 @@ namespace IS {
 
         protected:
         private:
+            ButtonsRenderer _buttonsRenderer;
     };
 }
 

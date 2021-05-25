@@ -6,6 +6,7 @@
 */
 
 #include "Map.hpp"
+#include "PowerUp.hpp"
 
 IS::Map::Map(const std::string &cubicMapPath, const std::string &texturePath)
 {
@@ -37,6 +38,13 @@ void IS::Map::render()
                 DrawModel(crate, {x * 10, 0, y * 10}, 1, WHITE);
         }
     }
+}
+
+void IS::Map::addElement(MAP_TILES elem, int x, int y)
+{
+    if (y < 0 || y >= _height || x < 0 || x >= _width)
+        return;
+    _2DMap[y][x] = elem;
 }
 
 bool IS::Map::IsCorner(int x, int y)
@@ -85,11 +93,39 @@ bool IS::Map::IsEmpty(int x, int y)
     return (false);
 }
 
+void IS::Map::spawnPowerUp(int x, int y)
+{
+    if (rand() % 3 == 0) {
+        int powerUp = rand() % 3;
+        float posX = x * 10;
+        float posY = y * 10;
+        switch (powerUp)
+        {
+        case 0:
+            GLOBAL::_powerups.push_back(new PowerUp(Entity(*GLOBAL::_texturedModels["powerUpBlastRadius"], { posX, 4, posY }, { 0, 0, 0 }, 1), POWER_TYPE::FIRE, *GLOBAL::_particleSystem["shinyPowerUp"]));
+            break;
+        case 1:
+            GLOBAL::_powerups.push_back(new PowerUp(Entity(*GLOBAL::_texturedModels["powerUpIncreaseBomb"], { posX, 4, posY }, { 0, 0, 0 }, 1), POWER_TYPE::MOREBOMB, *GLOBAL::_particleSystem["shinyPowerUp"]));
+            break;
+        case 2:
+            GLOBAL::_powerups.push_back(new PowerUp(Entity(*GLOBAL::_texturedModels["powerUpSpeedUp"], { posX, 4, posY }, { 0, 0, 0 }, 1), POWER_TYPE::SPEED, *GLOBAL::_particleSystem["shinyPowerUp"]));
+            break;
+        case 3:
+            GLOBAL::_powerups.push_back(new PowerUp(Entity(*GLOBAL::_texturedModels["powerUpSoftPass"], { posX, 4, posY }, { 0, 0, 0 }, 1), POWER_TYPE::SOFTPASS, *GLOBAL::_particleSystem["shinyPowerUp"]));
+            break;
+        default:
+            break;
+        }
+    }
+}
+
 bool IS::Map::TryDestroy(int x, int y)
 {
     if (!IsEmpty(x, y)) {
-        if (_2DMap[y][x] == CRATE)
+        if (_2DMap[y][x] == CRATE) {
+            spawnPowerUp(x, y);
             _2DMap[y][x] = EMPTY;
+        }
         return (true);
     }
     return (false);
@@ -110,7 +146,21 @@ int IS::Map::getWidth() const
     return (_width);
 }
 
+IS::MAP_TILES IS::Map::getElement(int x, int y) const
+{
+    if (y < 0 || y >= _height || x < 0 || x >= _width)
+        return (MAP_TILES::EMPTY);
+    return (_2DMap[y][x]);
+}
+
 void IS::Map::setModel(Model model)
 {
     _model = model;
+}
+
+void IS::Map::setElement(MAP_TILES elem, int x, int y)
+{
+    if (y < 0 || y >= _height || x < 0 || x >= _width)
+        return;
+    _2DMap[y][x] = elem;
 }

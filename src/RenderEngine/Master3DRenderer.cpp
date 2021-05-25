@@ -15,10 +15,10 @@ IS::Master3DRenderer::~Master3DRenderer()
 {
 }
 
-void IS::Master3DRenderer::start(IS::Camera camera)
+void IS::Master3DRenderer::start(IS::Camera *camera)
 {
     ClearBackground(DARKBLUE);
-    BeginMode3D(camera.getCamera3D());
+    BeginMode3D(camera->getCamera3D());
 }
 
 void IS::Master3DRenderer::stop()
@@ -26,7 +26,7 @@ void IS::Master3DRenderer::stop()
     EndMode3D();
 }
 
-void IS::Master3DRenderer::render(int scene, IS::Camera camera, Map &map)
+void IS::Master3DRenderer::render(int scene, IS::Camera *camera)
 {
     start(camera);
     {
@@ -39,7 +39,7 @@ void IS::Master3DRenderer::render(int scene, IS::Camera camera, Map &map)
         }
     }
     {
-        _entityRenderer.render(scene, camera, map);
+        _entityRenderer.render(scene, camera);
     }
     {
         rlDisableDepthMask();

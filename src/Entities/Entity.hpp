@@ -12,6 +12,7 @@
 #include "../include.hpp"
 #include "../Models/TexturedModel.hpp"
 #include "Map.hpp"
+#include "Camera.hpp"
 
 namespace IS {
     class Entity {
@@ -19,10 +20,11 @@ namespace IS {
             Entity(const TexturedModel &texturedModel, Vector3 position, Vector3 rotation, float scale);
             ~Entity();
 
-            virtual bool update(Camera3D camera, Map &map);
+            virtual bool update(Camera *camera);
             void increasePosition(Vector3 vec);
             void increaseRotation(Vector3 vec);
 
+            void resetFrame();
             void nextFrame();
             void prevFrame();
 
@@ -39,6 +41,7 @@ namespace IS {
             void setRotation(Vector3 rotation);
             void setScale(float scale);
             void setColor(Color color, int materialNumber);
+            void setAlive(bool state);
 
         protected:
             TexturedModel _texturedModel;

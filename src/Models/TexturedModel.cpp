@@ -25,12 +25,29 @@ IS::TexturedModel::TexturedModel(const std::string &modelPath)
             _texture = LoadTexture(pathTexture.c_str());
             _models[0].materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = _texture;
         }
+        _nbFrame = 1;
     } else {
         int i = 0;
         while (std::filesystem::exists((path = std::string("ressources/" + modelPath + "/" + modelPath + "_" + IntPlusPadding(i, 6) + ".obj")))) {
             _models.push_back(LoadModel(path.c_str()));
             i += 1;
+            _nbFrame += 1;
         }
+    }
+}
+
+IS::TexturedModel::TexturedModel(const std::string &modelPath, const std::string &texturePath)
+{
+    std::string path = "ressources/" + modelPath + ".obj";
+    std::string pathTexture = "ressources/" + texturePath + ".png";
+
+    if (std::filesystem::exists(path)) {
+        _models.push_back(LoadModel(path.c_str()));
+        if (std::filesystem::exists(pathTexture)) {
+            _texture = LoadTexture(pathTexture.c_str());
+            _models[0].materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = _texture;
+        }
+        _nbFrame = 1;
     }
 }
 
@@ -39,6 +56,7 @@ IS::TexturedModel::TexturedModel(Mesh mesh, const std::string &texturePath)
     _models.push_back(LoadModelFromMesh(mesh));
     _texture = LoadTexture(texturePath.c_str());
     _models[0].materials[0].maps[MATERIAL_MAP_DIFFUSE].texture = _texture;
+    _nbFrame = 1;
 }
 
 IS::TexturedModel::TexturedModel(Model model)
@@ -50,14 +68,23 @@ IS::TexturedModel::~TexturedModel()
 {
 }
 
+void IS::TexturedModel::resetFrame()
+{
+    _currentFrame = 0;
+}
+
 void IS::TexturedModel::nextFrame()
 {
-    std::rotate(_models.begin(), _models.begin() + 1, _models.end());
+    _currentFrame += 1;
+    if (_currentFrame == _nbFrame)
+        _currentFrame = 0;
 }
 
 void IS::TexturedModel::prevFrame()
 {
-    std::rotate(_models.rbegin(), _models.rbegin() + 1, _models.rend());
+    _currentFrame -= 1;
+    if (_currentFrame < 0)
+        _currentFrame = _nbFrame - 1;
 }
 
 void IS::TexturedModel::clean()
@@ -69,7 +96,7 @@ void IS::TexturedModel::clean()
 
 Model IS::TexturedModel::getModel() const
 {
-    return (_models[0]);
+    return (_models[_currentFrame]);
 }
 
 Texture2D IS::TexturedModel::getTexture() const

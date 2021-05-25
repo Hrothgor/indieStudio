@@ -7,51 +7,71 @@
 
 #include "Bomb.hpp"
 
-IS::Bomb::Bomb(Entity entity, ParticleSystem smokeBomb, ParticleSystem explosionBomb, Color color1, Color color2)
+IS::Bomb::Bomb(Entity entity, Bomberman *player, ParticleSystem smokeBomb, ParticleSystem explosionBomb)
     : Entity(entity)
 {
+    _player = player;
     _smokeBomb = smokeBomb;
     _explosionBomb = explosionBomb;
     for (int i = 0; i < 5; i++)
-        setColor(color1, i);
-    setColor(color2, 5);
+        setColor(_player->getColor(0), i);
+    setColor(_player->getColor(1), 5);
+    GLOBAL::_sounds["bombFuse"]->play();
 }
 
 IS::Bomb::~Bomb()
 {
 }
 
-void IS::Bomb::explode(Map &map)
+void IS::Bomb::checkKillPlayer(int x, int y, Camera *camera)
+{
+    for (Bomberman *player : GLOBAL::_bombermans) {
+        int playerX = (player->getPosition().x + 4) / 10;
+        int playerY = (player->getPosition().z + 4) / 10;
+        if (playerX == x && playerY == y && player->IsAlive() == true) {
+            player->setDeathAnimation(true);
+            camera->startAnimation(camera->getPosition(), {player->getPosition().x, 30, player->getPosition().z + 30}, player->getPosition(), 4);
+            GLOBAL::_slowfactor = 10;
+        }
+    }
+}
+
+void IS::Bomb::explode(Camera *camera)
 {
     _alive = false;
+    GLOBAL::_sounds["bombExplosion"]->play();
+    int blastRadius = _player->getBlastRadius() + 1;
     int mapX = _position.x / 10;
     int mapY = _position.z / 10;
-    for (float x = mapX + 1; x < mapX + 4; x++) {
+    for (float x = mapX; x < mapX + blastRadius; x++) {
         _explosionBomb.emitParticle({x * 10, _position.y + 6, _position.z});
-        if (map.TryDestroy(x, mapY))
+        checkKillPlayer(x, mapY, camera);
+        if (GLOBAL::_map->TryDestroy(x, mapY))
             break;
     }
-    for (float x = mapX - 1; x > mapX - 4; x--) {
+    for (float x = mapX; x > mapX - blastRadius; x--) {
         _explosionBomb.emitParticle({x * 10, _position.y + 6, _position.z});
-        if (map.TryDestroy(x, mapY))
+        checkKillPlayer(x, mapY, camera);
+        if (GLOBAL::_map->TryDestroy(x, mapY))
             break;
     }
-    for (float y = mapY + 1; y < mapY + 4; y++) {
+    for (float y = mapY; y < mapY + blastRadius; y++) {
         _explosionBomb.emitParticle({_position.x, _position.y + 6, y * 10});
-        if (map.TryDestroy(mapX, y))
+        checkKillPlayer(mapX, y, camera);
+        if (GLOBAL::_map->TryDestroy(mapX, y))
             break;
     }
-    for (float y = mapY - 1; y > mapY - 4; y--) {
+    for (float y = mapY; y > mapY - blastRadius; y--) {
         _explosionBomb.emitParticle({_position.x, _position.y + 6, y * 10});
-        if (map.TryDestroy(mapX, y))
+        checkKillPlayer(mapX, y, camera);
+        if (GLOBAL::_map->TryDestroy(mapX, y))
             break;
     }
 }
 
 
-bool IS::Bomb::update(Camera3D camera, Map &map)
+bool IS::Bomb::update(Camera *camera)
 {
-    IS::Entity::update(camera, map);
     // Vector2 bombScreenPosition = GetWorldToScreen({_position.x, _position.y + 14, _position.z}, camera);
     // int flooredLife = _life.getElapsedTime();
     // std::string lifeTime("Bomb: " + std::to_string(_lifeLenght - flooredLife));
@@ -62,8 +82,10 @@ bool IS::Bomb::update(Camera3D camera, Map &map)
     // BeginMode3D(camera);
 
     _smokeBomb.generateParticles({_position.x, _position.y + 8, _position.z});
-    if (_life.getElapsedTime() > _lifeLenght) {
-        explode(map);
+    if ((_lifeLenght -= GetFrameTime()) < 0) {
+        GLOBAL::_map->setElement(MAP_TILES::EMPTY, _position.x / 10, _position.z / 10);
+        explode(camera);
+        _player->bombExplode();
         return (false);
     }
     return (true);

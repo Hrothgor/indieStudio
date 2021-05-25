@@ -29,7 +29,7 @@ IS::Entity::~Entity()
 {
 }
 
-bool IS::Entity::update(Camera3D camera, Map &map)
+bool IS::Entity::update(Camera *camera)
 {
     int i = 0;
 
@@ -52,6 +52,11 @@ void IS::Entity::increaseRotation(Vector3 vec)
     _rotation.z += vec.z;
     _texturedModel.setTransform(MatrixRotateXYZ({
         DEG2RAD*_rotation.x, DEG2RAD*_rotation.y, DEG2RAD*_rotation.z }));
+}
+
+void IS::Entity::resetFrame()
+{
+    _texturedModel.resetFrame();
 }
 
 void IS::Entity::nextFrame()
@@ -128,4 +133,9 @@ void IS::Entity::setColor(Color color, int materialNumber)
     if (materialNumber >= _colors.size() || materialNumber < 0)
         return;
     _colors[materialNumber] = color;
+}
+
+void IS::Entity::setAlive(bool state)
+{
+    _alive = state;
 }

@@ -24,6 +24,7 @@ void IS::Master2DRenderer::render(int scene)
 {
     start();
     DrawText(std::to_string(GetFPS()).c_str(), 0, 0, 50, RED);
+    _buttonsRenderer.render(scene);
     stop();
 }
 
