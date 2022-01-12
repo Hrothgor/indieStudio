@@ -35,7 +35,6 @@ namespace IS {
         private:
             Master3DRenderer _3Drenderer;
             Master2DRenderer _2Drenderer;
-            int _actualscene = 0;
     };
 }
 

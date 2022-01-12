@@ -16,8 +16,8 @@ std::string IntPlusPadding(int i, int paddingLength)
 
 IS::TexturedModel::TexturedModel(const std::string &modelPath)
 {
-    std::string path = "ressources/" + modelPath + ".obj";
-    std::string pathTexture = "ressources/" + modelPath + ".png";
+    std::string path = ASSETS_PATH"ressources/" + modelPath + ".obj";
+    std::string pathTexture = ASSETS_PATH"ressources/" + modelPath + ".png";
 
     if (std::filesystem::exists(path)) {
         _models.push_back(LoadModel(path.c_str()));
@@ -28,7 +28,7 @@ IS::TexturedModel::TexturedModel(const std::string &modelPath)
         _nbFrame = 1;
     } else {
         int i = 0;
-        while (std::filesystem::exists((path = std::string("ressources/" + modelPath + "/" + modelPath + "_" + IntPlusPadding(i, 6) + ".obj")))) {
+        while (std::filesystem::exists((path = std::string(ASSETS_PATH"ressources/" + modelPath + "/" + modelPath + "_" + IntPlusPadding(i, 6) + ".obj")))) {
             _models.push_back(LoadModel(path.c_str()));
             i += 1;
             _nbFrame += 1;
@@ -38,8 +38,8 @@ IS::TexturedModel::TexturedModel(const std::string &modelPath)
 
 IS::TexturedModel::TexturedModel(const std::string &modelPath, const std::string &texturePath)
 {
-    std::string path = "ressources/" + modelPath + ".obj";
-    std::string pathTexture = "ressources/" + texturePath + ".png";
+    std::string path = ASSETS_PATH"ressources/" + modelPath + ".obj";
+    std::string pathTexture = ASSETS_PATH"ressources/" + texturePath + ".png";
 
     if (std::filesystem::exists(path)) {
         _models.push_back(LoadModel(path.c_str()));

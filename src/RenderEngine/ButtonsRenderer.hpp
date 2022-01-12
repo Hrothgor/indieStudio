@@ -8,8 +8,7 @@
 #ifndef BUTTONSRENDERER_HPP_
 #define BUTTONSRENDERER_HPP_
 
-#include "../include.hpp"
-#include "../Buttons/Button.hpp"
+#include "../Buttons/ButtonBomberman.hpp"
 
 namespace IS {
     class ButtonsRenderer {
@@ -17,6 +16,7 @@ namespace IS {
             ButtonsRenderer();
             ~ButtonsRenderer();
 
+            void addButton(int scene, Button *button);
             void init();
 
             void render(int scene);

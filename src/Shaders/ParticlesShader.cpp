@@ -18,8 +18,8 @@ IS::ParticlesShader::~ParticlesShader()
 
 void IS::ParticlesShader::initShader()
 {
-    _shader = LoadShader("ressources/Shaders/particles.vs",
-                        "ressources/Shaders/particles.fs");
+    _shader = LoadShader(ASSETS_PATH"ressources/Shaders/particles.vs",
+                        ASSETS_PATH"ressources/Shaders/particles.fs");
     loc_texOffset1 = GetShaderLocation(_shader, "texOffset1");
     loc_texOffset2 = GetShaderLocation(_shader, "texOffset2");
     loc_numberOfRows = GetShaderLocation(_shader, "numberOfRows");

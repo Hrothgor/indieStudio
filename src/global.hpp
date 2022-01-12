@@ -19,6 +19,7 @@ namespace IS {
     class Bomberman;
     class PowerUp;
     class Map;
+    class Camera;
 
     namespace GLOBAL {
         inline std::map<std::string, TexturedModel *> _texturedModels;
@@ -30,6 +31,14 @@ namespace IS {
         inline std::vector<Bomberman *> _bombermans;
         inline std::vector<PowerUp *> _powerups;
         inline Map *_map;
+
+        inline Color listColor[MAX_COLOR] = {
+        DARKGRAY, MAROON, ORANGE, DARKGREEN, DARKBLUE, DARKPURPLE, DARKBROWN,
+        GRAY, RED, GOLD, LIME, BLUE, VIOLET, BROWN, LIGHTGRAY, PINK, YELLOW,
+        GREEN, SKYBLUE, PURPLE, BEIGE };
+        inline IS::Camera *camera;
+
+        inline int _scene = 0;
 
         inline int _slowfactor = 1;
         inline int _nbFrame = 0;

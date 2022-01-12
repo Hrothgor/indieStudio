@@ -5,6 +5,14 @@
 ** Sounds
 */
 
+#ifdef __unix
+    #define OS_Windows 0
+    #define MUSIC_PLAYING IsMusicStreamPlaying
+#elif defined(_WIN32) || defined(WIN32)
+    #define OS_Windows 1
+    #define MUSIC_PLAYING IsMusicPlaying
+#endif
+
 #include "Sounds.hpp"
 
 IS::Sounds::Sounds(const std::string &soundPath, bool looping)
@@ -13,7 +21,7 @@ IS::Sounds::Sounds(const std::string &soundPath, bool looping)
     if (std::filesystem::exists(path)) {
         _music = LoadMusicStream(path.c_str());
         _music.looping = looping;
-    } else if (std::filesystem::exists((path = "ressources/" + soundPath))) {
+    } else if (std::filesystem::exists((path = ASSETS_PATH"ressources/" + soundPath))) {
         _music = LoadMusicStream(path.c_str());
         _music.looping = looping;
     }
@@ -25,7 +33,7 @@ IS::Sounds::~Sounds()
 
 void IS::Sounds::play()
 {
-    if (IsMusicPlaying(_music))
+    if (MUSIC_PLAYING(_music))
         StopMusicStream(_music);
     PlayMusicStream(_music);
 }

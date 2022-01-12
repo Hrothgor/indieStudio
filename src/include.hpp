@@ -9,6 +9,10 @@
 #ifndef INCLUDE_HPP_
 #define INCLUDE_HPP_
 
+#define MENU 0
+#define MENUBOMBERMAN 1
+#define GAME 2
+
 #define WIDTH 1920.0
 #define HEIGHT 1080.0
 #define GRAVITY -10
@@ -17,16 +21,17 @@
 #define FAR_PLANE 1000.0
 
 #define GLSL_VERSION 330
+#define MAX_COLOR 21
 
 #include <string>
 #include <iostream>
 #include <fstream>
 #include <cmath>
 #include <vector>
+#include <map>
 #include <regex>
 #include <unordered_map>
 #include <time.h>
-#include <unistd.h>
 #include <filesystem>
 
 #include "raylib.h"

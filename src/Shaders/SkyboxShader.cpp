@@ -18,8 +18,8 @@ IS::SkyboxShader::~SkyboxShader()
 
 void IS::SkyboxShader::initShader()
 {
-    _shader = LoadShader("ressources/Shaders/skybox.vs",
-                        "ressources/Shaders/skybox.fs");
+    _shader = LoadShader(ASSETS_PATH"ressources/Shaders/skybox.vs",
+                        ASSETS_PATH"ressources/Shaders/skybox.fs");
     int value = MATERIAL_MAP_CUBEMAP;
     SetShaderValue(_shader, GetShaderLocation(_shader, "environmentMap"), &value, SHADER_UNIFORM_INT);
 }

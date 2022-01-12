@@ -7,11 +7,6 @@
 
 #include "Entity.hpp"
 
-Color listColor[21] = {
-        DARKGRAY, MAROON, ORANGE, DARKGREEN, DARKBLUE, DARKPURPLE, DARKBROWN,
-        GRAY, RED, GOLD, LIME, BLUE, VIOLET, BROWN, LIGHTGRAY, PINK, YELLOW,
-        GREEN, SKYBLUE, PURPLE, BEIGE };
-
 IS::Entity::Entity(const TexturedModel &texturedModel, Vector3 position, Vector3 rotation, float scale)
     : _texturedModel(texturedModel)
     , _colors(_texturedModel.getModel().materialCount)
@@ -21,8 +16,8 @@ IS::Entity::Entity(const TexturedModel &texturedModel, Vector3 position, Vector3
     _scale = scale;
     _texturedModel.setTransform(MatrixRotateXYZ({
         DEG2RAD*_rotation.x, DEG2RAD*_rotation.y, DEG2RAD*_rotation.z }));
-    for (Color &color : _colors)
-        color = listColor[rand() % 21];
+    // for (Color &color : _colors)
+    //     color = GLOBAL::listColor[rand() % MAX_COLOR];
 }
 
 IS::Entity::~Entity()
@@ -87,6 +82,11 @@ Vector3 IS::Entity::getRotation() const
 float IS::Entity::getScale() const
 {
     return (_scale);
+}
+
+Vector3 IS::Entity::getVelocity() const
+{
+    return (_velocity);
 }
 
 Color IS::Entity::getColor(int materialNumber) const

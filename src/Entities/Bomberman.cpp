@@ -43,11 +43,12 @@ void IS::Bomberman::powerUpFire()
 void IS::Bomberman::powerUpBomb()
 {
     _nbBomb += 1;
+    _maxBomb += 1;
 }
 
 void IS::Bomberman::powerUpSpeed()
 {
-    _speed += 0.1;
+    _speed += 0.075;
 }
 
 void IS::Bomberman::bombExplode()
@@ -65,44 +66,77 @@ void IS::Bomberman::setDeathAnimation(bool state)
     _dying = state;
 }
 
+void IS::Bomberman::setKey(keyPlayer_t keys, int gamePadID, bool ai)
+{
+    if (ai) {
+        _keys = {};
+        _monitorType = AI;
+    } else if (gamePadID == -1) {
+        _keys = keys;
+        _monitorType = KEYBOARD;
+    } else {
+        _keys = {};
+        _monitorType = CONTROLLER;
+        _gamePadID = gamePadID;
+    }
+}
+
+void IS::Bomberman::changeMonitorType()
+{
+    if (_monitorType == AI)
+        _monitorType = KEYBOARD;
+    else if (_monitorType == KEYBOARD)
+        _monitorType = CONTROLLER;
+    else if (_monitorType == CONTROLLER)
+        _monitorType = AI;
+}
+
 void IS::Bomberman::checkKeyPressed()
 {
+    ///// check KEY /////
     if (_monitorType == KEYBOARD) {
         if (IsKeyDown(_keys.up))
-            _velocity.z = -_speed;
+            _actions.moveUp = true;
         if (IsKeyDown(_keys.down))
-            _velocity.z = _speed;
+            _actions.moveDown = true;
         if (IsKeyDown(_keys.left))
-            _velocity.x = -_speed;
+            _actions.moveLeft = true;
         if (IsKeyDown(_keys.right))
-            _velocity.x = _speed;
-        if (IsKeyPressed(_keys.bomb) && _nbBomb > 0) {
-            float x = floor((_position.x + 4) / 10) * 10;
-            float y = floor((_position.z + 4) / 10) * 10;
-            _nbBomb -= 1;
-            GLOBAL::_entities.push_back(new Bomb(Entity(*GLOBAL::_texturedModels["bomb"], {x, 0, y}, { 0, 0, 0 }, 2), this,  *GLOBAL::_particleSystem["fireBomb"], *GLOBAL::_particleSystem["explosionBomb"]));
-            GLOBAL::_map->addElement(IS::MAP_TILES::BOMB, x / 10, y / 10);
-        }
+            _actions.moveRight = true;
+        if (IsKeyPressed(_keys.bomb))
+            _actions.dropBomb = true;
     } else if (_monitorType == CONTROLLER) {
         if (IsGamepadAvailable(_gamePadID)) {
-            if (GetGamepadAxisMovement(_gamePadID, GAMEPAD_AXIS_LEFT_Y) > 0)
-                _velocity.z = -_speed;
             if (GetGamepadAxisMovement(_gamePadID, GAMEPAD_AXIS_LEFT_Y) < 0)
-                _velocity.z = _speed;
+                _actions.moveUp = true;
+            if (GetGamepadAxisMovement(_gamePadID, GAMEPAD_AXIS_LEFT_Y) > 0)
+                _actions.moveDown = true;
             if (GetGamepadAxisMovement(_gamePadID, GAMEPAD_AXIS_LEFT_X) < 0)
-                _velocity.x = -_speed;
+                _actions.moveLeft = true;
             if (GetGamepadAxisMovement(_gamePadID, GAMEPAD_AXIS_LEFT_X) > 0)
-                _velocity.x = _speed;
-            if (IsGamepadButtonDown(_gamePadID, GAMEPAD_BUTTON_RIGHT_FACE_RIGHT)) {
-                float x = floor((_position.x + 4) / 10) * 10;
-                float y = floor((_position.z + 4) / 10) * 10;
-                _nbBomb -= 1;
-                GLOBAL::_entities.push_back(new Bomb(Entity(*GLOBAL::_texturedModels["bomb"], {x, 0, y}, { 0, 0, 0 }, 2), this,  *GLOBAL::_particleSystem["fireBomb"], *GLOBAL::_particleSystem["explosionBomb"]));
-                GLOBAL::_map->addElement(IS::MAP_TILES::BOMB, x / 10, y / 10);
-            }
+                _actions.moveRight = true;
+            if (IsGamepadButtonPressed(_gamePadID, GAMEPAD_BUTTON_RIGHT_FACE_RIGHT))
+                _actions.dropBomb = true;
         }
     } else if (_monitorType == AI) {
-
+        _actions = IS::AIPath::getAIMove(this, _maxBomb, _nbBomb);
+        _velocity = { 0 };
+    }
+    ///// DO ACTION /////
+    if (_actions.moveUp)
+        _velocity.z = -_speed;
+    if (_actions.moveDown)
+        _velocity.z = _speed;
+    if (_actions.moveLeft)
+        _velocity.x = -_speed;
+    if (_actions.moveRight)
+        _velocity.x = _speed;
+    if (_actions.dropBomb && _nbBomb > 0) {
+        float x = floor((_position.x + 4) / 10) * 10;
+        float y = floor((_position.z + 4) / 10) * 10;
+        _nbBomb -= 1;
+        GLOBAL::_entities.push_back(new Bomb(Entity(*GLOBAL::_texturedModels["bomb"], {x, 0, y}, { 0, 0, 0 }, 2), this,  *GLOBAL::_particleSystem["fireBomb"], *GLOBAL::_particleSystem["explosionBomb"]));
+        GLOBAL::_map->addElement(IS::MAP_TILES::BOMB, x / 10, y / 10);
     }
 }
 
@@ -222,24 +256,6 @@ void IS::Bomberman::checkCollisionMap()
     /////
     if (moved && Vector3Length(_velocity) != 0)
         _smokeFeet.generateParticles({_position.x, _position.y, _position.z});
-    else if (_monitorType == AI) {
-        int dir = rand() % 4;
-        switch (dir)
-        {
-        case 0:
-            setVelocity({_speed, 0, 0});
-            break;
-        case 1:
-            setVelocity({-_speed, 0, 0});
-            break;
-        case 2:
-            setVelocity({0, 0, _speed});
-            break;
-        case 3:
-            setVelocity({0, 0, -_speed});
-            break;
-        }
-    }
 }
 
 void IS::Bomberman::checkCollisionPowerUp()
@@ -281,16 +297,15 @@ bool IS::Bomberman::update(Camera *camera)
             return (false);
         }
         increaseRotation({0, 0, 1});
-    } else {
-        if (_monitorType != AI)
-            checkKeyPressed();
+    } else if (IS::GLOBAL::_scene == GAME) {
+        checkKeyPressed();
         changeModelRotation();
         checkCollisionMap();
         checkCollisionPowerUp();
         if (_velocity.x == 0 && _velocity.y == 0 && _velocity.z == 0)
             resetFrame();
-        if (_monitorType != AI)
-            _velocity = { 0 };
+        _velocity = { 0 };
+        _actions = { false };
         return (true);
     }
     return (true);

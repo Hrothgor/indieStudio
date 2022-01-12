@@ -32,6 +32,7 @@ namespace IS {
             Vector3 getPosition() const;
             Vector3 getRotation() const;
             float getScale() const;
+            Vector3 getVelocity() const;
             Color getColor(int materialNumber) const;
             bool IsAlive() const;
 

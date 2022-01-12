@@ -18,8 +18,8 @@ IS::LightShader::~LightShader()
 
 void IS::LightShader::initShader()
 {
-    _shader = LoadShader("ressources/Shaders/light.vs",
-                        "ressources/Shaders/light.fs");
+    _shader = LoadShader(ASSETS_PATH"ressources/Shaders/light.vs",
+                        ASSETS_PATH"ressources/Shaders/light.fs");
     _shader.locs[SHADER_LOC_MATRIX_MODEL] = GetShaderLocation(_shader, "matModel");
     _shader.locs[SHADER_LOC_MATRIX_VIEW] = GetShaderLocation(_shader, "matView");
     _shader.locs[SHADER_LOC_MATRIX_PROJECTION] = GetShaderLocation(_shader, "matProjection");

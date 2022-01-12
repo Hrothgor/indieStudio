@@ -23,7 +23,7 @@ namespace IS
         float getElapsedTime();
 
     private:
-        std::chrono::_V2::system_clock::time_point _clock = std::chrono::high_resolution_clock::now();
+        std::chrono::high_resolution_clock::time_point _clock = std::chrono::high_resolution_clock::now();
 
     };
 }

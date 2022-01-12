@@ -30,7 +30,8 @@ void IS::EntityRenderer::prepare(int scene, Camera *camera)
 void IS::EntityRenderer::render(int scene, IS::Camera *camera)
 {
     prepare(scene, camera);
-    GLOBAL::_map->render();
+    if (GLOBAL::_scene == GAME)
+        GLOBAL::_map->render();
     for (auto &list : _entities) {
         if (list.first != scene)
             continue;

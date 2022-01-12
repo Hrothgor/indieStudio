@@ -1,12 +1,22 @@
 cmake_minimum_required(VERSION 3.14)
-project(my_project)
+if (UNIX)
+	project(bomberman CXX)
+	set(CMAKE_CXX_STANDARD 17)
+	find_package(raylib 2.5.0 REQUIRED) # Requires at least version 2.5.0
+	file(GLOB_RECURSE my_project_src "src/*.cpp")
+	SET(CMAKE_CXX_FLAGS  "-std=c++17 -O2")
+	add_executable(bomberman ${my_project_src})
+	target_link_libraries(bomberman raylib)
+	target_compile_definitions(bomberman PUBLIC ASSETS_PATH="${CMAKE_CURRENT_SOURCE_DIR}/")
+endif (UNIX)
 
-find_package(raylib 2.5.0 REQUIRED) # Requires at least version 2.5.0
-
-set(CMAKE_C_STANDARD 11)
-
-file(GLOB_RECURSE my_project_src "src/*.cpp")
-SET(CMAKE_CXX_FLAGS  "-std=c++17 -O2")
-add_executable(my_project ${my_project_src})
-
-target_link_libraries(my_project raylib)
+if (WIN32)
+	project(bomberman CXX)
+	set(CMAKE_CXX_STANDARD 17)
+	include_directories(${PROJECT_SOURCE_DIR}/include)
+	link_directories(${CMAKE_SOURCE_DIR}/lib)
+	file(GLOB_RECURSE my_project_src "src/*.cpp")
+	add_executable(bomberman ${my_project_src})
+	target_link_libraries(bomberman raylib winmm)
+	target_compile_definitions(bomberman PUBLIC ASSETS_PATH="${CMAKE_CURRENT_SOURCE_DIR}/")
+endif(WIN32)
