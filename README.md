@@ -1,6 +1,6 @@
 # indieStudio
 
-
+<pre>
 Controls:
     - joystick
     - keyboard:
@@ -8,3 +8,4 @@ Controls:
         player 2 : arrow to move, rightCtrl to drop bomb
         player 3 : TGFH to move, Y to drop bomb
         player 4 : IKJL to move, O to drop bomb
+</pre>
